@@ -269,7 +269,7 @@
         // Now safe to use device APIs
         document.addEventListener("backbutton", onBackKeyDown, false);
         
-        /*
+        
         //  --- NOTIFICACIONES PUSH
         var push = PushNotification.init({
             android: {
@@ -292,7 +292,7 @@
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
                     // si ha cambiado lo guardamos DE NUEVO
-                    saveRegistrationId(data.registrationId);
+//                    saveRegistrationId(data.registrationId);
                 }
 
             } else {
@@ -300,7 +300,7 @@
                 console.log("registration id: "+data.registrationId);
                 
                 // lo guardamos por PRIMERA vez 
-                saveRegistrationId(data.registrationId);
+//                saveRegistrationId(data.registrationId);
             }
         });
 
@@ -314,7 +314,7 @@
         push.on('error', function(e) {
             alert('error');
             // e.message
-        });*/
+        });
         
         // oculta splashscreen (mejor ponerlo en config.xml
         navigator.splashscreen.hide();
