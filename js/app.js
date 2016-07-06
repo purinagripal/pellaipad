@@ -269,7 +269,10 @@
         // Now safe to use device APIs
         document.addEventListener("backbutton", onBackKeyDown, false);
         
+        alert('on device ready');
         
+        
+        /*
         //  --- NOTIFICACIONES PUSH
         var push = PushNotification.init({
             android: {
@@ -287,20 +290,20 @@
             // comprobamos si tiene RegistrationId
             if( window.localStorage.getItem('reg_id') ){
                 // ya esta guardado
-//                alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
-//                console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
                     // si ha cambiado lo guardamos DE NUEVO
-//                    saveRegistrationId(data.registrationId);
+                    saveRegistrationId(data.registrationId);
                 }
 
             } else {
-//                alert("registration id: "+data.registrationId);
-//                console.log("registration id: "+data.registrationId);
+                alert("registration id: "+data.registrationId);
+                console.log("registration id: "+data.registrationId);
                 
                 // lo guardamos por PRIMERA vez 
-//                saveRegistrationId(data.registrationId);
+                saveRegistrationId(data.registrationId);
             }
         });
 
@@ -312,9 +315,9 @@
         });
 
         push.on('error', function(e) {
-//            alert('error');
+            alert('error');
             // e.message
-        });
+        });*/
         
         // oculta splashscreen (mejor ponerlo en config.xml
         navigator.splashscreen.hide();
