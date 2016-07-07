@@ -32,7 +32,8 @@
     
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
+<!--    <gap:plugin name="org.apache.cordova.dialogs" />-->
+    <gap:plugin name="cordova-plugin-dialogs" />
 <!--    <gap:plugin name="org.apache.cordova.globalization" />-->
     
     <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
