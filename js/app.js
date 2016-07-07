@@ -272,7 +272,7 @@
         alert('on device ready');
         
         
-        /*
+
         //  --- NOTIFICACIONES PUSH
         var push = PushNotification.init({
             android: {
@@ -285,7 +285,7 @@
             },
             windows: {}
         });
-        
+             
         push.on('registration', function(data) {            
             // comprobamos si tiene RegistrationId
             if( window.localStorage.getItem('reg_id') ){
@@ -317,7 +317,7 @@
         push.on('error', function(e) {
             alert('error');
             // e.message
-        });*/
+        });
         
         // oculta splashscreen (mejor ponerlo en config.xml
         navigator.splashscreen.hide();
