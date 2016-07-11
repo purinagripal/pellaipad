@@ -53,7 +53,7 @@
     
     
     <!--    Compartir en RRSS   -->
-    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
     <preference name="android-build-tool" value="gradle" />
