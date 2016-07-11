@@ -268,9 +268,7 @@
         
         // Now safe to use device APIs
         document.addEventListener("backbutton", onBackKeyDown, false);
-        
-        alert('on device ready');
-        
+        document.addEventListener("resume", onResume, false);
         
 
         //  --- NOTIFICACIONES PUSH
@@ -466,6 +464,25 @@
         window.historial = [""];
         
         Backbone.history.navigate('', {trigger: true});
+    };
+    
+    // para actualizar la lista de eventos en iOS (nunca se cierra la app)
+    function onResume() {
+        // actualizamos desde el servidor
+        homeView.model.fetch({reset: true, 
+                          success: function() {
+                            console.log( 'fetch success' );                            
+                          },
+                          complete: function() {
+                              //alert('fetch complete');
+                              console.log( 'fetch complete, oculta cargando' );
+                              
+                              // renderiza eventos una vez descargados
+                              homeView.cargarEventos();
+                              homeView.render();
+                          }
+        });
+        
     };
     
 
