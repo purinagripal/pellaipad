@@ -34,15 +34,12 @@
     <!---------------------->
     <!------ PLUGINS ------->
     
-<!--    <gap:plugin name="org.apache.cordova.console" />-->
     <plugin name="cordova-plugin-console" />
     
-<!--    <gap:plugin name="org.apache.cordova.device" />-->
     <plugin name="cordova-plugin-device" />
 
     <plugin name="cordova-plugin-dialogs" />
     
-<!--    <gap:plugin name="org.apache.cordova.globalization" />-->
     
     <!-- SplashScreen -->
     <plugin name="cordova-plugin-splashscreen" source="npm" />
