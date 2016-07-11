@@ -30,13 +30,22 @@
 <!--    <preference name="android-minSdkVersion" value="10" />-->
     <preference name="android-installLocation" value="auto" />
     
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.device" />
-<!--    <gap:plugin name="org.apache.cordova.dialogs" />-->
-    <gap:plugin name="cordova-plugin-dialogs" />
+    
+    <!---------------------->
+    <!------ PLUGINS ------->
+    
+<!--    <gap:plugin name="org.apache.cordova.console" />-->
+    <plugin name="cordova-plugin-console" />
+    
+<!--    <gap:plugin name="org.apache.cordova.device" />-->
+    <plugin name="cordova-plugin-device" />
+
+    <plugin name="cordova-plugin-dialogs" />
+    
 <!--    <gap:plugin name="org.apache.cordova.globalization" />-->
     
-    <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
+    <!-- SplashScreen -->
+    <plugin name="cordova-plugin-splashscreen" />
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="ShowSplashScreenSpinner" value="false"/>
@@ -47,7 +56,7 @@
     
     
     <!--    Compartir en RRSS   -->
-    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
     <preference name="android-build-tool" value="gradle" />
@@ -55,21 +64,9 @@
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
-    <!--
-    <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" >
-        <param name="SENDER_ID" value="41817165383" />
-    </plugin>
-    -->
-    <!-- ultima config notificaciones PUSH
-    <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
-    -->
-    <!--
-    <preference name="android-build-tool" value="gradle" />
-    <plugin name="phonegap-plugin-push" source="npm" />
-    -->
     
     <!--    WhiteList   -->
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
     <access origin="*" />
     <!-- Permitir whatsapp -->

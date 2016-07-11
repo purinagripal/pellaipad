@@ -311,7 +311,8 @@
             // para que solo descargue las notificaciones una vez (no por cada notificacion)
             if( window.notif_vistas == 0 ) {
                 eventosNotificados();
-            }             
+            }
+            push.finish(); // para iOS
         });
 
         push.on('error', function(e) {
