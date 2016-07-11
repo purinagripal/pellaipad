@@ -45,12 +45,12 @@
 <!--    <gap:plugin name="org.apache.cordova.globalization" />-->
     
     <!-- SplashScreen -->
-    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="AutoHideSplashScreen" value="false" />
-    <gap:splash src="splash.png" />
+    <splash src="splash.png" />
     
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     
@@ -72,16 +72,6 @@
     <!-- Permitir whatsapp -->
     <allow-intent href="whatsapp:*" />
     <access origin="whatsapp:*" launch-external="yes" />    
-    <!--
-    <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" /> 
-    -->
     
     
     <icon src="icon.png" />
