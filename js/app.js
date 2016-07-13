@@ -310,6 +310,12 @@
             if( window.notif_vistas == 0 ) {
                 eventosNotificados();
             }
+            // borrar notificaciones del centro de notificaciones
+            push.clearAllNotifications(function() {
+                console.log('notificaciones borradas');
+            }, function() {
+                console.log('error borrando notificaciones');
+            });
             push.finish(); // para iOS
         });
 
