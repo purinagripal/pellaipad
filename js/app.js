@@ -311,11 +311,7 @@
                 eventosNotificados();
             }
             // borrar notificaciones del centro de notificaciones
-            push.clearAllNotifications(function() {
-                console.log('notificaciones borradas');
-            }, function() {
-                console.log('error borrando notificaciones');
-            });
+            push.clearAllNotifications();
             push.finish(); // para iOS
         });
 
