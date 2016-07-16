@@ -291,7 +291,7 @@
             // comprobamos si tiene RegistrationId
             if( window.localStorage.getItem('reg_id') ){
                 // ya esta guardado
-                alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                //alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
@@ -300,7 +300,7 @@
                 }
 
             } else {
-                alert("registration id: "+data.registrationId);
+                //alert("registration id: "+data.registrationId);
                 console.log("registration id: "+data.registrationId);
                 
                 // lo guardamos por PRIMERA vez 
@@ -314,7 +314,11 @@
                 eventosNotificados();
             }
             // borrar notificaciones del centro de notificaciones
-            push.clearAllNotifications(function(){});
+            push.clearAllNotifications(function() {
+                console.log('success clear notifications');
+            }, function() {
+                console.log('error clear notifications');
+            });
             push.finish(); // para iOS
         });
 
