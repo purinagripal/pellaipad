@@ -270,6 +270,9 @@
         document.addEventListener("backbutton", onBackKeyDown, false);
         document.addEventListener("resume", onResume, false);
         
+        
+        StatusBar.hide();
+        
 
         //  --- NOTIFICACIONES PUSH
         var push = PushNotification.init({
@@ -311,7 +314,7 @@
                 eventosNotificados();
             }
             // borrar notificaciones del centro de notificaciones
-            push.clearAllNotifications();
+            push.clearAllNotifications(function(){});
             push.finish(); // para iOS
         });
 
@@ -478,6 +481,10 @@
                           complete: function() {
                               //alert('fetch complete');
                               console.log( 'fetch complete, oculta cargando' );
+                              
+                              // resetea
+                              homeView.ciudad = 0;
+                              homeView.categoria = 0;
                               
                               // renderiza eventos una vez descargados
                               homeView.cargarEventos();
