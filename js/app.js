@@ -281,8 +281,9 @@
             },
             ios: {
                 alert: "true",
-                badge: "false",
-                sound: "false"
+                badge: "true",
+                sound: "false",
+                clearBadge: "true"
             },
             windows: {}
         });
