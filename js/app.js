@@ -313,13 +313,25 @@
             if( window.notif_vistas == 0 ) {
                 eventosNotificados();
             }
-            // borrar notificaciones del centro de notificaciones
-            push.clearAllNotifications(function() {
-                console.log('success clear notifications');
-            }, function() {
-                console.log('error clear notifications');
-            });
-            push.finish(); // para iOS
+            
+            
+            setTimeout( function(){ 
+                // borrar notificaciones del centro de notificaciones
+                push.clearAllNotifications(function() {
+                    console.log('success clear notifications');
+                }, function() {
+                    console.log('error clear notifications');
+                });
+            }, 3000);
+            
+            setTimeout( function(){ 
+                push.finish(function() {
+                    console.log('success finish');
+                }, function() {
+                    console.log('error finish');
+                }, 'push-1');
+            }, 9000);
+            
         });
 
         push.on('error', function(e) {
@@ -378,16 +390,20 @@
             complete: function(data){
                 console.log("complete eventos notificados");
                 
-                // reset historial
-                window.historial = ['', 'favoritos'];
-                // redirecciona a favoritos
-                Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
-                Backbone.history.navigate('favoritos', {replace: true, trigger: true});
+                setTimeout( function() { 
+                    // reset historial
+                    window.historial = ['', 'favoritos'];
+                    // redirecciona a favoritos
+                    Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
+                    Backbone.history.navigate('favoritos', {replace: true, trigger: true});
+                    
+                }, 2000);
                 
+                                
                 // reiniciar la variable x si la app queda abierta mucho tiempo
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
-                }, 5000);
+                }, 9000);
             },
         });
         
