@@ -7,8 +7,7 @@ var EventoCollection = Backbone.Collection.extend({
     model: Evento,
 
     //url: "http://localhost/fuerteagenda_cms/agenda_app",
-    //url: "http://test.mepwebs.com/agenda_app",
-    url: "http://test.mepwebs.com/appeventos",
+    url: "http://pelladeocio.com/appeventos",
     
     comparator: 'date',
     
@@ -85,7 +84,7 @@ var Follower = Backbone.Model.extend({
     idAttribute: 'id_follow',
     
     //urlRoot: "http://localhost/fuerteagenda_cms/appfollowers", 
-    urlRoot: "http://test.mepwebs.com/appfollowers", 
+    urlRoot: "http://pelladeocio.com/appfollowers", 
     
     
 });

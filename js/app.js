@@ -355,7 +355,7 @@
         console.log('eventos notificados para id_follow='+id_follow);
         
         $.ajax({
-            url: 'http://test.mepwebs.com/app_feventos/'+id_follow,
+            url: 'http://pelladeocio.com/app_feventos/'+id_follow,
             //url: 'http://localhost/fuerteagenda_cms/app_feventos/'+id_follow,
             data: '',
             cache: false,
