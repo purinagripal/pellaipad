@@ -1,6 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Allerta+Stencil|Oxygen|Unica+One);
 
-body {font-size: 14px; font-weight:normal; line-height: 1.8; font-family: 'Oxygen',Arial,Helvetica; background-color:#111;color: #fff;}
+body {
+    font-size: 14px; 
+    font-weight:normal; 
+    line-height: 1.8; 
+    font-family: 'Oxygen',Arial,Helvetica; 
+/*  COLORES  background-color:#111;
+    background-color:#B7D7EB;*/
+    background-color:#BADBEF;
+    color: #fff;
+}
 
 h1,h2,h3,h4,h5,h6{ font-weight:normal;padding: 0;margin: 0;color: #fff;}
 h1,h2,h3{ font-family: 'Allerta Stencil',Arial,Helvetica;text-transform: uppercase;}
@@ -27,7 +36,8 @@ blockquote {padding: 0 1.25em; margin: 0 0 1.25em; border-left: 5px solid #aaa; 
 /*color*/
 .bgcolor{background-color: #f2ab00;} /* amarillo */
 .textcolor{color: #f2ab00;}
-a {color:#f2ab00; text-decoration:none}
+
+a {color: darkblue; text-decoration:none}
 a:hover{color:#fff;text-decoration:none}
 /*color*/
 
@@ -44,7 +54,9 @@ a:hover{color:#fff;text-decoration:none}
     width: 100%;
     border-bottom: solid 1px #666;
     padding: 10px;
-    background-color:#111;
+/*    COLORES background-color:#111;
+    background-color:#77878F;*/
+    background-color:#1F5A77;
 }
 .header-50 {
     position: absolute;
@@ -54,7 +66,8 @@ a:hover{color:#fff;text-decoration:none}
     width: 100%;
     border-bottom: solid 1px #666;
     padding: 10px;
-    background-color:#111;
+    /*    COLORES background-color:#111;*/
+    background-color:#1F5A77;
 }
 /*.guiaeventos {
     position: absolute;
@@ -277,12 +290,29 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 
 /* guiaeventos --- en INDEX (proximos eventos), en AGENDA y en otros eventos EVENTO */
-.guiaeventos h4 {border-bottom: 1px solid;}
-.guiaeventos .cuadro {background-color: #222; margin: 0 0.1em 0.5em;}
+.guiaeventos h4 {
+    border-bottom: 1px solid;
+}
+.guiaeventos .cuadro {
+/*  COLORES  background-color: #222; 
+    background-color: #D9EAF2;*/
+    background-color: #EBF0EF;
+    color: #111;
+    margin: 0 0.1em 0.5em;}
 .guiaeventos .cuadro img {margin-bottom: 0.9em;}
 .guiaeventos .cuadro h5 {margin: 0.5em 0;}
 .guiaeventos .cuadro p {margin: 0.6em 0; font-size: 1em; line-height: 1.2;}
-.guiaeventos .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; margin-bottom: 5px; background-color: #111; border: 1px solid #222;}
+.guiaeventos .cuadro .date {text-align: center; padding: 0.5em 0; margin-bottom: 5px; 
+/*
+    COLORES
+    background-color: #111; 
+    border: 1px solid #222;
+    color: #aaa;
+*/
+    background-color:#D9EAF2;
+    border: 1px solid #EBF0EF;
+    color: #111
+}
 .guiaeventos .cuadro .date span { display: block; font-size: 1.25em; line-height: 1.2;}
 .guiaeventos .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
 .guiaeventos .cuadro .date b {font-size: 1.3em;}
