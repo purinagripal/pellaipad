@@ -11,9 +11,11 @@ body {
     color: #fff;
 }
 
+/*img {border-radius: 5px;}*/
+
 h1,h2,h3,h4,h5,h6{ font-weight:normal;padding: 0;margin: 0;color: #fff;}
 h1,h2,h3{ font-family: 'Allerta Stencil',Arial,Helvetica;text-transform: uppercase;}
-h4,h5,h6{ font-family: 'Abel',Arial,Helvetica; color: #ccc;}
+h4,h5,h6{ font-family: 'Abel',Arial,Helvetica; color: #1F5A77;}
 
 
 h3{font-size: 1.55em; margin-top: 1.56em; margin-bottom: 1.25em; color: #fff;}
@@ -34,8 +36,8 @@ blockquote {padding: 0 1.25em; margin: 0 0 1.25em; border-left: 5px solid #aaa; 
 
 
 /*color*/
-.bgcolor{background-color: #f2ab00;} /* amarillo */
-.textcolor{color: #f2ab00;}
+.bgcolor{background-color: #1F5A77;} /* amarillo */
+.textcolor{color: #1F5A77;}
 
 a {color: #fff; text-decoration:none}
 a:hover{color:#fff;text-decoration:none}
@@ -162,14 +164,14 @@ a.menu_salir {
 }
 
 .dropdown-menu {
-    background-color: #111;
-    border: 1px solid #222;
+    background-color: #1F5A77;
+    border: 1px solid #256c90;
 }
 .dropdown-menu .divider {
-    background-color: #222;
+    background-color: #256c90;
 }
 .dropdown-menu > li > a {
-    color: #f2ab00;
+    color: #fff;
     font-size: 1.2em;
     line-height: 2;
 }
@@ -214,8 +216,8 @@ a.menu_salir {
 
 .btn-pella {
   color: #fff;
-  background-color: #f2ab00;
-  border-color: #f2ab00;
+  background-color: #1F5A77;
+  border-color: #1F5A77;
     margin-bottom: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -226,8 +228,8 @@ a.menu_salir {
 .btn-pella.active,
 .open .dropdown-toggle.btn-pella {
   color: #fff;
-  background-color: #fdb300;
-  border-color: #f2ab00;
+  background-color: #256c90;
+  border-color: #1F5A77;
 }
 .btn-pella:active,
 .btn-pella.active,
@@ -249,11 +251,11 @@ fieldset[disabled] .btn-pella:active,
 .btn-pella.disabled.active,
 .btn-pella[disabled].active,
 fieldset[disabled] .btn-pella.active {
-  background-color: #f7c54c;
-  border-color: #f7c54c;
+  background-color: #5195b7;
+  border-color: #5195b7;
 }
 .btn-pella .badge {
-  color: #fdb300;
+  color: #256c90;
   background-color: #fff;
 }
 
@@ -298,11 +300,13 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background-color: #D9EAF2;*/
     background-color: #EBF0EF;
     color: #111;
-    margin: 0 0.1em 3px;}
+    margin: 0 0.1em 3px;
+    overflow: hidden;
+}
 .guiaeventos .cuadro img {margin-bottom: 0.9em;}
 .guiaeventos .cuadro h5 {margin: 0.5em 0; color: #111; font-weight: 600;}
 .guiaeventos .cuadro p {margin: 0.6em 0; font-size: 1em; line-height: 1.2;}
-.guiaeventos .cuadro .date {text-align: center; padding: 1.1em 0; margin-bottom: 0px; 
+.guiaeventos .cuadro .date {text-align: center; padding: 1.2em 0;
 /*
     COLORES
     background-color: #111; 
@@ -310,8 +314,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     color: #aaa;
 */
     background-color:#D9EAF2;
-/*    border: 1px solid #EBF0EF;*/
-    color: #222;
+    color: #111;
+    /* para que tenga altura 100% */
+    padding-bottom: 1000px; 
+    margin-bottom: -997px;
 }
 .guiaeventos .cuadro .date span { display: block; font-size: 1.25em; line-height: 1.2;}
 .guiaeventos .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
@@ -325,29 +331,30 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 
 /* evento-detalle --- en EVENTO */
-.evento-detalle .cuadro {background-color: #222; }
+.evento-detalle .cuadro {background-color: #EBF0EF; }
 .evento-detalle .cuadro img {margin-bottom: 1em;}
-.evento-detalle .cuadro h4 {color: #f2ab00; font-size: 2em; margin-bottom: 0.5em;}
+.evento-detalle .cuadro h4 {color: #1F5A77; font-size: 2em; margin-bottom: 0.5em;}
 .evento-detalle .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1; }
 .evento-detalle .cuadro .datos-evento p {text-align: right;}
 .evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: justify; font-size: 0.9em;}
 .evento-detalle .cuadro .descr-local { margin-top: 0;}
 .evento-detalle .cuadro .descr-evento p {font-size: 1.1em; line-height: 1.4; text-align: justify;}
-.evento-detalle .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; background-color: #111; margin-bottom: 1.5em;}
+.evento-detalle .cuadro .date {text-align: center; color: #111; padding: 0.5em 0; margin-bottom: 1.5em;}
 .evento-detalle .cuadro .date span { font-size: 1.25em; line-height: 1.2;}
 .evento-detalle .cuadro .date span.dia { font-size: 1.25em; padding-bottom: 0.5em; }
 .evento-detalle .cuadro .date b {font-size: 1.5em;}
 .evento-detalle .cuadro .date span.hora {/*display: block;*/ font-size: 1.5em; line-height: 1.8;}
 .evento-detalle .cuadro .local { font-size: 1.5em; font-weight: bold; }
 .evento-detalle .cuadro .ciudad { font-size: 1.5em; margin-left: 1em;}
-.evento-detalle .cuadro .local_link .local { font-size: 1.2em; font-weight: bold; color: #f2ab00;}
+.evento-detalle .cuadro .local_link {color: #222;}
+.evento-detalle .cuadro .local_link .local { font-size: 1.2em; font-weight: bold; color: #111;}
 .evento-detalle .cuadro .local_link .glyphicon { font-size: 0.8em;}
 .evento-detalle .cuadro p.direc { font-size: 1.1em; text-align: left;}
 /*
 .evento-detalle .cuadro .local { font-size: 1.5em; font-weight: bold; float:left;}
 .evento-detalle .cuadro .ciudad { font-size: 1.5em; float: right;}
 */
-.evento-detalle .cuadro h5 { margin-bottom: 0.8em; color: #f2ab00;}
+.evento-detalle .cuadro h5 { margin-bottom: 0.8em; color: #1F5A77;}
 .mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}
 /* evento-detalle --- en EVENTO */
 
@@ -361,12 +368,22 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* lista eventos del LOCAL */
 
 
+
 /* - - - - - - - - - - - - - */
 /* COLORES DE LAS CATEGORIAS */
 
+.cuadro h4, .cuadro h5 {font-weight: 600;}
+.cuadro {
+    background-color: #EBF0EF;
+    color: #111; 
+}
+.cuadro .date {color: #111;}
+
 /* ROJOS */
 /*.cuadro.categ_1    {background-color: #EFEAEB;}*/
-.cuadro.categ_1 h5 {color: #FEFBAF;}
+.cuadro.categ_1 h5 {color: #FEFBAF;} /*#E3DB1E*/
+.cuadro.categ_1 h4 {color: #FEFBAF;}
+.cuadro.categ_1 h5 a {color: #FEFBAF;}
 .cuadro.categ_1 .date {
     background-color:#FEFBAF;
 /*    border: 1px solid #EFEAEB;*/
@@ -375,6 +392,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* VERDES */
 /*.cuadro.categ_2    {background-color: #EAEFED;}*/
 .cuadro.categ_2 h5 {color: #C2A34F;}
+.cuadro.categ_2 h4 {color: #C2A34F;}
+.cuadro.categ_2 h5 a {color: #C2A34F;}
 .cuadro.categ_2 .date {
     background-color:#C2A34F;
 /*    border: 1px solid #EAEFED;*/
@@ -383,6 +402,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* AMARILLOS */
 /*.cuadro.categ_3    {background-color: #EFEFEA;}*/
 .cuadro.categ_3 h5 {color: #FBB829;}
+.cuadro.categ_3 h4 {color: #FBB829;}
+.cuadro.categ_3 h5 a {color: #FBB829;}
 .cuadro.categ_3 .date {
     background-color:#FBB829;
 /*    border: 1px solid #EFEFEA;*/
@@ -391,6 +412,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* AZULES */
 /*.cuadro.categ_5    {background-color: #EBF0EF;}*/
 .cuadro.categ_5 h5 {color: #9CC451;}
+.cuadro.categ_5 h4 {color: #9CC451;}
+.cuadro.categ_5 h5 a {color: #9CC451;}
 .cuadro.categ_5 .date {
     background-color:#9CC451;
 /*    border: 1px solid #EBF0EF;*/
@@ -399,6 +422,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* MORAOS */
 /*.cuadro.categ_4    {background-color: #EDEAEF;}*/
 .cuadro.categ_4 h5 {color: #27A877;}
+.cuadro.categ_4 h4 {color: #27A877;}
+.cuadro.categ_4 h5 a {color: #27A877;}
 .cuadro.categ_4 .date {
     background-color:#27A877;
 /*    border: 1px solid #EDEAEF;*/
@@ -407,10 +432,13 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* NARANJAS */
 /*.cuadro.categ_6    {background-color: #EFEDEA;}*/
 .cuadro.categ_6 h5 {color: #049EB9;}
+.cuadro.categ_6 h4 {color: #049EB9;}
+.cuadro.categ_6 h5 a {color: #049EB9;}
 .cuadro.categ_6 .date {
     background-color:#049EB9;
 /*    border: 1px solid #EFEDEA;*/
 }
+
 
 
 
@@ -428,6 +456,16 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
         font-size: 1.3em;
     }
     
+}
+
+@media (min-width: 460px) {
+    .guiaeventos .cuadro .date {
+    /*    para que por arriba tenga espacio */
+        padding: 1.7em 0;
+    /*    para que tenga altura 100% */
+        padding-bottom: 1000px; 
+        margin-bottom: -997px;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */

@@ -147,23 +147,28 @@
 </script>
 
 <script id="eventos-list-tpl" type="text/template">
-    <div class="row cuadro" data-id="{{id_evento}}" >
-        <div class="col-xs-9">                
-            <h5><i class="notif fa fa-bell"></i> {{title}}</h5>
-            <div class="row">
-                <div class="col-xs-5">
-                    <a href="#eventos/{{id_evento}}" ><img src="http://pelladeocio.com/uploads/medias/{{image}}" class="img-responsive" /></a>
-                </div>
-                <div class="col-xs-7">
-                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
-                </div>
-            </div>
-        </div>
+    <div class="row cuadro categ_{{id_categoria}}" data-id="{{id_evento}}" >
         <div class="col-xs-3 date">
             <span class="dia">{{fecha_dm.diasemana}}</span>
             <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}</span>
             <span class="hora">{{hora_format}} h</span>
         </div>
+        <div class="col-xs-9">  
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5><i class="notif fa fa-bell"></i> {{title}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7">
+                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
+                </div>
+                <div class="col-xs-5">
+                    <a href="#eventos/{{id_evento}}" ><img src="http://pelladeocio.com/uploads/medias/{{image}}" class="img-responsive" /></a>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </script>
     
@@ -227,7 +232,7 @@
     </div>
     
     <div class="container wrapper-absolute-50 evento-detalle">
-        <div class="row cuadro">
+        <div class="row cuadro categ_{{id_categoria}}">
             <div class="col-xs-12">
                 <h4>{{title}}</h4>
             </div>
@@ -244,8 +249,8 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="datos-evento">
-                    <p>{{precio}}</p>
                     <p>{{horario}}</p>
+                    <p>{{precio}}</p>
                 </div>
                 <div class="descr-evento">
                     {{{descripcion}}}

@@ -8,7 +8,7 @@ var EventoListItemView = Backbone.View.extend({
         console.log('id_evento de model en evento list: '+this.model.attributes.id_evento);
         
         // añade la clase q correponde a la categoria del evento
-        this.claseCategoria(this.model.attributes.id_categoria);   
+        //this.claseCategoria(this.model.attributes.id_categoria);   
         
         // si es notificacion la marca como tal
         this.mostrarNotificacion(this.model.attributes.id_evento);
@@ -30,11 +30,11 @@ var EventoListItemView = Backbone.View.extend({
         if( esNotif == 1 ) {
             $('.notif.fa-bell', this.el).show();
         }
-    },
-    
-    claseCategoria: function (id_categoria) {
-        $('.row.cuadro', this.el).addClass('categ_'+id_categoria);
     }
+    
+//    claseCategoria: function (id_categoria) {
+//        $('.row.cuadro', this.el).addClass('categ_'+id_categoria);
+//    }
     
     /*events: {
         "click .cuadro": "ver_evento"
