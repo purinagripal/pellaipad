@@ -178,8 +178,8 @@ a.menu_salir {
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  color: #f2ab00;
-  background-color: #333;
+  color: #fff;
+  background-color: #256c90;
 }
 /* fin estilos header */
 
@@ -259,16 +259,21 @@ fieldset[disabled] .btn-pella.active {
   background-color: #fff;
 }
 
-
+.link_bigmap {font-size: 1.1em; font-weight: 700; color: #1F5A77; margin-bottom: 30px;}
 #eve-map-canvas {
     width:100%; 
-    height:300px;
-    margin-bottom: 35px;
+    height:150px;
+    margin-bottom: 5px;
 }
 #local-map-canvas {
     width:100%; 
-    height:300px;
-    margin-bottom: 35px;
+    height:150px;
+    margin-bottom: 5px;
+}
+#big-map-canvas {
+    width:100%; 
+    height:430px;
+    margin-bottom: 5px;
 }
 /* ocultar enlaces inferiores mapa */
 a[href^="http://maps.google.com/maps"]{display:none !important}
@@ -350,6 +355,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .evento-detalle .cuadro .local_link .local { font-size: 1.2em; font-weight: bold; color: #111;}
 .evento-detalle .cuadro .local_link .glyphicon { font-size: 0.8em;}
 .evento-detalle .cuadro p.direc { font-size: 1.1em; text-align: left;}
+.evento-detalle .cuadro p.mapadirec {margin-bottom: 70px;}
+.evento-detalle .cuadro p.pbigmap {margin-bottom: 30px;}
 /*
 .evento-detalle .cuadro .local { font-size: 1.5em; font-weight: bold; float:left;}
 .evento-detalle .cuadro .ciudad { font-size: 1.5em; float: right;}
@@ -484,4 +491,21 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     
+}
+
+/* media-queries en altura para el mapa */
+@media (min-height: 627px) {
+    #eve-map-canvas {height: 200px;}
+    #local-map-canvas {height: 200px;}
+    #big-map-canvas {height:575px;}
+}
+@media (min-height: 736px) {
+    #eve-map-canvas {height: 230px;}
+    #local-map-canvas {height: 230px;}
+    #big-map-canvas {height:685px;}
+}
+@media (min-height: 1024px) {
+    #eve-map-canvas {height: 300px;}
+    #local-map-canvas {height: 300px;}
+    #big-map-canvas {height:974px;}
 }

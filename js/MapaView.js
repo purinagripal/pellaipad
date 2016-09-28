@@ -1,30 +1,28 @@
-var EventoView = Backbone.View.extend({
+var MapaView = Backbone.View.extend({
 
     initialize: function () {
 
     },
 
     render: function () {
-        // descripcion: pasar de \r\n a <br>
-        var descripcionBr = (this.model.attributes.descripcion + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
-        this.model.attributes.descripcion = descripcionBr;
+        
         
         this.$el.html(this.template(this.model.toJSON()));        
-        this.datosModelo = this.model.attributes;
-        console.log(this.datosModelo);
+        var datosModelo = this.model.attributes;
+        console.log(datosModelo);
         
         // si el evento era una notificacion, lo saca de la lista xq ya esta visto
-        this.borrarNotificacion(this.datosModelo.id_evento);
+        this.borrarNotificacion(datosModelo.id_evento);
         
-        var div_canvas = $('#eve-map-canvas', this.el)[0];
+        var div_canvas = $('#big-map-canvas', this.el)[0];
         
-        var myLatlng = new google.maps.LatLng(this.datosModelo.lat, this.datosModelo.long); 
+        var myLatlng = new google.maps.LatLng(datosModelo.lat, datosModelo.long); 
         window.mapOptions = { 
             zoom: 17, 
             center: myLatlng,
             streetViewControl: false,
             styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }]}],
-            draggable: false
+            draggable: true
         }; 
         window.map = new google.maps.Map(div_canvas, window.mapOptions);
         window.marker = new google.maps.Marker({ 
@@ -43,8 +41,6 @@ var EventoView = Backbone.View.extend({
         "click .link_locales": "ver_locales",
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
-        
-        "click .link_bigmap": "ver_bigmap",
         
         "click .boton_atras": "volver_atras",
         "click .menu_salir": "salir",
@@ -81,15 +77,6 @@ var EventoView = Backbone.View.extend({
             window.localStorage.setItem('ev_notif', JSON.stringify(eventos_notificados));
         }
         /*función splice() , dos parámetros: el primero será el índice a partir del cual queremos borrar elementos y, el                    segundo, el número de elementos que queremos borrar a partir de la posición dada.*/
-    },
-    
-    ver_bigmap: function (event) {
-        
-        // añade entrada al historial
-        window.historial.push('mapaEvento/'+this.datosModelo.id_evento);
-        console.log("window.historial: "+window.historial);
-
-        Backbone.history.navigate('mapaEvento/'+this.datosModelo.id_evento, {trigger: true});
     },
     
     ///////////////////////////////////////

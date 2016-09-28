@@ -7,7 +7,13 @@ var LocalDetailsView = Backbone.View.extend({
     render: function () {
         console.log("render de local details view");
         
+        // Eventor.resume: pasar de \r\n a <br>
+        var descripcionBr = (this.model.attributes.Eventor.resume + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
+        this.model.attributes.Eventor.resume = descripcionBr;
+        
         this.$el.html(this.template(this.model.toJSON()));
+        console.log('this.model.toJSON');
+        console.log(this.model.toJSON());
         
         //console.log("con this.el");
         //console.log($('#map-canvas', this.el)[0]);

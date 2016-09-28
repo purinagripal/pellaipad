@@ -125,12 +125,14 @@ var PreferView = Backbone.View.extend({
                 window.localStorage.setItem('pref_categ', JSON.stringify(contexto_this.categorias));
                 window.localStorage.setItem('pref_ciudad', JSON.stringify(contexto_this.ciudades));
                 // redirecciona a INICIO
+                window.historial = [""]; // resetea el historial
                 Backbone.history.navigate('', {trigger: true, replace: true});
             },
             error: function(model, response) {
                 $('#boton_guardar').show();
                 $('#cargando').hide();
                 // redirecciona a INICIO (para que no se quede bloqueado en esta pantalla
+                window.historial = [""]; // resetea el historial
                 Backbone.history.navigate('', {trigger: true, replace: true});
             },
             wait: true

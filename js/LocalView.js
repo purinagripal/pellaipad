@@ -7,11 +7,11 @@ var LocalView = Backbone.View.extend({
     render:function () {
         console.log('render de local');
                 
-        var primerEvento = this.collection.at(0);
+        this.primerEvento = this.collection.at(0);
         
-        this.$el.html(this.template(primerEvento.toJSON()));
+        this.$el.html(this.template(this.primerEvento.toJSON()));
         
-        $('.localDetails', this.el).html(new LocalDetailsView({model: primerEvento}).render().el);
+        $('.localDetails', this.el).html(new LocalDetailsView({model: this.primerEvento}).render().el);
                 
         _.each(this.collection.models, 
                function (evento) {$('.guiaeventos', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
@@ -26,6 +26,8 @@ var LocalView = Backbone.View.extend({
         "click .link_locales": "ver_locales",
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
+        
+        "click .link_bigmap": "ver_bigmap",
         
         "click .boton_atras": "volver_atras",
         "click .menu_salir": "salir",
@@ -44,6 +46,15 @@ var LocalView = Backbone.View.extend({
         console.log("window.historial: "+window.historial);
 
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
+    },
+    
+    ver_bigmap: function (event) {
+        var id_local = this.primerEvento.attributes.id_user;
+        // añade entrada al historial
+        window.historial.push('mapaLocal/'+id_local);
+        console.log("window.historial: "+window.historial);
+
+        Backbone.history.navigate('mapaLocal/'+id_local, {trigger: true});
     },
     
     ///////////////////////////////////////

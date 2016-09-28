@@ -11,6 +11,7 @@
     
     PreferView.prototype.template = Handlebars.compile($("#prefer-tpl").html());
     FavoritosView.prototype.template = Handlebars.compile($("#favoritos-tpl").html());
+    MapaView.prototype.template = Handlebars.compile($("#mapa-tpl").html());
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
@@ -47,7 +48,9 @@
             "eventos/:id":          "eventoDetails",
             "locales":              "locales",
             "zona_loc/:id_ciudad":  "ciudadLocales",
-            "local/:id":            "localDetails"
+            "local/:id":            "localDetails",
+            "mapaLocal/:id":        "mapaLocal",
+            "mapaEvento/:id":       "mapaEvento"
         },
         
         preferencias: function () {
@@ -217,7 +220,67 @@
             google.maps.event.trigger(window.map, 'resize');
             window.map.setOptions(window.mapOptions);
             //window.map.setCenter(window.mapOptions.center);
+        },
+        
+        mapaLocal: function (id) {
+            console.log("mapaLocal link");
+            //console.log(JSON.stringify(this.eventosList));
+            // lista de eventos del Local
+            this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
+            var primerEvento = this.eventosLocal.at(0);
+            console.log("primerEvento");
+            console.log(primerEvento);
+            
+            var nuevoModel = new Backbone.Model({
+                titulo: primerEvento.attributes.Eventor.first_name,
+                direccion: primerEvento.attributes.Eventor.direccion,
+                ciudad: primerEvento.attributes.Eventor.CiudadEventor.nombre,
+                lat: primerEvento.attributes.Eventor.lat,
+                long: primerEvento.attributes.Eventor.long,
+                id_categoria: 0
+            });
+            
+            console.log("nuevoModel");
+            console.log(nuevoModel);
+            
+            $("html,body").scrollTop(0);
+            slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
+            
+            // para que el mapa se vea más de una vez
+            google.maps.event.trigger(window.map, 'resize');
+            window.map.setOptions(window.mapOptions);
+            //window.map.setCenter(window.mapOptions.center);
+        },
+        
+        mapaEvento: function (id) {
+            console.log("mapaEvento link");
+            
+            var primerEvento = this.eventosList.get(id);
+            console.log("primerEvento");
+            console.log(primerEvento);
+            
+            var nuevoModel = new Backbone.Model({
+                titulo: primerEvento.attributes.title,
+                direccion: primerEvento.attributes.direccion,
+                ciudad: primerEvento.attributes.Ciudad.nombre,
+                lat: primerEvento.attributes.lat,
+                long: primerEvento.attributes.long,
+                id_categoria: primerEvento.attributes.id_categoria
+            });
+            
+            console.log("nuevoModel");
+            console.log(nuevoModel);
+            
+            $("html,body").scrollTop(0);
+            slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
+            
+            // para que el mapa se vea más de una vez
+            google.maps.event.trigger(window.map, 'resize');
+            window.map.setOptions(window.mapOptions);
+            //window.map.setCenter(window.mapOptions.center);
         }
+        
+        
         
     });
 
@@ -314,16 +377,7 @@
                 eventosNotificados();
             }
             
-            
-            setTimeout( function(){ 
-                // borrar notificaciones del centro de notificaciones
-                push.clearAllNotifications(function() {
-                    console.log('success clear notifications');
-                }, function() {
-                    console.log('error clear notifications');
-                });
-            }, 3000);
-            
+                    
             setTimeout( function(){ 
                 push.finish(function() {
                     console.log('success finish');

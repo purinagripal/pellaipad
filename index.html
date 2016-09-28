@@ -252,8 +252,11 @@
                     <p>{{horario}}</p>
                     <p>{{precio}}</p>
                 </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12">
                 <div class="descr-evento">
-                    {{{descripcion}}}
+                    <p>{{{descripcion}}}</p>
                 </div>
             </div>
             <div class="col-xs-12">
@@ -261,6 +264,7 @@
                     <h5>Dónde ...</h5>
                     <p class="direc">{{direccion}}. {{Ciudad.nombre}}</p>
                     <div id="eve-map-canvas"></div>
+                    <p class="pbigmap"><a class="link_bigmap">Mapa en pantalla completa</a></p>
                 </div>
                 <div class="date local_link" data-id="{{Eventor.id_user}}">
                     <span class="local">{{Eventor.first_name}} </span><span class="ciudad"><i class="fa fa-plus-circle"></i> info</span>
@@ -387,11 +391,53 @@
                 <h5>Dónde ...</h5>
                 <p class="direc">{{Eventor.direccion}}. {{Eventor.CiudadEventor.nombre}}</p>
                 <div id="local-map-canvas"></div>
+                <p class="pbigmap"><a class="link_bigmap">Mapa en pantalla completa</a></p>
             </div>
+            <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
 </script>
+    
+<script id="mapa-tpl" type="text/template">
+    <div class="header-50">
+        <div class="head_sup">
+            <a class="boton_atras pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a class="boton_inicio pull-left"><i class="fa fa-home"></i></a>
+            
+            <img src="logo.png" /> <h1>Pella de Ocio</h1>
+            
+            <div class="menu_drop dropdown pull-right">
+                <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
+                    <li><a class="link_eventos">Eventos</a></li>
+                    <li><a class="link_locales" >Locales</a></li>
+                    <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="menu_salir">Salir</a></li>
+                </ul>
+            </div>
+            <a class="pull-right" onclick="window.plugins.socialsharing.share('Próximamente {{title}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://pelladeocio.com/es/evento-{{id_evento}}')"><i class="fa fa-share-alt"></i></a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    
+    <div class="container wrapper-absolute-50 evento-detalle">
+        <div class="row cuadro categ_{{id_categoria}}">
+            <div class="col-xs-12">
+                <div class="datos-evento">
+                    <div id="big-map-canvas"></div>
+                    <p class="mapadirec">{{direccion}}. {{ciudad}}</p>
+                </div>
+            </div>   
+        </div>
+    </div>
+</script>
+
 
     
 <script src="cordova.js"></script>
@@ -416,6 +462,7 @@
 <script src="js/LocalDetailsView.js"></script>
 <script src="js/PreferView.js"></script>
 <script src="js/FavoritosView.js"></script>
+<script src="js/MapaView.js"></script>    
 <script src="js/app.js"></script>
 
 </body>
