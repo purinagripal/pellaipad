@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Allerta+Stencil|Oxygen|Nunito|Passion+One|Changa|Reem+Kufi|Bree+Serif|Abel);
+@import url(http://fonts.googleapis.com/css?family=Allerta+Stencil|Oxygen|Abel);
 
 body {
     font-size: 14px; 
@@ -344,6 +344,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: justify; font-size: 0.9em;}
 .evento-detalle .cuadro .descr-local { margin-top: 0;}
 .evento-detalle .cuadro .descr-evento p {font-size: 1.1em; line-height: 1.4; text-align: justify;}
+.evento-detalle .cuadro .descr-evento p.link_web {margin: 1.3em auto; color: #1F5A77; font-size: 1.1em;}
 .evento-detalle .cuadro .date {text-align: center; color: #111; padding: 0.5em 0; margin-bottom: 1.5em;}
 .evento-detalle .cuadro .date span { font-size: 1.25em; line-height: 1.2;}
 .evento-detalle .cuadro .date span.dia { font-size: 1.25em; padding-bottom: 0.5em; }
@@ -363,7 +364,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 */
 .evento-detalle .cuadro h5 { margin-bottom: 0.8em; color: #1F5A77;}
 .mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}
+
 /* evento-detalle --- en EVENTO */
+
+
 
 .lista-locales img {margin-top: 8px;}
 /* lista eventos del LOCAL */

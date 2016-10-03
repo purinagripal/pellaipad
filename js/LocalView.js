@@ -27,6 +27,7 @@ var LocalView = Backbone.View.extend({
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
         
+        "click .link_web": "ver_web",
         "click #local-map-canvas": "ver_bigmap",
         "click .link_bigmap": "ver_bigmap",
         
@@ -34,6 +35,10 @@ var LocalView = Backbone.View.extend({
         "click .menu_salir": "salir",
         
         "click .guiaeventos.eventoslocal .cuadro": "l_ver_evento"
+    },
+    
+    ver_web: function (event) {
+        var ref = cordova.InAppBrowser.open('http://'+this.primerEvento.attributes.Eventor.web_link, '_blank');
     },
     
     l_ver_evento: function (event) {

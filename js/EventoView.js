@@ -57,7 +57,7 @@ var EventoView = Backbone.View.extend({
     
     
     ver_web: function (event) {
-        var ref = cordova.InAppBrowser.open(this.datosModelo.web_link, '_blank');
+        var ref = cordova.InAppBrowser.open('http://'+this.datosModelo.web_link, '_blank');
     },
     
     
