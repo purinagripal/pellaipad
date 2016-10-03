@@ -44,13 +44,22 @@ var EventoView = Backbone.View.extend({
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
         
+        "click #eve-map-canvas": "ver_bigmap",
         "click .link_bigmap": "ver_bigmap",
+        "click .link_web": "ver_web",
         
         "click .boton_atras": "volver_atras",
         "click .menu_salir": "salir",
         
         "click .local_link": "ver_local"
     },
+    
+    
+    
+    ver_web: function (event) {
+        var ref = cordova.InAppBrowser.open(this.datosModelo.web_link, '_blank');
+    },
+    
     
     ver_local: function (event) {
         var id_local = $(event.currentTarget).attr('data-id'); 

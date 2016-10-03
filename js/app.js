@@ -393,6 +393,9 @@
             // e.message
         });
         
+        // para abrir en InAppBrowser
+        window.open = cordova.InAppBrowser.open;
+        
         // oculta splashscreen (mejor ponerlo en config.xml
         navigator.splashscreen.hide();
         

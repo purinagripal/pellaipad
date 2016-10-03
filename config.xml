@@ -48,6 +48,7 @@
     <plugin name="cordova-plugin-console" spec="1.0.3" />
     <plugin name="cordova-plugin-device" spec="1.1.2" />
     <plugin name="cordova-plugin-dialogs" spec="1.2.1" />
+    <plugin name="cordova-plugin-inappbrowser" />
     
     <!--   SplashScreen   -->
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
