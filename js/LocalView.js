@@ -27,7 +27,7 @@ var LocalView = Backbone.View.extend({
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
         
-        "click .link_web": "ver_web",
+        "click a.link_web": "ver_web",
         "click #local-map-canvas": "ver_bigmap",
         "click .link_bigmap": "ver_bigmap",
         

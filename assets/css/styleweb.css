@@ -259,6 +259,13 @@ fieldset[disabled] .btn-pella.active {
   background-color: #fff;
 }
 
+.btn-pella.link_web {
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 1.2em auto;
+}
+
 .link_bigmap {font-size: 1.1em; font-weight: 700; color: #1F5A77; margin-bottom: 30px;}
 #eve-map-canvas {
     width:100%; 
@@ -397,8 +404,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_1 h5 a {color: #FEFBAF;}
 .cuadro.categ_1 .date {
     background-color:#FEFBAF;
-/*    border: 1px solid #EFEAEB;*/
 }
+.cuadro.categ_1 .btn-pella.link_web {color:#111; background-color:#FEFBAF; border-color: #FEFBAF;}
 
 /* VERDES */
 /*.cuadro.categ_2    {background-color: #EAEFED;}*/
@@ -409,6 +416,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background-color:#C2A34F;
 /*    border: 1px solid #EAEFED;*/
 }
+.cuadro.categ_2 .btn-pella.link_web {color:#111; background-color:#C2A34F; border-color: #C2A34F;}
 
 /* AMARILLOS */
 /*.cuadro.categ_3    {background-color: #EFEFEA;}*/
@@ -419,16 +427,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background-color:#FBB829;
 /*    border: 1px solid #EFEFEA;*/
 }
+.cuadro.categ_3 .btn-pella.link_web {color:#111; background-color:#FBB829; border-color: #FBB829;}
 
-/* AZULES */
-/*.cuadro.categ_5    {background-color: #EBF0EF;}*/
-.cuadro.categ_5 h5 {color: #9CC451;}
-.cuadro.categ_5 h4 {color: #9CC451;}
-.cuadro.categ_5 h5 a {color: #9CC451;}
-.cuadro.categ_5 .date {
-    background-color:#9CC451;
-/*    border: 1px solid #EBF0EF;*/
-}
 
 /* MORAOS */
 /*.cuadro.categ_4    {background-color: #EDEAEF;}*/
@@ -439,6 +439,20 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background-color:#27A877;
 /*    border: 1px solid #EDEAEF;*/
 }
+.cuadro.categ_4 .btn-pella.link_web {color:#111; background-color:#27A877; border-color: #27A877;}
+
+
+/* AZULES */
+/*.cuadro.categ_5    {background-color: #EBF0EF;}*/
+.cuadro.categ_5 h5 {color: #9CC451;}
+.cuadro.categ_5 h4 {color: #9CC451;}
+.cuadro.categ_5 h5 a {color: #9CC451;}
+.cuadro.categ_5 .date {
+    background-color:#9CC451;
+/*    border: 1px solid #EBF0EF;*/
+}
+.cuadro.categ_5 .btn-pella.link_web {color:#111; background-color:#9CC451; border-color: #9CC451;}
+
 
 /* NARANJAS */
 /*.cuadro.categ_6    {background-color: #EFEDEA;}*/
@@ -449,6 +463,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background-color:#049EB9;
 /*    border: 1px solid #EFEDEA;*/
 }
+.cuadro.categ_6 .btn-pella.link_web {color:#111; background-color:#049EB9; border-color: #049EB9;}
 
 
 

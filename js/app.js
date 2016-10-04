@@ -308,15 +308,17 @@
 
     $(document).ready( function() { console.log("document ready"); });
     
+    // eliminar 300ms delay
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+    
     document.addEventListener("deviceready", onDeviceReady, false);
     
     // PhoneGap esta listo y ahora ya se pueden hacer llamadas a PhoneGap
     function onDeviceReady() {
         console.log('onDeviceReady se ejecutó');
         console.log(navigator);
-        
-        // eliminar delay 300ms
-        FastClick.attach(document.body);
         
         if (navigator.notification) { // Override default HTML alert with native dialog
             window.alert = function (message) {
