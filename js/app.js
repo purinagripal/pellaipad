@@ -309,9 +309,9 @@
     $(document).ready( function() { console.log("document ready"); });
     
     // eliminar 300ms delay
-    document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-    }, false);
+//    document.addEventListener('DOMContentLoaded', function() {
+//        FastClick.attach(document.body);
+//    }, false);
     
     document.addEventListener("deviceready", onDeviceReady, false);
     
