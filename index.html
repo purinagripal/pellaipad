@@ -149,24 +149,21 @@
 <script id="eventos-list-tpl" type="text/template">
     <div class="row cuadro categ_{{id_categoria}}" data-id="{{id_evento}}" >
         <div class="col-xs-3 date">
-            <span class="dia">{{fecha_dm.diasemana}}</span>
-            <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}</span>
-            <span class="hora">{{hora_format}} h</span>
+            <span class="ndia">{{fecha_dm.dia}}</span>
+            <!--<span class="mes">{{fecha_dm.mes}}</span>-->
+            <span class="mes">noviembre</span>
+            <span class="diasemana">{{fecha_dm.diasemana}}</span>
+            <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
         </div>
-        <div class="col-xs-9">  
-            <div class="row">
-                <div class="col-xs-12">
-                    <h5><i class="notif fa fa-bell"></i> {{title}}</h5>
-                </div>
+        <div class="col-xs-6 info">  
+            <h5><i class="notif fa fa-bell"></i> {{title}}</h5>
+            <div class="eventor-ciudad">
+                <p class="nombre-eventor">{{Eventor.first_name}}</p>
+                <p class="ciudad"><i class="fa fa-map-marker"></i> {{Ciudad.nombre}}</p>
             </div>
-            <div class="row">
-                <div class="col-xs-7">
-                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
-                </div>
-                <div class="col-xs-5">
-                    <a href="#eventos/{{id_evento}}" ><img src="http://pelladeocio.com/uploads/medias/{{image}}" class="img-responsive" /></a>
-                </div>
-            </div>
+        </div>
+        <div class="col-xs-3 imagen">
+            <img src="http://pelladeocio.com/uploads/medias/{{image}}" />
         </div>
         
     </div>
@@ -250,7 +247,7 @@
                 </div>
                 <div class="datos-evento">
                     {{#if horario}}
-                        <p><i class="fa fa-calendar-o"></i> {{horario}}</p>
+                        <p><i class="fa fa-calendar-o"></i> {{{horarioBr}}}</p>
                     {{/if}}
                     {{#if precio}}
                         <p><i class="fa fa-money"></i> {{precio}}</p>
@@ -260,7 +257,7 @@
             <div class="clearfix"></div>
             <div class="col-xs-12">
                 <div class="descr-evento">
-                    <p>{{{descripcion}}}</p>
+                    <p>{{{descripcionBr}}}</p>
                     
                     {{#if web_link}}
                         <a class="link_web" ><i class="fa fa-link"></i> {{web_link}}</a>
@@ -391,10 +388,10 @@
         </div>
         <div class="col-xs-12 col-sm-7 col-lg-6">
             <div class="descr-evento descr-local">
-                <p>{{{Eventor.resume}}}</p>
+                <p>{{{Eventor.resumeBr}}}</p>
                 {{#if Eventor.horario}}
                     <p><i class="fa fa-calendar-o"></i> Horario: <br>
-                    {{{Eventor.horario}}}</p>
+                    {{{Eventor.horarioBr}}}</p>
                 {{/if}}
                 {{#if Eventor.telefono}}
                     <p><i class="fa fa-phone"></i> {{Eventor.telefono}}</p>

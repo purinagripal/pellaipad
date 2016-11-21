@@ -9,12 +9,12 @@ var LocalDetailsView = Backbone.View.extend({
         
         // Eventor.resume: pasar de \r\n a <br>
         var descripcionBr = (this.model.attributes.Eventor.resume + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
-        this.model.attributes.Eventor.resume = descripcionBr;
+        this.model.attributes.Eventor.resumeBr = descripcionBr;
         
         // Eventor.horario: pasar de \r\n a <br>
         if(this.model.attributes.Eventor.horario) {
-        var horarioBr = (this.model.attributes.Eventor.horario + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
-        this.model.attributes.Eventor.horario = horarioBr;
+            var horarioBr = (this.model.attributes.Eventor.horario + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
+            this.model.attributes.Eventor.horarioBr = horarioBr;
         }
         
         this.$el.html(this.template(this.model.toJSON()));

@@ -7,7 +7,14 @@ var EventoView = Backbone.View.extend({
     render: function () {
         // descripcion: pasar de \r\n a <br>
         var descripcionBr = (this.model.attributes.descripcion + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
-        this.model.attributes.descripcion = descripcionBr;
+        this.model.attributes.descripcionBr = descripcionBr;
+        
+        // Eventor.horario: pasar de \r\n a <br>
+        if(this.model.attributes.horario) {
+            var horarioBr = (this.model.attributes.horario + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
+            this.model.attributes.horarioBr = horarioBr;
+        }
+        
         
         this.$el.html(this.template(this.model.toJSON()));        
         this.datosModelo = this.model.attributes;
