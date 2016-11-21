@@ -348,14 +348,15 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     position: relative;
     padding-right: 0px;
     padding-left: 0px;
+    /* para el ajuste de la imagen */
     height: 100%;
     overflow: hidden;
 }
 .guiaeventos .cuadro .imagen img {
     /* ajusta la imagen */
-    width: 100%; height: 100%; object-fit: cover;
+    /*width: 100%; height: 100%; object-fit: cover;*/
 
-/*  otra opcion para ajustar la imagen
+    /* otra opcion para ajustar la imagen*/
     position: absolute;
     top: -100%;
     bottom: -100%;
@@ -364,7 +365,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     margin: auto; 
     height: 100%;
     width: auto;
-*/
 }
 /*.guiaeventos .cuadro .date b{display: block;font-size: 1.5em;}
 .guiaeventos .cuadro .date span{font-size: 1.25em;}*/
