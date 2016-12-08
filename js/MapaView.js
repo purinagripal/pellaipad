@@ -12,7 +12,7 @@ var MapaView = Backbone.View.extend({
         console.log(datosModelo);
         
         // si el evento era una notificacion, lo saca de la lista xq ya esta visto
-        this.borrarNotificacion(datosModelo.id_evento);
+        //this.borrarNotificacion(datosModelo.id_evento);
         
         var div_canvas = $('#big-map-canvas', this.el)[0];
         

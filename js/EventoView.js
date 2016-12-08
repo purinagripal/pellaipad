@@ -100,6 +100,8 @@ var EventoView = Backbone.View.extend({
     },
     
     ver_bigmap: function (event) {
+        console.log('evento ver big map');
+        console.log(event);
         
         // añade entrada al historial
         window.historial.push('mapaEvento/'+this.datosModelo.id_evento);

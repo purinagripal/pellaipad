@@ -3,6 +3,14 @@ var PreferView = Backbone.View.extend({
     initialize: function () {
         console.log('initialize de preferView');
         
+        /* los arrays this.ciudades_01 y this.categorias_01 son arrays tipo [0, 1, 1, 0, 1, 1, 1]
+           marcan con 0's la ciudad/categoría no seleccionadas, 
+           y con 1's las seleccionadas */
+        
+        /* los arrays this.ciudades y this.categorias se rellenan al clikar en guardar con los valores de id_ciudad/id_categoria 
+           son arrays tipo: [{"id_categoria":1},{"id_categoria":2},{"id_categoria":5},{"id_categoria":6}]
+           y se crean para guardar la info en BBDD y en localStorage */
+        
         this.ciudades_01 = [0,0,0,0,0,0,0,0,0];
         this.categorias_01 = [0,0,0,0,0,0,0];
         this.categorias = [];
@@ -106,6 +114,8 @@ var PreferView = Backbone.View.extend({
         // TO_DO: habría que COMPROBAR si ya tenemos el id_follow guardado
         var ls_id_follow = window.localStorage.getItem('id_follow');
         var contexto_this = this;
+        
+        //console.log(JSON.stringify(contexto_this.categorias));
         
         // muestra imagen cargando...
         $('#cargando').show();

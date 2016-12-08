@@ -7,7 +7,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
 /*  COLORES  background-color:#000;
     background-color:#808080;BADBEF*/
-    background-color:#003245;
+    background-color:#004158;
     color: #fff;
 }
 
@@ -15,7 +15,7 @@ body {
 
 h1,h2,h3,h4,h5,h6{ font-weight:normal; padding: 0; margin: 0; color: #fff;}
 h1,h2,h3{ font-family: 'Titillium Web', sans-serif; text-transform: uppercase;}
-h4,h5,h6{ font-family: 'Titillium Web', sans-serif; color: #003245;}
+h4,h5,h6{ font-family: 'Titillium Web', sans-serif; color: #004158;}
 
 
 h3{font-size: 1.55em; margin-top: 1.56em; margin-bottom: 1.25em; color: #fff;}
@@ -36,8 +36,8 @@ blockquote {padding: 0 1.25em; margin: 0 0 1.25em; border-left: 5px solid #aaa; 
 
 
 /*color*/
-.bgcolor{background-color: #003245;} 
-.textcolor{color: #003245;}
+.bgcolor{background-color: #004158;} 
+.textcolor{color: #004158;}
 
 a {color: #fff; text-decoration:none}
 a:hover{color:#fff;text-decoration:none}
@@ -47,18 +47,17 @@ a:hover{color:#fff;text-decoration:none}
 /* APP MOVIL */
 /* ********* */
 
-/* header fijo */
+/* header fijo en altura */
 .header {
     position: absolute;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 95px;
     width: 100%;
-    border-bottom: solid 1px #666;
-    padding: 10px;
-/*    COLORES background-color:#000;
-    background-color:#77878F;474747*/
-    background-color:#003245;
+    padding-top: 5px;
+
+    background-color:#004158;
+    border-bottom: solid 1px #00212c;
 }
 .header-50 {
     position: absolute;
@@ -67,25 +66,14 @@ a:hover{color:#fff;text-decoration:none}
     height: 50px;
     width: 100%;
     border-bottom: solid 1px #666;
-    padding: 10px;
-    /*    COLORES background-color:#000;003245*/
-    background-color:#003245;
+    padding-top: 5px;
+    /*    COLORES background-color:#000;004158*/
+    background-color:#004158;
 }
-/*.guiaeventos {
-    position: absolute;
-    top: 80px;
-    bottom: 0;
-    width: 100%;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-.guiaeventos.eventoslocal {
-    position: relative;
-    top: 0;
-}*/
+
 .wrapper-absolute-80 {
     position: absolute;
-    top: 80px;
+    top: 95px;
     bottom: 0;
     width: 100%;
     overflow: scroll;
@@ -103,12 +91,17 @@ a:hover{color:#fff;text-decoration:none}
 /* fin header fijo */
 
 /* estilos header */
+/* head_sup */
 .head_sup {
     text-align: center;
+    height: 48px;
 }
 .head_sup img {
+    margin: 0;
+    /* posicion absoluta, centrado arriba sobre la imagen */
+    position: absolute; top: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;
+    
     vertical-align: bottom;
-    margin-right: 10px;
 }
 .head_sup h1 {
     display: inline;
@@ -146,10 +139,9 @@ a.menu_salir {
     display: inline;
 }
 
+/* head_inf */
 .header .head_inf {
-/*    padding-top: 5px;*/
 }
-
 .header .head_inf.favoritos {
     text-align: center;
     font-weight: bold;
@@ -157,31 +149,48 @@ a.menu_salir {
     letter-spacing: 0.2em;
     margin-top: 10px;
 }
-.selec_drop {
-    display: inline;
-    margin: 3px;
-    margin-left: 25px;
+.selec_container {
+    background-color: #00212c;
+    border: solid 1px #004158;
+}
+.dropdown.selec_drop {
+    text-align: center;
+}
+.dropdown.selec_drop button.dropdown-toggle {
+    height: 40px;
+    width: 100%;
+    background-color: #00212c;
+    color: #fff;
+    border: none;
+}
+.dropdown-menu.ddm-right {
+    left: -24px;
+}
+.dropdown.selec_drop .dropdown-menu > li > a {
+    padding: 3px 0px;
 }
 
+/* comunes head_sup y head_inf */
 .dropdown-menu {
-    background-color: #003245;
-    border: 1px solid #256c90;
+    background-color: #004158;
+    border: 1px solid #00212c;
 }
 .dropdown-menu .divider {
-    background-color: #256c90;
+    background-color: #00212c;
 }
 .dropdown-menu > li > a {
     color: #fff;
     font-size: 1.2em;
     line-height: 2;
 }
-
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   color: #fff;
-  background-color: #256c90;
+  background-color: #00212c;
 }
 /* fin estilos header */
+
+
 
 /* HOME */
 .cargando_eventos {
@@ -216,8 +225,8 @@ a.menu_salir {
 
 .btn-pella {
   color: #fff;
-  background-color: #003245;
-  border-color: #003245;
+  background-color: #004158;
+  border-color: #004158;
     margin-bottom: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -229,7 +238,7 @@ a.menu_salir {
 .open .dropdown-toggle.btn-pella {
   color: #fff;
   background-color: #256c90;
-  border-color: #003245;
+  border-color: #004158;
 }
 .btn-pella:active,
 .btn-pella.active,
@@ -266,21 +275,23 @@ fieldset[disabled] .btn-pella.active {
     margin: 1.2em auto;
 }*/
 
-.link_bigmap {font-size: 1.1em; font-weight: 700; color: #003245; margin-bottom: 30px;}
+.link_bigmap {color: #000;}
 #eve-map-canvas {
     width:100%; 
     height:150px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    border: solid 1px #000;
 }
 #local-map-canvas {
     width:100%; 
     height:150px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border: solid 1px #000;
 }
 #big-map-canvas {
     width:100%; 
     height:430px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 /* ocultar enlaces inferiores mapa */
 a[href^="http://maps.google.com/maps"]{display:none !important}
@@ -294,20 +305,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* ************* */
 
 
+/* guiaeventos --- en HOME y LOCALES */
 
-/* home --- en INDEX */
-.homeinfo { padding: 7.5em 0 1.25em 0;}
-.fronttext h1 {padding: 0.1em; font-size:2.3em; line-height:1; display: inline-block; }
-.fronttext p {margin:0; margin-top: 1em; background-color: rgba(0,0,0,0.7);display: inline-block;padding: 0.6em;}
-.homeinfo .publi {position: relative;}
-/* home  --- en INDEX */
-
-
-/* guiaeventos --- en INDEX (proximos eventos), en AGENDA y en otros eventos EVENTO */
-.guiaeventos h4 { /* titulo local en lista locales */
-    border-bottom: 1px solid;
-    letter-spacing: -0.3px;
-}
 .guiaeventos .cuadro {
 /*  COLORES  background-color: #222; 
     background-color: #EBF0EF;*/
@@ -324,12 +323,12 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .guiaeventos .cuadro h5 {margin: 0.3em 0; color: #000; font-weight: 600; letter-spacing: -0.2px;}
 .guiaeventos .cuadro .eventor-ciudad {position: absolute; bottom: 0; }
 .guiaeventos .cuadro p {font-size: 1em; line-height: 1.3; margin: 0;}
-.guiaeventos .cuadro p.nombre-eventor {}
-.guiaeventos .cuadro p.ciudad {font-weight: 700; margin-bottom: 0.7em;}
+.guiaeventos .cuadro p.nombre-eventor {font-weight: 700; font-style: italic; font-size: 0.95em;}
+.guiaeventos .cuadro p.ciudad {margin-bottom: 0.7em;}
 
 .guiaeventos .cuadro .date {
     text-align: center; 
-    background-color:#D9EAF2;
+    background-color:#fff;
     color: #000;
     height: 100%;
     /* para que tenga altura 100% */
@@ -353,7 +352,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     overflow: hidden;
 }
 .guiaeventos .cuadro .imagen img {
-    /* ajusta la imagen */
+    /* ajusta la imagen - no funciona en movil */
     /*width: 100%; height: 100%; object-fit: cover;*/
 
     /* otra opcion para ajustar la imagen*/
@@ -366,57 +365,103 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     height: 100%;
     width: auto;
 }
-/*.guiaeventos .cuadro .date b{display: block;font-size: 1.5em;}
-.guiaeventos .cuadro .date span{font-size: 1.25em;}*/
+/* titulo local en lista locales */
+.guiaeventos h4 { 
+    margin: 0.2em 0;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #004158;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+    color: #004158;
+}
+.cuadro .fa-map-marker {color: #004158;}
+.cuadro .fa-phone {color: #004158;}
+.lista-locales .cuadro p.ciudad {margin-bottom: 1em;}
+.lista-locales .cuadro .imagen {background-color: #00212c;}
 
-
-/* guiaeventos --- en INDEX, AGENDA y EVENTO */
+/* fin guiaeventos --- en HOME y LOCALES */
 
 
 /* evento-detalle --- en EVENTO */
-.evento-detalle .cuadro {background-color: #EBF0EF; }
-.evento-detalle .cuadro img {margin-bottom: 1em;}
-.evento-detalle .cuadro h4 {color: #003245; font-size: 2em; margin-bottom: 0.5em; letter-spacing: -1px;}
-.evento-detalle .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1; }
-.evento-detalle .cuadro .datos-evento p {text-align: right;}
-.evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: justify; font-size: 0.9em;}
-.evento-detalle .cuadro .descr-local { margin-top: 0;}
-.evento-detalle .cuadro .descr-local p { margin: 1em auto;}
-.evento-detalle .cuadro .descr-local br { line-height: 1;}
-.evento-detalle .cuadro .descr-evento p {font-size: 1.1em; line-height: 1.4; text-align: justify;}
-.evento-detalle .cuadro .descr-evento a.link_web {margin: 1.3em auto; color: #000; font-size: 1.1em; font-weight: 700;}
-.evento-detalle .cuadro .date {text-align: center; color: #000; padding: 0.5em 0; margin-bottom: 1.5em;}
-.evento-detalle .cuadro .date span { font-size: 1.25em; line-height: 1.2;}
-.evento-detalle .cuadro .date span.dia { font-size: 1.25em; padding-bottom: 0.5em; }
-.evento-detalle .cuadro .date b {font-size: 1.5em;}
-.evento-detalle .cuadro .date span.hora {/*display: block;*/ font-size: 1.5em; line-height: 1.8;}
-.evento-detalle .cuadro .local { font-size: 1.5em; font-weight: bold; }
-.evento-detalle .cuadro .ciudad { font-size: 1.5em; margin-left: 1em;}
-.evento-detalle .cuadro .local_link {color: #222;}
-.evento-detalle .cuadro .local_link .local { font-size: 1.2em; font-weight: bold; color: #000;}
-.evento-detalle .cuadro .local_link .glyphicon { font-size: 0.8em;}
-.evento-detalle .cuadro p.direc { font-size: 1.1em; text-align: left;}
+.evento-detalle .cuadro {background-color: #fff; }
+
+.evento-detalle .cuadro .titulo-imagen {
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: 0;
+}
+.evento-detalle .cuadro h4 {
+    margin: 0;
+    /* posicion absoluta, centrado arriba sobre la imagen */
+    position: absolute; top: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #fff; 
+    font-size: 1.8em; letter-spacing: -1px; line-height: 1.1;
+    /* gradiente en background */
+    background: rgba(0, 0, 0, 0.5); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0));  /*Fx 3.6-15*/
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0));  /*Standard*/
+}
+
+/* fecha */
+.evento-detalle .cuadro .date {text-align: center; color: #000; padding: 0; margin-bottom: 0.5em;}
+.evento-detalle .cuadro .date span.ndia { font-size: 2.2em; font-weight: 700; line-height: 1.3; text-transform: uppercase;}
+.evento-detalle .cuadro .date span.hora {display: block; font-size: 1.2em; line-height: 1.8; color: #fff;}
+
+/* organizador y localidad */
+.evento-detalle .cuadro p {margin: 0 0 0.6em; font-size: 1em; line-height: 1; }
+.evento-detalle .cuadro p.nombre-eventor { font-size: 1em; font-weight: 700; font-style: italic;}
+.evento-detalle .cuadro p.ciudad { font-size: 1em;}
+
+/* datos-evento: horario y precio */
+.evento-detalle .cuadro .datos-evento p {font-size: 0.8em; text-align: right;}
+.evento-detalle .cuadro .datos-evento-grande p {font-size: 1em; text-align: right;}
+
+/* descripcion del evento */
+.evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: justify; font-size: 1em;}
+.evento-detalle .cuadro .descr-evento p {line-height: 1.4; text-align: justify;}
+.evento-detalle .cuadro .descr-evento a.link_web {margin: 1.3em auto; color: #004158; font-size: 1.1em; font-weight: 700;}
+
+/* direccion y mapa del evento */
+.evento-detalle .cuadro .direccion-evento {background-color: #f2f2f2; margin-top: 25px;}
+.evento-detalle .cuadro p.direcc { font-size: 1.1em; text-align: right; padding-top: 1em;}
+.evento-detalle .cuadro span.calle {float: left; line-height: 1.8;}
+.evento-detalle .cuadro span.fullscreen {font-size: 1.8em; line-height: 1;}
+
+/* mapa en fullscreen */
 .evento-detalle .cuadro p.mapadirec {margin-bottom: 70px;}
-.evento-detalle .cuadro p.pbigmap {margin-bottom: 30px;}
-/*
-.evento-detalle .cuadro .local { font-size: 1.5em; font-weight: bold; float:left;}
-.evento-detalle .cuadro .ciudad { font-size: 1.5em; float: right;}
-*/
-.evento-detalle .cuadro h5 { margin-bottom: 0.8em; color: #003245;}
-.mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}
 
-/* evento-detalle --- en EVENTO */
+/* enlace al organizador */
+.evento-detalle .cuadro .organizador-evento {background-color: #9e9e9e;}
+.evento-detalle .cuadro .local_link {color: #fff; width: 100%; text-align: center; font-size: 1em; padding: 0.8em 0;}
+.evento-detalle .cuadro .local_link .icono {float: left;}
+.evento-detalle .cuadro .local_link .nombre-local {font-weight: bold;}
 
 
+/* PANTALLA LOCAL (comparte estilos con EVENTO) */
+.localDetails {width: 100%;}
+.evento-detalle .cuadro .detalle-local {background-color: #004158; color: #fff; margin-bottom: 0.6em;} /* cuadro con color de fondo */
+.evento-detalle .cuadro .horario-local { font-size: 0.9em; line-height: 1.65; margin: 0.7em 0;}
+.evento-detalle .cuadro .tlf-local { text-align: right;}
 
-.lista-locales img {margin-top: 8px;}
 /* lista eventos del LOCAL */
 .eventoslocal h2 {
-    margin: 8px 5px;
-    margin-top: 20px;
-    font-size: 1.4em;
+    margin: 24px 12px 12px;
+    font-size: 1.6em;
+    text-align: center;
 }
-/* lista eventos del LOCAL */
+
+/*.mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}*/
+
+/* fin - evento-detalle --- en EVENTO */
+
+/* sobreescribe bootstrap */
+.img-responsive {width: 100%;}
+
 
 
 
@@ -441,6 +486,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_1 .btn-pella.link_web {color:#000; background-color:#ea6e49; border-color: #ea6e49;}
 .cuadro.categ_1 .fa-map-marker {color: #ea6e49;}
 .cuadro.categ_1 .date span.hora {background-color: #8c422c;}
+.cuadro.categ_1 .descr-evento a.link_web {color: #ea6e49;}
+.cuadro.categ_1 .imagen {background-color: #ea6e49;}
 
 /* VERDES */
 /*.cuadro.categ_2    {background-color: #EAEFED;}*/
@@ -454,6 +501,9 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_2 .btn-pella.link_web {color:#000; background-color:#9fb235; border-color: #9fb235;}
 .cuadro.categ_2 .fa-map-marker {color: #9fb235;}
 .cuadro.categ_2 .date span.hora {background-color: #5f6b20;}
+.cuadro.categ_2 .descr-evento a.link_web {color: #9fb235;}
+.cuadro.categ_2 .imagen {background-color: #9fb235;}
+
 
 /* AMARILLOS fdca37 */
 /*.cuadro.categ_3    {background-color: #EFEFEA;}*/
@@ -467,7 +517,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_3 .btn-pella.link_web {color:#000; background-color:#f6ac34; border-color: #f6ac34;}
 .cuadro.categ_3 .fa-map-marker {color: #f6ac34;}
 .cuadro.categ_3 .date span.hora {background-color: #94671f;}
-
+.cuadro.categ_3 .descr-evento a.link_web {color: #f6ac34;}
+.cuadro.categ_3 .imagen {background-color: #f6ac34;}
 
 /* MARRONES */
 /*.cuadro.categ_4    {background-color: #EDEAEF;}*/
@@ -481,6 +532,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_4 .btn-pella.link_web {color:#000; background-color:#988483; border-color: #988483;}
 .cuadro.categ_4 .fa-map-marker {color: #988483;}
 .cuadro.categ_4 .date span.hora {background-color: #5b4f4f;}
+.cuadro.categ_4 .descr-evento a.link_web {color: #988483;}
+.cuadro.categ_4 .imagen {background-color: #988483;}
 
 /* AZULES #1f9cd2 */
 /*.cuadro.categ_5    {background-color: #EBF0EF;}*/
@@ -494,6 +547,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_5 .btn-pella.link_web {color:#000; background-color:#459bd0; border-color: #459bd0;}
 .cuadro.categ_5 .fa-map-marker {color: #459bd0;}
 .cuadro.categ_5 .date span.hora {background-color: #295d7d;}
+.cuadro.categ_5 .descr-evento a.link_web {color: #459bd0;}
+.cuadro.categ_5 .imagen {background-color: #459bd0;}
 
 /* TURQUESAS */
 /*.cuadro.categ_6    {background-color: #EFEDEA;}*/
@@ -507,8 +562,37 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_6 .btn-pella.link_web {color:#000; background-color:#45b192; border-color: #45b192;}
 .cuadro.categ_6 .fa-map-marker {color: #45b192;}
 .cuadro.categ_6 .date span.hora {background-color: #296a58;}
+.cuadro.categ_6 .descr-evento a.link_web {color: #45b192;}
+.cuadro.categ_6 .imagen {background-color: #45b192;}
+
+/* excepciones de color */
+.evento-detalle .cuadro h4 {color: #fff;}
 
 
+
+/* ++++++++++++++++++++++++++++++++++++++ */
+/*     MEDIA QUERIES                      */
+/* ++++++++++++++++++++++++++++++++++++++ */
+
+/* MEDIA QUERIES EN ALTURA para el mapa */
+@media (min-height: 627px) {
+    #eve-map-canvas {height: 200px;}
+    #local-map-canvas {height: 200px;}
+    #big-map-canvas {height:575px;}
+}
+@media (min-height: 736px) {
+    #eve-map-canvas {height: 230px;}
+    #local-map-canvas {height: 230px;}
+    #big-map-canvas {height:685px;}
+}
+@media (min-height: 1024px) {
+    #eve-map-canvas {height: 300px;}
+    #local-map-canvas {height: 300px;}
+    #big-map-canvas {height:974px;}
+}
+
+
+/* MEDIA QUERIES EN ANCHO */
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -526,49 +610,66 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     
 }
 
-@media (min-width: 460px) {
-    /*
-    .guiaeventos .cuadro .date {
-    /*    para que por arriba tenga espacio 
-        padding: 1.7em 0;
-    /*    para que tenga altura 100% 
-        padding-bottom: 1000px; 
-        margin-bottom: -997px;
-    }*/
+@media (min-width: 412px) {
+    /* en inicio */
+    /* altura fija del cuadro + ajustes fuentes */
+    .guiaeventos .cuadro {height: 105px;}
+    .guiaeventos .cuadro .date span.ndia {margin-top: 8px;}
+    .guiaeventos .cuadro .info {font-size: 1.1em;}
+    .guiaeventos .cuadro h5 {font-size: 1.3em;}
+    
+    /* en evento */
+    .evento-detalle .cuadro .datos-evento p {font-size: 1em;}
+}
+
+@media (min-width: 600px) {
+    /* en inicio */
+    /* altura fija del cuadro + ajustes fuentes */
+    .guiaeventos .cuadro {height: 150px;}
+    .guiaeventos .cuadro .date {font-size: 1.4em;}
+    .guiaeventos .cuadro .date span.ndia {margin-top: 10px;}
+    .guiaeventos .cuadro .info {font-size: 1.4em;}
+    
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    body {font-size: 18px;}
+    
+    /* en inicio */
     /* altura fija del cuadro */
     .guiaeventos .cuadro {height: 190px;}
-    body {font-size: 18px;}
+    /* resto igual que 600px */
+    
+    /* en evento */
+    .evento-detalle .cuadro .datos-evento p {font-size: 0.8em;}
+    .evento-detalle .cuadro .descr-evento {padding-left: 1em;}
+    #eve-map-canvas {height: 300px;}
+    #local-map-canvas {height: 300px;}
+    
     .fronttext h1 {font-size:3em;}
-    .evento-detalle .cuadro .date span.hora {display:inline}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    /* en inicio */
+    /* altura fija del cuadro + ajustes fuentes */
+    .guiaeventos .cuadro {height: 250px;}
+    .guiaeventos .cuadro .date {font-size: 2em;}
+    .guiaeventos .cuadro .date span.ndia {margin-top: 10px;}
+    .guiaeventos .cuadro .info {font-size: 2em;}    
     
+    /* en evento */
+    .evento-detalle .cuadro .datos-evento p {font-size: 1em;}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+    /* en inicio */
+    /* altura fija del cuadro + ajustes fuentes */
+    .guiaeventos .cuadro {height: 320px;}
+    .guiaeventos .cuadro .date {font-size: 2.3em;}
+    .guiaeventos .cuadro .date span.ndia {margin-top: 25px;}
+    .guiaeventos .cuadro .info {font-size: 2.3em;}        
 }
 
-/* media-queries en altura para el mapa */
-@media (min-height: 627px) {
-    #eve-map-canvas {height: 200px;}
-    #local-map-canvas {height: 200px;}
-    #big-map-canvas {height:575px;}
-}
-@media (min-height: 736px) {
-    #eve-map-canvas {height: 230px;}
-    #local-map-canvas {height: 230px;}
-    #big-map-canvas {height:685px;}
-}
-@media (min-height: 1024px) {
-    #eve-map-canvas {height: 300px;}
-    #local-map-canvas {height: 300px;}
-    #big-map-canvas {height:974px;}
-}
