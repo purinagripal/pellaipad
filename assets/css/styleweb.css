@@ -54,8 +54,9 @@ a:hover{color:#fff;text-decoration:none}
     left: 0;
     height: 95px;
     width: 100%;
-    padding-top: 5px;
+    padding-top: 6px;
 
+    color: #80a0ac;
     background-color:#004158;
     border-bottom: solid 1px #00212c;
 }
@@ -63,12 +64,13 @@ a:hover{color:#fff;text-decoration:none}
     position: absolute;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 53px;
     width: 100%;
-    border-bottom: solid 1px #666;
-    padding-top: 5px;
-    /*    COLORES background-color:#000;004158*/
+    padding-top: 6px;
+    /*    COLORES */
+    color: #80a0ac;
     background-color:#004158;
+    border-bottom: solid 1px #00212c;
 }
 
 .wrapper-absolute-80 {
@@ -81,7 +83,7 @@ a:hover{color:#fff;text-decoration:none}
 }
 .wrapper-absolute-50 {
     position: absolute;
-    top: 50px;
+    top: 53px;
     bottom: 0;
     width: 100%;
     overflow: scroll;
@@ -94,47 +96,34 @@ a:hover{color:#fff;text-decoration:none}
 /* head_sup */
 .head_sup {
     text-align: center;
-    height: 48px;
+    height: 47px;
 }
 .head_sup img {
     margin: 0;
     /* posicion absoluta, centrado arriba sobre la imagen */
-    position: absolute; top: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;
-    
-    vertical-align: bottom;
+    position: absolute; top: 6px; margin-left: auto; margin-right: auto; left: 0; right: 0;
 }
-.head_sup h1 {
-    display: inline;
-    font-size:1.4em;
-}
-/*.head_sup .icon {
-    margin: 0;
-    margin-right: 8px;
-    margin-left: 8px;
-    font-size: 1.5em;
-}*/
 
-/*para que en el movil tenga ancho el icono
-.icon {
-    padding-right: 25px;
-}*/
-.head_sup .glyphicon {
-    margin-right: 8px;
-    margin-left: 8px;
-    font-size: 1.2em;
-}
+/* corregir aquí el tamaño de los iconos a 40px */
+/* en pantallas con más iconos no poner logo completo */
 .head_sup .fa {
-    margin-right: 8px;
-    margin-left: 8px;
-    font-size: 1.4em;
+    margin-right: 7px;
+    margin-left: 7px;
+    font-size: 28px;
+    color: #80a0ac;
 }
 
 .menu_drop {
     display: inline;
     text-align: right;
 }
-/*.menu_drop i.fa {font-size: 2em;}*/
-.menu_drop .dropdown-menu .fa {font-size: 0.8em;}
+.menu_drop .dropdown-menu .fa {
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
 a.menu_salir {
     display: inline;
 }
@@ -147,7 +136,7 @@ a.menu_salir {
     font-weight: bold;
     font-size: 1.2em;
     letter-spacing: 0.2em;
-    margin-top: 10px;
+    line-height: 40px;
 }
 .selec_container {
     background-color: #00212c;
@@ -160,7 +149,7 @@ a.menu_salir {
     height: 40px;
     width: 100%;
     background-color: #00212c;
-    color: #fff;
+    color: #80a0ac;
     border: none;
 }
 .dropdown-menu.ddm-right {
@@ -601,12 +590,14 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .head_sup h1 {
         font-size:1.1em;
     }
+/*
     .head_sup .fa {
         margin: 0;
         margin-right: 8px;
         margin-left: 8px;
         font-size: 1.3em;
     }
+*/
     
 }
 
@@ -672,4 +663,3 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .guiaeventos .cuadro .date span.ndia {margin-top: 25px;}
     .guiaeventos .cuadro .info {font-size: 2.3em;}        
 }
-
