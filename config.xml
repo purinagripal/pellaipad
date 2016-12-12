@@ -75,7 +75,7 @@
     <plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
-    <plugin name="phonegap-plugin-push" source="npm">        
+    <plugin name="phonegap-plugin-push" source="npm" spec="1.8.4">        
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
