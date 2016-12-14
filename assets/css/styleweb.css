@@ -233,6 +233,7 @@ a.menu_salir {
     color: #00212c;
     z-index: -100;
 }
+#boton_guardar {z-index: 1000;}
 
 
 /* campana de notificacion */
