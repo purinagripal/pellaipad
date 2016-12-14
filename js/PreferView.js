@@ -75,7 +75,7 @@ var PreferView = Backbone.View.extend({
     },
 
     events: {
-        "click button#boton_guardar.btn.btn-pella.btn-lg.btn-block": "click_guardar",
+        "click #boton_guardar": "click_guardar",
         "click .sel_cat": "selec_categoria",
         "click .sel_ciudad": "selec_ciudad",
         
@@ -108,10 +108,6 @@ var PreferView = Backbone.View.extend({
             $('#ciudad'+index_ciu+' i.fa-check').hide();
         }
         console.log(this.ciudades_01);
-        
-        // muestra imagen cargando...
-        $('#cargando').show();
-        $('#boton_guardar').hide();
     },
     
     guardarPreferencias: function () {
