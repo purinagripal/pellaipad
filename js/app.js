@@ -336,7 +336,7 @@
         document.addEventListener("resume", onResume, false);
         
         
-        StatusBar.hide();
+        //StatusBar.hide();
         
 
         //  --- NOTIFICACIONES PUSH
