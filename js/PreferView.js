@@ -108,6 +108,10 @@ var PreferView = Backbone.View.extend({
             $('#ciudad'+index_ciu+' i.fa-check').hide();
         }
         console.log(this.ciudades_01);
+        
+        // muestra imagen cargando...
+        $('#cargando').show();
+        $('#boton_guardar').hide();
     },
     
     guardarPreferencias: function () {
