@@ -75,7 +75,7 @@ var PreferView = Backbone.View.extend({
     },
 
     events: {
-        "click #boton_guardar": "click_guardar",
+        "click button#boton_guardar.btn.btn-pella.btn-lg.btn-block": "click_guardar",
         "click .sel_cat": "selec_categoria",
         "click .sel_ciudad": "selec_ciudad",
         
@@ -153,6 +153,7 @@ var PreferView = Backbone.View.extend({
     click_guardar: function (event) {
         
         console.log("guardar_prefes");
+        console.log(event);
         
         this.categorias = [];
         this.ciudades = [];
