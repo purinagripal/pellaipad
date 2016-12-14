@@ -56,7 +56,7 @@ a:hover{color:#fff;text-decoration:none}
     width: 100%;
     padding-top: 6px;
 
-    color: #80a0ac;
+    color: #d8e1e5;
     background-color:#004158;
     border-bottom: solid 1px #00212c;
 }
@@ -68,7 +68,7 @@ a:hover{color:#fff;text-decoration:none}
     width: 100%;
     padding-top: 6px;
     /*    COLORES */
-    color: #80a0ac;
+    color: #d8e1e5;
     background-color:#004158;
     border-bottom: solid 1px #00212c;
 }
@@ -101,7 +101,7 @@ a:hover{color:#fff;text-decoration:none}
 .head_sup img {
     margin: 0;
     /* posicion absoluta, centrado arriba sobre la imagen */
-    position: absolute; top: 6px; margin-left: auto; margin-right: auto; left: 0; right: 0;
+    position: absolute; top: 3px; margin-left: auto; margin-right: auto; left: 0; right: 0;
 }
 
 /* corregir aquí el tamaño de los iconos a 40px */
@@ -109,8 +109,9 @@ a:hover{color:#fff;text-decoration:none}
 .head_sup .fa {
     margin-right: 7px;
     margin-left: 7px;
-    font-size: 28px;
-    color: #80a0ac;
+    font-size: 35px;
+    line-height: 40px;
+    color: #d8e1e5;
 }
 
 .menu_drop {
@@ -130,13 +131,15 @@ a.menu_salir {
 
 /* head_inf */
 .header .head_inf {
+    color: #fff;
 }
 .header .head_inf.favoritos {
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     line-height: 40px;
+    color: #fff;
 }
 .selec_container {
     background-color: #00212c;
@@ -149,7 +152,7 @@ a.menu_salir {
     height: 40px;
     width: 100%;
     background-color: #00212c;
-    color: #80a0ac;
+    color: #fff;
     border: none;
 }
 .dropdown-menu.ddm-right {
@@ -190,22 +193,46 @@ a.menu_salir {
 .eventos_cargados {display: none;}
 
 /* Preferencias */
+.prefer .intro {margin-top: 15px;}
+.prefer-lugares, .prefer-categorias {padding: 0;}
 .prefer h5 {
     margin-top: 15px;
+    background-color: #004158;
+    color: #fff;
+    padding: 12px;
 }
+.list-group {
+    color: #fff;
+}
+.list-group-item {
+    margin-bottom: 0px;
+    border: none;
+    border-bottom: solid 2px #004158;
+}
+.list-group-item:first-child, .list-group-item:last-child {border-radius: 0;}
+
+.sel_cat .col-xs-2 {text-align: center;}
+.ico-cat {border-right: solid 1px #004158;}
+.sel_cat .fa-check, .sel_ciudad .fa-check {
+    display: none;
+    color: #000;
+}
+#cat1 {background-color: #459bd0;} /* azul - musica */
+#cat2 {background-color: #45b192;} /* turquesa - espectaculos */
+#cat3 {background-color: #9fb235;} /* verde - cursos */
+#cat6 {background-color: #f6ac34;} /* amarillo - niños */
+#cat4 {background-color: #988483;} /* marron - charlas */
+#cat5 {background-color: #ea6e49;} /* rojo - deporte */
+.sel_ciudad {background-color: #d8e1e5; color: #004158;}
 
 /* Favoritos */
 #cargando {
     display: none;
     text-align: center;
     margin-bottom: 50px;
+    color: #00212c;
 }
-.list-group {
-    color:black;
-}
-.sel_cat i, .sel_ciudad i {
-    display: none;
-}
+
 
 /* campana de notificacion */
 .notif.fa-bell {
@@ -309,7 +336,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     height: 100%;
 }
 /* h5: titulo evento */
-.guiaeventos .cuadro h5 {margin: 0.3em 0; color: #000; font-weight: 600; letter-spacing: -0.2px;}
+.guiaeventos .cuadro h5 {margin: 0.3em 0; color: #000; font-weight: 600; letter-spacing: -0.2px; font-size: 1.05em; line-height: 1.3;}
 .guiaeventos .cuadro .eventor-ciudad {position: absolute; bottom: 0; }
 .guiaeventos .cuadro p {font-size: 1em; line-height: 1.3; margin: 0;}
 .guiaeventos .cuadro p.nombre-eventor {font-weight: 700; font-style: italic; font-size: 0.95em;}
@@ -637,6 +664,9 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .evento-detalle .cuadro .descr-evento {padding-left: 1em;}
     #eve-map-canvas {height: 300px;}
     #local-map-canvas {height: 300px;}
+    
+    /* preferencias */
+    .prefer-lugares, .prefer-categorias {padding: 12px;}
     
     .fronttext h1 {font-size:3em;}
 }
