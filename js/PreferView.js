@@ -37,7 +37,7 @@ var PreferView = Backbone.View.extend({
             for (index = 0; index < ls_pref_categ.length; index++) { 
                 id_categoria = ls_pref_categ[index].id_categoria;
                 this.categorias_01[id_categoria] = 1;
-                $('#cat'+id_categoria+' .fa-check', this.el).show();
+                $('#cat'+id_categoria+' i.fa-check', this.el).show();
             }
             console.log('categorias 0y1');
             console.log(this.categorias_01);
@@ -47,7 +47,7 @@ var PreferView = Backbone.View.extend({
             for (index = 0; index < ls_pref_ciudad.length; index++) { 
                 id_ciudad = ls_pref_ciudad[index].id_ciudad;
                 this.ciudades_01[id_ciudad] = 1;
-                $('#ciudad'+id_ciudad+' .fa-check', this.el).show();
+                $('#ciudad'+id_ciudad+' i.fa-check', this.el).show();
             }
             console.log('ciudades 0y1');
             console.log(this.ciudades_01);
@@ -62,8 +62,8 @@ var PreferView = Backbone.View.extend({
             // selecciono todo por defecto
             this.ciudades_01 = [0,1,1,1,1,1,1,1,1];
             this.categorias_01 = [0,1,1,1,1,1,1];
-            $('.sel_ciudad .fa-check', this.el).show();
-            $('.sel_cat .fa-check', this.el).show();
+            $('.sel_ciudad i.fa-check', this.el).show();
+            $('.sel_cat i.fa-check', this.el).show();
             
         }
     },
@@ -90,10 +90,10 @@ var PreferView = Backbone.View.extend({
         var index_cat = $(event.currentTarget).attr('data-id'); 
         if(this.categorias_01[index_cat]==0) {
             this.categorias_01[index_cat]=1;
-            $('#cat'+index_cat+' .fa-check').show();
+            $('#cat'+index_cat+' i.fa-check').show();
         } else {
             this.categorias_01[index_cat]=0;
-            $('#cat'+index_cat+' .fa-check').hide();
+            $('#cat'+index_cat+' i.fa-check').hide();
         }
         console.log(this.categorias_01);
     },
@@ -102,10 +102,10 @@ var PreferView = Backbone.View.extend({
         var index_ciu = $(event.currentTarget).attr('data-id'); 
         if(this.ciudades_01[index_ciu]==0) {
             this.ciudades_01[index_ciu]=1;
-            $('#ciudad'+index_ciu+' .fa-check').show();
+            $('#ciudad'+index_ciu+' i.fa-check').show();
         } else {
             this.ciudades_01[index_ciu]=0;
-            $('#ciudad'+index_ciu+' .fa-check').hide();
+            $('#ciudad'+index_ciu+' i.fa-check').hide();
         }
         console.log(this.ciudades_01);
     },
