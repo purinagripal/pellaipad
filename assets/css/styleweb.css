@@ -193,6 +193,7 @@ a.menu_salir {
 .eventos_cargados {display: none;}
 
 /* Preferencias */
+.prefer {position: relative;}
 .prefer .intro {margin-top: 15px;}
 .prefer-lugares, .prefer-categorias {padding: 0;}
 .prefer h5 {
@@ -233,7 +234,7 @@ a.menu_salir {
     color: #00212c;
     z-index: -100;
 }
-#boton_guardar {z-index: 1000;}
+#boton_guardar {z-index: 1000; position: relative;}
 
 
 /* campana de notificacion */
