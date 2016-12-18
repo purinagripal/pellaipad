@@ -234,6 +234,7 @@
             var nuevoModel = new Backbone.Model({
                 titulo: primerEvento.attributes.Eventor.first_name,
                 direccion: primerEvento.attributes.Eventor.direccion,
+                localidad: primerEvento.attributes.Eventor.localidad,
                 ciudad: primerEvento.attributes.Eventor.CiudadEventor.nombre,
                 lat: primerEvento.attributes.Eventor.lat,
                 long: primerEvento.attributes.Eventor.long,
@@ -262,6 +263,7 @@
             var nuevoModel = new Backbone.Model({
                 titulo: primerEvento.attributes.title,
                 direccion: primerEvento.attributes.direccion,
+                localidad: primerEvento.attributes.localidad,
                 ciudad: primerEvento.attributes.Ciudad.nombre,
                 lat: primerEvento.attributes.lat,
                 long: primerEvento.attributes.long,

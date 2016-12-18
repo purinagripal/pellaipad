@@ -148,13 +148,19 @@ a.menu_salir {
 .dropdown.selec_drop {
     text-align: center;
 }
-.dropdown.selec_drop button.dropdown-toggle {
+.dropdown.selec_drop button.dropdown-toggle,
+.dropdown.selec_drop button.dropdown-toggle:hover,
+.dropdown.selec_drop button.dropdown-toggle:focus,
+.dropdown.selec_drop button.dropdown-toggle:active,
+.dropdown.selec_drop button.dropdown-toggle.active
+{
     height: 40px;
     width: 100%;
     background-color: #00212c;
     color: #fff;
     border: none;
 }
+
 .dropdown-menu.ddm-right {
     left: -24px;
 }
@@ -237,10 +243,7 @@ a.menu_salir {
 #boton_guardar {z-index: 1000; position: relative;}
 
 
-/* campana de notificacion */
-.notif.fa-bell {
-    display: none;
-}
+
 
 .btn-pella {
   color: #fff;
@@ -356,6 +359,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     margin-bottom: -1000px;*/
 }
 .guiaeventos .cuadro .date span { display: block; line-height: 1;}
+.guiaeventos .cuadro .date span.ico-categ {position: absolute; top:2px; left: 2px; color: #fff;}
+.guiaeventos .cuadro .date span.hoy { font-size: 2em; font-weight:900; line-height: 2.3;}
+.guiaeventos .cuadro .date span.ndiafi { font-size: 2.2em; font-weight:900; line-height: 1;}
+.guiaeventos .cuadro .date span.ndiaff { font-size: 2.2em; font-weight:900; line-height: 1; border-top: solid 1px #000;}
 .guiaeventos .cuadro .date span.ndia { font-size: 2.4em; font-weight:900; line-height: 1;}
 .guiaeventos .cuadro .date span.mes { font-size: 0.7em; text-transform:uppercase; margin-bottom: 0.3em; }
 .guiaeventos .cuadro .date span.diasemana { font-size: 1em; border-top: solid 1px #000; padding-top: 0.1em;}
@@ -389,6 +396,18 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     width: auto;
 
 }
+/* campana de notificacion */
+.notif.fa-exclamation-circle {
+/*    display: none;*/
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    padding: 5px;
+    color: #004158;
+    font-size: 1.1em;
+}
+
+
 /* titulo local en lista locales */
 .guiaeventos h4 { 
     margin: 0.2em 0;
@@ -419,21 +438,24 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     margin: 0;
     /* posicion absoluta, centrado arriba sobre la imagen */
     position: absolute; top: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
     text-align: center;
     color: #fff; 
     font-size: 1.8em; letter-spacing: -1px; line-height: 1.1;
     /* gradiente en background */
-    background: rgba(0, 0, 0, 0.5); /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0)); /*Safari 5.1-6*/
-    background: -o-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0)); /*Opera 11.1-12*/
-    background: -moz-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0));  /*Fx 3.6-15*/
-    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0));  /*Standard*/
+    background: rgba(0, 0, 0, 0.7); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0));  /*Fx 3.6-15*/
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0));  /*Standard*/
 }
 
 /* fecha */
-.evento-detalle .cuadro .date {text-align: center; color: #000; padding: 0; margin-bottom: 0.5em;}
-.evento-detalle .cuadro .date span.ndia { font-size: 2.2em; font-weight: 700; line-height: 1.3; text-transform: uppercase;}
+.evento-detalle .cuadro .date {text-align: center; color: #000; padding: 0; margin-bottom: 0.5em; position: relative;}
+.evento-detalle .cuadro .date span.ico-categ {display: block; position: absolute; top: 0px; left: 15px; font-size: 1.3em; line-height: 2.1; color: #fff;}
+.evento-detalle .cuadro .date span.ndia {display: block; font-size: 2.2em; font-weight: 700; line-height: 1.3; text-transform: uppercase;}
+.evento-detalle .cuadro .date span.ndiafin {display: block; font-size: 2.2em; font-weight: 700; line-height: 1.3; text-transform: uppercase; border-top: solid 1px #000;}
 .evento-detalle .cuadro .date span.hora {display: block; font-size: 1.2em; line-height: 1.8; color: #fff;}
 
 /* organizador y localidad */
@@ -453,7 +475,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* direccion y mapa del evento */
 .evento-detalle .cuadro .direccion-evento {background-color: #f2f2f2; margin-top: 25px;}
 .evento-detalle .cuadro p.direcc { font-size: 1.1em; text-align: right; padding-top: 1em;}
-.evento-detalle .cuadro span.calle {float: left; line-height: 1.8;}
+.evento-detalle .cuadro span.calle {float: left; line-height: 1.8; text-align: left;}
 .evento-detalle .cuadro span.fullscreen {font-size: 1.8em; line-height: 1;}
 
 /* mapa en fullscreen */
@@ -489,105 +511,100 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 
 
-/* - - - - - - - - - - - - - */
-/* COLORES DE LAS CATEGORIAS */
+/* +++++++++++++++++++++++++++++++ */
+/*    COLORES DE LAS CATEGORIAS    */
+/* +++++++++++++++++++++++++++++++ */
 
 .cuadro h4, .cuadro h5 {font-weight: 600;}
 .cuadro {
-    background-color: #EBF0EF; /* #EBF0EF */
+    background-color: #EBF0EF; 
     color: #000; 
 }
 .cuadro .date {color: #000;}
 
-/* ROJOS */
-/*.cuadro.categ_1    {background-color: #EFEAEB;}*/
-.cuadro.categ_1 h5 {color: #ea6e49;} /*#E3DB1E*/
-.cuadro.categ_1 h4 {color: #ea6e49;}
-.cuadro.categ_1 h5 a {color: #ea6e49;}
+/* AZULES - musica */
+.cuadro.categ_1 h5 {color: #459bd0;}
+.cuadro.categ_1 h4 {color: #459bd0;}
+.cuadro.categ_1 h5 a {color: #459bd0;}
 .cuadro.categ_1 .date {
-    background-color:#ea6e49;
+    background-color:#459bd0;
 }
-.cuadro.categ_1 .btn-pella.link_web {color:#000; background-color:#ea6e49; border-color: #ea6e49;}
-.cuadro.categ_1 .fa-map-marker {color: #ea6e49;}
-.cuadro.categ_1 .date span.hora {background-color: #8c422c;}
-.cuadro.categ_1 .descr-evento a.link_web {color: #ea6e49;}
-.cuadro.categ_1 .imagen {background-color: #ea6e49;}
+.cuadro.categ_1 .btn-pella.link_web {color:#000; background-color:#459bd0; border-color: #459bd0;}
+.cuadro.categ_1 .fa-map-marker {color: #459bd0;}
+.cuadro.categ_1 .date span.hora {background-color: #295d7d;}
+.cuadro.categ_1 .descr-evento a.link_web {color: #459bd0;}
+.cuadro.categ_1 .imagen {background-color: #459bd0;}
+.cuadro.categ_1 .notif.fa-exclamation-circle {color: #459bd0};
 
-/* VERDES */
-/*.cuadro.categ_2    {background-color: #EAEFED;}*/
-.cuadro.categ_2 h5 {color: #9fb235;}
-.cuadro.categ_2 h4 {color: #9fb235;}
-.cuadro.categ_2 h5 a {color: #9fb235;}
+/* TURQUESAS - espectaculos */
+.cuadro.categ_2 h5 {color: #45b192;}
+.cuadro.categ_2 h4 {color: #45b192;}
+.cuadro.categ_2 h5 a {color: #45b192;}
 .cuadro.categ_2 .date {
-    background-color:#9fb235;
-/*    border: 1px solid #EAEFED;*/
+    background-color:#45b192;
 }
-.cuadro.categ_2 .btn-pella.link_web {color:#000; background-color:#9fb235; border-color: #9fb235;}
-.cuadro.categ_2 .fa-map-marker {color: #9fb235;}
-.cuadro.categ_2 .date span.hora {background-color: #5f6b20;}
-.cuadro.categ_2 .descr-evento a.link_web {color: #9fb235;}
-.cuadro.categ_2 .imagen {background-color: #9fb235;}
+.cuadro.categ_2 .btn-pella.link_web {color:#000; background-color:#45b192; border-color: #45b192;}
+.cuadro.categ_2 .fa-map-marker {color: #45b192;}
+.cuadro.categ_2 .date span.hora {background-color: #296a58;}
+.cuadro.categ_2 .descr-evento a.link_web {color: #45b192;}
+.cuadro.categ_2 .imagen {background-color: #45b192;}
+.cuadro.categ_2 .notif.fa-exclamation-circle {color: #45b192};
 
-
-/* AMARILLOS fdca37 */
-/*.cuadro.categ_3    {background-color: #EFEFEA;}*/
-.cuadro.categ_3 h5 {color: #f6ac34;}
-.cuadro.categ_3 h4 {color: #f6ac34;}
-.cuadro.categ_3 h5 a {color: #f6ac34;}
+/* VERDES - cursos */
+.cuadro.categ_3 h5 {color: #9fb235;}
+.cuadro.categ_3 h4 {color: #9fb235;}
+.cuadro.categ_3 h5 a {color: #9fb235;}
 .cuadro.categ_3 .date {
-    background-color:#f6ac34;
-/*    border: 1px solid #EFEFEA;*/
+    background-color:#9fb235;
 }
-.cuadro.categ_3 .btn-pella.link_web {color:#000; background-color:#f6ac34; border-color: #f6ac34;}
-.cuadro.categ_3 .fa-map-marker {color: #f6ac34;}
-.cuadro.categ_3 .date span.hora {background-color: #94671f;}
-.cuadro.categ_3 .descr-evento a.link_web {color: #f6ac34;}
-.cuadro.categ_3 .imagen {background-color: #f6ac34;}
+.cuadro.categ_3 .btn-pella.link_web {color:#000; background-color:#9fb235; border-color: #9fb235;}
+.cuadro.categ_3 .fa-map-marker {color: #9fb235;}
+.cuadro.categ_3 .date span.hora {background-color: #5f6b20;}
+.cuadro.categ_3 .descr-evento a.link_web {color: #9fb235;}
+.cuadro.categ_3 .imagen {background-color: #9fb235;}
+.cuadro.categ_3 .notif.fa-exclamation-circle {color: #9fb235};
 
-/* MARRONES */
-/*.cuadro.categ_4    {background-color: #EDEAEF;}*/
+/* AMARILLOS - niños */
+.cuadro.categ_6 h5 {color: #f6ac34;}
+.cuadro.categ_6 h4 {color: #f6ac34;}
+.cuadro.categ_6 h5 a {color: #f6ac34;}
+.cuadro.categ_6 .date {
+    background-color:#f6ac34;
+}
+.cuadro.categ_6 .btn-pella.link_web {color:#000; background-color:#f6ac34; border-color: #f6ac34;}
+.cuadro.categ_6 .fa-map-marker {color: #f6ac34;}
+.cuadro.categ_6 .date span.hora {background-color: #94671f;}
+.cuadro.categ_6 .descr-evento a.link_web {color: #f6ac34;}
+.cuadro.categ_6 .imagen {background-color: #f6ac34;}
+.cuadro.categ_6 .notif.fa-exclamation-circle {color: #f6ac34};
+
+/* MARRONES - charlas */
 .cuadro.categ_4 h5 {color: #988483;}
 .cuadro.categ_4 h4 {color: #988483;}
 .cuadro.categ_4 h5 a {color: #988483;}
 .cuadro.categ_4 .date {
     background-color:#988483;
-/*    border: 1px solid #EDEAEF;*/
 }
 .cuadro.categ_4 .btn-pella.link_web {color:#000; background-color:#988483; border-color: #988483;}
 .cuadro.categ_4 .fa-map-marker {color: #988483;}
 .cuadro.categ_4 .date span.hora {background-color: #5b4f4f;}
 .cuadro.categ_4 .descr-evento a.link_web {color: #988483;}
 .cuadro.categ_4 .imagen {background-color: #988483;}
+.cuadro.categ_4 .notif.fa-exclamation-circle {color: #988483};
 
-/* AZULES #1f9cd2 */
-/*.cuadro.categ_5    {background-color: #EBF0EF;}*/
-.cuadro.categ_5 h5 {color: #459bd0;}
-.cuadro.categ_5 h4 {color: #459bd0;}
-.cuadro.categ_5 h5 a {color: #459bd0;}
+/* ROJOS - deporte */
+.cuadro.categ_5 h5 {color: #ea6e49;} /*#E3DB1E*/
+.cuadro.categ_5 h4 {color: #ea6e49;}
+.cuadro.categ_5 h5 a {color: #ea6e49;}
 .cuadro.categ_5 .date {
-    background-color:#459bd0;
-/*    border: 1px solid #EBF0EF;*/
+    background-color:#ea6e49;
 }
-.cuadro.categ_5 .btn-pella.link_web {color:#000; background-color:#459bd0; border-color: #459bd0;}
-.cuadro.categ_5 .fa-map-marker {color: #459bd0;}
-.cuadro.categ_5 .date span.hora {background-color: #295d7d;}
-.cuadro.categ_5 .descr-evento a.link_web {color: #459bd0;}
-.cuadro.categ_5 .imagen {background-color: #459bd0;}
-
-/* TURQUESAS */
-/*.cuadro.categ_6    {background-color: #EFEDEA;}*/
-.cuadro.categ_6 h5 {color: #45b192;}
-.cuadro.categ_6 h4 {color: #45b192;}
-.cuadro.categ_6 h5 a {color: #45b192;}
-.cuadro.categ_6 .date {
-    background-color:#45b192;
-/*    border: 1px solid #EFEDEA;*/
-}
-.cuadro.categ_6 .btn-pella.link_web {color:#000; background-color:#45b192; border-color: #45b192;}
-.cuadro.categ_6 .fa-map-marker {color: #45b192;}
-.cuadro.categ_6 .date span.hora {background-color: #296a58;}
-.cuadro.categ_6 .descr-evento a.link_web {color: #45b192;}
-.cuadro.categ_6 .imagen {background-color: #45b192;}
+.cuadro.categ_5 .btn-pella.link_web {color:#000; background-color:#ea6e49; border-color: #ea6e49;}
+.cuadro.categ_5 .fa-map-marker {color: #ea6e49;}
+.cuadro.categ_5 .date span.hora {background-color: #8c422c;}
+.cuadro.categ_5 .descr-evento a.link_web {color: #ea6e49;}
+.cuadro.categ_5 .imagen {background-color: #ea6e49;}
+.cuadro.categ_5 .notif.fa-exclamation-circle {color: #ea6e49};
 
 /* excepciones de color */
 .evento-detalle .cuadro h4 {color: #fff;}
@@ -640,7 +657,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* en inicio */
     /* altura fija del cuadro + ajustes fuentes */
     .guiaeventos .cuadro {height: 105px;}
-    .guiaeventos .cuadro .date span.ndia {margin-top: 8px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy {margin-top: 8px;}
+    .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 5px}
     .guiaeventos .cuadro .info {font-size: 1.1em;}
     .guiaeventos .cuadro h5 {font-size: 1.3em;}
     
@@ -653,7 +671,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* altura fija del cuadro + ajustes fuentes */
     .guiaeventos .cuadro {height: 150px;}
     .guiaeventos .cuadro .date {font-size: 1.4em;}
-    .guiaeventos .cuadro .date span.ndia {margin-top: 10px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy, .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 10px;}
     .guiaeventos .cuadro .info {font-size: 1.4em;}
     
 }
@@ -666,6 +684,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* altura fija del cuadro */
     .guiaeventos .cuadro {height: 190px;}
     /* resto igual que 600px */
+    .guiaeventos .cuadro .date span.ico-categ {position: absolute; top: 7px; left: 8px; }
     
     /* en evento */
     .evento-detalle .cuadro .datos-evento p {font-size: 0.8em;}
@@ -685,7 +704,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* altura fija del cuadro + ajustes fuentes */
     .guiaeventos .cuadro {height: 250px;}
     .guiaeventos .cuadro .date {font-size: 2em;}
-    .guiaeventos .cuadro .date span.ndia {margin-top: 10px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy, .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 10px;}
     .guiaeventos .cuadro .info {font-size: 2em;}    
     
     /* en evento */
@@ -698,6 +717,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* altura fija del cuadro + ajustes fuentes */
     .guiaeventos .cuadro {height: 320px;}
     .guiaeventos .cuadro .date {font-size: 2.3em;}
-    .guiaeventos .cuadro .date span.ndia {margin-top: 25px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy {margin-top: 25px;}
+    .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 18px;}
     .guiaeventos .cuadro .info {font-size: 2.3em;}        
 }

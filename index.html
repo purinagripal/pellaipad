@@ -44,7 +44,7 @@
         <div class="row cuadro prefer">
             <div class="col-xs-12 intro">
                 <p>Pella de Ocio te avisa cuando se publica un nuevo evento.</p>
-                <p>Selecciona las categorías y lugares de los que quieres recibir notificaciones.</p>
+                <p>Selecciona las categorías y municipios de los que quieres recibir notificaciones.</p>
             </div>
             
             <div class="col-xs-12 col-sm-6 prefer-categorias">
@@ -108,11 +108,19 @@
                 <div class="clearfix"></div>
             </div>
             <div class="col-xs-12 col-sm-6 prefer-lugares">
-                <h5>Lugares:</h5>
+                <h5>Municipio:</h5>
                 <ul class="list-group">
+                    <li id="ciudad1" class="sel_ciudad list-group-item" data-id="1">
+                        <div class="row">
+                            <div class="col-xs-10">Antigua</div>
+                            <div class="col-xs-2" ><i class="fa fa-check"></i></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
                     <li id="ciudad2" class="sel_ciudad list-group-item" data-id="2">
                         <div class="row">
-                            <div class="col-xs-10">Corralejo</div>
+                            <div class="col-xs-10">Betancuria</div>
                             <div class="col-xs-2" ><i class="fa fa-check"></i></div>
                             <div class="clearfix"></div>
                         </div>
@@ -120,7 +128,7 @@
                     </li>
                     <li id="ciudad3" class="sel_ciudad list-group-item" data-id="3">
                         <div class="row">
-                            <div class="col-xs-10">Cotillo</div>
+                            <div class="col-xs-10">La Oliva</div>
                             <div class="col-xs-2" ><i class="fa fa-check"></i></div>
                             <div class="clearfix"></div>
                         </div>
@@ -128,20 +136,12 @@
                     </li>
                     <li id="ciudad4" class="sel_ciudad list-group-item" data-id="4">
                         <div class="row">
-                            <div class="col-xs-10">La Oliva</div>
+                            <div class="col-xs-10">Pájara</div>
                             <div class="col-xs-2" ><i class="fa fa-check"></i></div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>
-                    </li>
-                    <li id="ciudad1" class="sel_ciudad list-group-item" data-id="1">
-                        <div class="row">
-                            <div class="col-xs-10">Lajares</div>
-                            <div class="col-xs-2" ><i class="fa fa-check"></i></div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                    </li>                    
                     <li id="ciudad6" class="sel_ciudad list-group-item" data-id="6">
                         <div class="row">
                             <div class="col-xs-10">Puerto del Rosario</div>
@@ -150,25 +150,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li id="ciudad7" class="sel_ciudad list-group-item" data-id="7">
-                        <div class="row">
-                            <div class="col-xs-10">Puerto Lajas</div>
-                            <div class="col-xs-2" ><i class="fa fa-check"></i></div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
                     <li id="ciudad5" class="sel_ciudad list-group-item" data-id="5">
                         <div class="row">
-                            <div class="col-xs-10">Tindaya</div>
-                            <div class="col-xs-2" ><i class="fa fa-check"></i></div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li id="ciudad8" class="sel_ciudad list-group-item" data-id="8">
-                        <div class="row">
-                            <div class="col-xs-10">Villaverde</div>
+                            <div class="col-xs-10">Tuineje</div>
                             <div class="col-xs-2" ><i class="fa fa-check"></i></div>
                             <div class="clearfix"></div>
                         </div>
@@ -213,16 +197,15 @@
             <div class="col-xs-6 selec_container" >
                 <div class="dropdown selec_drop">
                   <button class="dropdown-toggle" id="dropdownMenuCiudad" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Lugar <span class="caret"></span>
+                    Municipio <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu ddm-left" aria-labelledby="dropdownMenuCiudad">
-                    <li><a class="filt_zona" data-id="2">Corralejo</a></li>
-                    <li><a class="filt_zona" data-id="3">Cotillo</a></li>
-                    <li><a class="filt_zona" data-id="4">La Oliva</a></li>
-                    <li><a class="filt_zona" data-id="1">Lajares</a></li>
+                    <li><a class="filt_zona" data-id="1">Antigua</a></li>
+                    <li><a class="filt_zona" data-id="2">Betancuria</a></li>
+                    <li><a class="filt_zona" data-id="3">La Oliva</a></li>
+                    <li><a class="filt_zona" data-id="4">Pájara</a></li>
                     <li><a class="filt_zona" data-id="6">Puerto del Rosario</a></li>
-                    <li><a class="filt_zona" data-id="7">Puerto Lajas</a></li>
-                    <li><a class="filt_zona" data-id="5">Tindaya</a></li>
+                    <li><a class="filt_zona" data-id="5">Tuineje</a></li>
                     <li><a class="filt_zona" data-id="0">Todas</a></li>
                   </ul>
                 </div>
@@ -237,7 +220,7 @@
                         <li><a class="filt_categ" data-id="1">Música</a></li>
                         <li><a class="filt_categ" data-id="2">Espectáculos</a></li>
                         <li><a class="filt_categ" data-id="3">Talleres y cursos</a></li>
-                        <li><a class="filt_categ" data-id="4">Charlas y encuentros</a></li>
+                        <li><a class="filt_categ" data-id="4">Charlas y expos</a></li>
                         <li><a class="filt_categ" data-id="5">Deportes</a></li>
                         <li><a class="filt_categ" data-id="6">Para niños</a></li>
                         <li><a class="filt_categ" data-id="0">Todas</a></li>
@@ -261,17 +244,34 @@
 <script id="eventos-list-tpl" type="text/template">
     <div class="row cuadro categ_{{id_categoria}}" data-id="{{id_evento}}" >
         <div class="col-xs-3 date">
-            <span class="ndia">{{fecha_dm.dia}}</span>
-            <span class="mes">{{fecha_dm.mes}}</span>
-            <span class="diasemana">{{fecha_dm.diasemana}}</span>
-            <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+            <span class="ico-categ"></span>
+            {{#if f_fin}}
+                <!-- evento varios dias -->
+                <span class="ndiafi">{{fecha_dm.dia}}</span>
+                <span class="mes">{{fecha_dm.mes}}</span>
+                <span class="ndiaff">{{f_fin_dm.dia}}</span>
+                <span class="mes">{{f_fin_dm.mes}}</span>    
+            {{else}}
+                <!-- evento un solo dia -->
+                {{#if fecha_dm.diasemana}}
+                    <span class="ndia">{{fecha_dm.dia}}</span>
+                    <span class="mes">{{fecha_dm.mes}}</span>
+                    <span class="diasemana">{{fecha_dm.diasemana}}</span>
+                    <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                {{else}} 
+                    <!-- es HOY -->
+                    <span class="hoy">{{fecha_dm.dia}}</span>
+                    <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                {{/if}}
+            {{/if}}         
         </div>
         <div class="col-xs-6 info">  
-            <h5><i class="notif fa fa-bell"></i> {{title}}</h5>
+            <h5>{{title}}</h5>
             <div class="eventor-ciudad">
                 <p class="nombre-eventor">{{Eventor.first_name}}</p>
-                <p class="ciudad"><i class="fa fa-map-marker"></i> {{Ciudad.nombre}}</p>
+                <p class="ciudad"><i class="fa fa-map-marker"></i> {{localidad}}</p>
             </div>
+            <i class="notif fa fa-exclamation-circle"></i> 
         </div>
         <div class="col-xs-3 imagen">
             <img src="http://pelladeocio.com/uploads/medias/{{image}}" />
@@ -347,8 +347,17 @@
                         <h4>{{title}}</h4>
                         <img src="http://pelladeocio.com/uploads/medias/{{image}}" class="img-responsive" />
                         <div class="date">
-                            <span class="ndia">{{fecha_dm.dia}} {{fecha_dm.mes}}</span>
-                            <span class="hora">{{fecha_dm.diasemana}}  <i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                            <span class="ico-categ"></span>
+                            {{#if f_fin}}
+                                <!-- evento varios dias -->
+                                <span class="ndia">{{fecha_dm.dia}} {{fecha_dm.mes}}</span>
+                                <span class="ndiafin">{{f_fin_dm.dia}} {{f_fin_dm.mes}}</span>
+                            {{else}}
+                                <!-- evento 1 dia -->
+                                <span class="ndia">{{fecha_dm.dia}} {{fecha_dm.mes}}</span>
+                                <span class="hora">{{fecha_dm.diasemana}}  <i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                            {{/if}}
+                            
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -356,7 +365,7 @@
                     {{#if horario}}
                         <div class="col-xs-4">
                             <p class="nombre-eventor">{{Eventor.first_name}}</p>
-                            <p class="ciudad"><i class="fa fa-map-marker"></i> {{Ciudad.nombre}}</p>
+                            <p class="ciudad"><i class="fa fa-map-marker"></i> {{localidad}}</p>
                         </div>
                         <div class="col-xs-8">
                             <div class="datos-evento">
@@ -367,17 +376,23 @@
                             </div>
                         </div>
                     {{else}}
-                        <div class="col-xs-7">
-                            <p class="nombre-eventor">{{Eventor.first_name}}</p>
-                            <p class="ciudad"><i class="fa fa-map-marker"></i> {{Ciudad.nombre}}</p>
-                        </div>
-                         <div class="col-xs-5">
-                            <div class="datos-evento-grande">
-                                {{#if precio}}
-                                    <p>{{precio}}</p>
-                                {{/if}}
+                        {{#if precio}}
+                            <div class="col-xs-8">
+                                <p class="nombre-eventor">{{Eventor.first_name}}</p>
+                                <p class="ciudad"><i class="fa fa-map-marker"></i> {{localidad}}</p>
                             </div>
-                        </div>
+                            <div class="col-xs-4">
+                                <div class="datos-evento-grande">
+                                    <p>{{precio}}</p>
+                                </div>
+                            </div>
+                        {{else}}
+                            <div class="col-xs-12">
+                                <p class="nombre-eventor">{{Eventor.first_name}}</p>
+                                <p class="ciudad"><i class="fa fa-map-marker"></i> {{localidad}}, {{Ciudad.nombre}}</p>
+                            </div>                             
+                        {{/if}}
+                        
                     {{/if}}
                 </div>
             </div> <!-- fin bloq-izq -->
@@ -394,7 +409,7 @@
             
             <div class="col-xs-12 direccion-evento">
                 <p class="direcc">
-                    <span class="calle">{{direccion}}. {{Ciudad.nombre}}</span>
+                    <span class="calle">{{direccion}}. {{localidad}}, {{Ciudad.nombre}}</span>
                     <span class="fullscreen"><a class="link_bigmap"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></span>
                     <div class="clearfix"></div>
                 </p>
@@ -436,16 +451,15 @@
             <div class="col-xs-12 selec_container" >
                 <div class="dropdown selec_drop pull-right">
                   <button class="dropdown-toggle" id="dropdownMenuCiudad" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Lugar <span class="caret"></span>
+                    Municipio <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuCiudad">
-                    <li><a class="filt_zona" data-id="2">Corralejo</a></li>
-                    <li><a class="filt_zona" data-id="3">Cotillo</a></li>
-                    <li><a class="filt_zona" data-id="4">La Oliva</a></li>
-                    <li><a class="filt_zona" data-id="1">Lajares</a></li>
+                    <li><a class="filt_zona" data-id="1">Antigua</a></li>
+                    <li><a class="filt_zona" data-id="2">Betancuria</a></li>
+                    <li><a class="filt_zona" data-id="3">La Oliva</a></li>
+                    <li><a class="filt_zona" data-id="4">Pájara</a></li>
                     <li><a class="filt_zona" data-id="6">Puerto del Rosario</a></li>
-                    <li><a class="filt_zona" data-id="7">Puerto Lajas</a></li>
-                    <li><a class="filt_zona" data-id="5">Tindaya</a></li>
+                    <li><a class="filt_zona" data-id="5">Tuineje</a></li>
                     <li><a class="filt_zona" data-id="0">Todas</a></li>
                   </ul>
                 </div>
@@ -462,7 +476,7 @@
                 <div class="col-xs-8 info">
                     <h4>{{first_name}}</h4>
                     <div class="eventor-ciudad">
-                        <p class="ciudad"><i class="fa fa-map-marker"></i> {{CiudadEventor.nombre}}</p>
+                        <p class="ciudad"><i class="fa fa-map-marker"></i> {{localidad}}</p>
                     </div>
                 </div>
             </div>
@@ -521,14 +535,19 @@
                         <p class="horario-local">{{{Eventor.horarioBr}}}</p>
                     {{/if}}
                 </div>
-                <div class="col-xs-4">
-                    <p class="ciudad"><i class="fa fa-map-marker"></i> {{Eventor.CiudadEventor.nombre}}</p>
-                </div>
-                <div class="col-xs-8">
-                    {{#if Eventor.telefono}}
+                {{#if Eventor.telefono}}
+                    <div class="col-xs-6">
+                        <p class="ciudad"><i class="fa fa-map-marker"></i> {{Eventor.localidad}}</p>
+                    </div>
+                    <div class="col-xs-6">
                         <p class="tlf-local"><i class="fa fa-phone"></i> {{Eventor.telefono}}</p>
-                    {{/if}}
-                </div>
+                    </div>
+                {{else}}
+                    <div class="col-xs-12">
+                        <p class="ciudad"><i class="fa fa-map-marker"></i> {{Eventor.localidad}}, {{Eventor.CiudadEventor.nombre}}</p>
+                    </div>
+                {{/if}}
+                
             </div>
         </div> <!-- fin bloq-izq -->
         
@@ -543,7 +562,7 @@
         
         <div class="col-xs-12 direccion-evento">
             <p class="direcc">
-                <span class="calle">{{Eventor.direccion}}. {{Eventor.CiudadEventor.nombre}}</span>
+                <span class="calle">{{Eventor.direccion}}. {{Eventor.localidad}}, {{Eventor.CiudadEventor.nombre}}</span>
                 <span class="fullscreen"><a class="link_bigmap"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></span>
                 <div class="clearfix"></div>
             </p>
@@ -583,7 +602,7 @@
         <div class="row cuadro categ_{{id_categoria}}">
             <div class="col-xs-12 direccion-evento">
                     <div id="big-map-canvas"></div>
-                    <p class="mapadirec">{{direccion}}. {{ciudad}}</p>
+                    <p class="mapadirec">{{direccion}}. {{localidad}}, {{ciudad}}</p>
             </div>   
         </div>
     </div>

@@ -64,28 +64,26 @@ var HomeView = Backbone.View.extend({
         var ciudad_txt;
         switch(this.ciudad) {
             case '1':
-                ciudad_txt = 'Lajares';
+                ciudad_txt = 'Antigua';
                 break;
             case '2':
-                ciudad_txt = 'Corralejo';
+                ciudad_txt = 'Betancuria';
                 break;
             case '3':
-                ciudad_txt = 'Cotillo';
-                break;
-            case '4':
                 ciudad_txt = 'La Oliva';
                 break;
+            case '4':
+                ciudad_txt = 'Pájara';
+                break;
             case '5':
-                ciudad_txt = 'Tindaya';
+                ciudad_txt = 'Tuineje';
                 break;
             case '6':
                 ciudad_txt = 'Puerto';
                 break;
-            case '7':
-                ciudad_txt = 'P. Lajas';
-                break;
+            
             default:
-                ciudad_txt = 'Lugar';
+                ciudad_txt = 'Municipio';
         }
         this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
                 

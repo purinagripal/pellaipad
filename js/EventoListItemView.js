@@ -5,6 +5,32 @@ var EventoListItemView = Backbone.View.extend({
         console.log(JSON.stringify(this.model));*/
         $(this.el).html(this.template(this.model.toJSON()));
         
+        // pone el icono de la categoria correspondiente
+        var ico_categ;
+        switch(this.model.attributes.id_categoria) {
+            case '1':
+                ico_categ = '<i class="fa fa-music"></i>';
+                break;
+            case '2':
+                ico_categ = '<i class="fa fa-star"></i>';
+                break;
+            case '3':
+                ico_categ = '<i class="fa fa-paper-plane"></i>';
+                break;
+            case '4':
+                ico_categ = '<i class="fa fa-comment"></i>';
+                break;
+            case '5':
+                ico_categ = '<i class="fa fa-bicycle"></i>';
+                break;
+            case '6':
+                ico_categ = '<i class="fa fa-child"></i>';
+                break;
+            default:
+                ico_categ = '<i class="fa fa-music"></i>';
+        }
+        $('.ico-categ', this.el).html(ico_categ);
+        
         console.log('id_evento de model en evento list: '+this.model.attributes.id_evento);
         
         // añade la clase q correponde a la categoria del evento
@@ -28,7 +54,7 @@ var EventoListItemView = Backbone.View.extend({
         }
         // si es un evento notificado muestra la campana
         if( esNotif == 1 ) {
-            $('.notif.fa-bell', this.el).show();
+            $('.notif.fa-exclamation-circle', this.el).show();
         }
     }
     

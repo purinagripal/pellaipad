@@ -40,6 +40,32 @@ var EventoView = Backbone.View.extend({
             title: 'titulo'
         });
         
+        // pone el icono de la categoria correspondiente
+        var ico_categ;
+        switch(this.datosModelo.id_categoria) {
+            case '1':
+                ico_categ = '<i class="fa fa-music"></i>';
+                break;
+            case '2':
+                ico_categ = '<i class="fa fa-star"></i>';
+                break;
+            case '3':
+                ico_categ = '<i class="fa fa-paper-plane"></i>';
+                break;
+            case '4':
+                ico_categ = '<i class="fa fa-comment"></i>';
+                break;
+            case '5':
+                ico_categ = '<i class="fa fa-bicycle"></i>';
+                break;
+            case '6':
+                ico_categ = '<i class="fa fa-child"></i>';
+                break;
+            default:
+                ico_categ = '<i class="fa fa-music"></i>';
+        }
+        $('.ico-categ', this.el).html(ico_categ);
+        
         return this;
     },
     
