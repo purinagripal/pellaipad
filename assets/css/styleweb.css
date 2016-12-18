@@ -396,9 +396,9 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     width: auto;
 
 }
-/* campana de notificacion */
+/* signo de notificacion */
 .notif.fa-exclamation-circle {
-    display: none;
+/*    display: none;*/
     position: absolute;
     bottom: 2px;
     right: 5px;
@@ -526,85 +526,74 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .cuadro.categ_1 h5 {color: #459bd0;}
 .cuadro.categ_1 h4 {color: #459bd0;}
 .cuadro.categ_1 h5 a {color: #459bd0;}
-.cuadro.categ_1 .date {
-    background-color:#459bd0;
-}
+.cuadro.categ_1 .date {background-color:#459bd0;}
 .cuadro.categ_1 .btn-pella.link_web {color:#000; background-color:#459bd0; border-color: #459bd0;}
 .cuadro.categ_1 .fa-map-marker {color: #459bd0;}
 .cuadro.categ_1 .date span.hora {background-color: #295d7d;}
 .cuadro.categ_1 .descr-evento a.link_web {color: #459bd0;}
 .cuadro.categ_1 .imagen {background-color: #459bd0;}
-.cuadro.categ_1 .notif.fa-exclamation-circle {color: #459bd0};
+.cuadro.categ_1 .notif.fa-exclamation-circle {color: #459bd0;}
+
 
 /* TURQUESAS - espectaculos */
 .cuadro.categ_2 h5 {color: #45b192;}
 .cuadro.categ_2 h4 {color: #45b192;}
 .cuadro.categ_2 h5 a {color: #45b192;}
-.cuadro.categ_2 .date {
-    background-color:#45b192;
-}
+.cuadro.categ_2 .date {background-color:#45b192;}
 .cuadro.categ_2 .btn-pella.link_web {color:#000; background-color:#45b192; border-color: #45b192;}
 .cuadro.categ_2 .fa-map-marker {color: #45b192;}
 .cuadro.categ_2 .date span.hora {background-color: #296a58;}
 .cuadro.categ_2 .descr-evento a.link_web {color: #45b192;}
 .cuadro.categ_2 .imagen {background-color: #45b192;}
-.cuadro.categ_2 .notif.fa-exclamation-circle {color: #45b192};
+.cuadro.categ_2 .notif.fa-exclamation-circle {color: #45b192;}
 
 /* VERDES - cursos */
 .cuadro.categ_3 h5 {color: #9fb235;}
 .cuadro.categ_3 h4 {color: #9fb235;}
 .cuadro.categ_3 h5 a {color: #9fb235;}
-.cuadro.categ_3 .date {
-    background-color:#9fb235;
-}
+.cuadro.categ_3 .date {background-color:#9fb235;}
 .cuadro.categ_3 .btn-pella.link_web {color:#000; background-color:#9fb235; border-color: #9fb235;}
 .cuadro.categ_3 .fa-map-marker {color: #9fb235;}
 .cuadro.categ_3 .date span.hora {background-color: #5f6b20;}
 .cuadro.categ_3 .descr-evento a.link_web {color: #9fb235;}
 .cuadro.categ_3 .imagen {background-color: #9fb235;}
-.cuadro.categ_3 .notif.fa-exclamation-circle {color: #9fb235};
+.cuadro.categ_3 .notif.fa-exclamation-circle {color: #9fb235;}
 
 /* AMARILLOS - niños */
 .cuadro.categ_6 h5 {color: #f6ac34;}
 .cuadro.categ_6 h4 {color: #f6ac34;}
 .cuadro.categ_6 h5 a {color: #f6ac34;}
-.cuadro.categ_6 .date {
-    background-color:#f6ac34;
-}
+.cuadro.categ_6 .date {background-color:#f6ac34;}
 .cuadro.categ_6 .btn-pella.link_web {color:#000; background-color:#f6ac34; border-color: #f6ac34;}
 .cuadro.categ_6 .fa-map-marker {color: #f6ac34;}
 .cuadro.categ_6 .date span.hora {background-color: #94671f;}
 .cuadro.categ_6 .descr-evento a.link_web {color: #f6ac34;}
 .cuadro.categ_6 .imagen {background-color: #f6ac34;}
-.cuadro.categ_6 .notif.fa-exclamation-circle {color: #f6ac34};
+.cuadro.categ_6 .notif.fa-exclamation-circle {color: #f6ac34;}
 
 /* MARRONES - charlas */
 .cuadro.categ_4 h5 {color: #988483;}
 .cuadro.categ_4 h4 {color: #988483;}
 .cuadro.categ_4 h5 a {color: #988483;}
-.cuadro.categ_4 .date {
-    background-color:#988483;
-}
+.cuadro.categ_4 .date {background-color:#988483;}
 .cuadro.categ_4 .btn-pella.link_web {color:#000; background-color:#988483; border-color: #988483;}
 .cuadro.categ_4 .fa-map-marker {color: #988483;}
 .cuadro.categ_4 .date span.hora {background-color: #5b4f4f;}
 .cuadro.categ_4 .descr-evento a.link_web {color: #988483;}
 .cuadro.categ_4 .imagen {background-color: #988483;}
-.cuadro.categ_4 .notif.fa-exclamation-circle {color: #988483};
+.cuadro.categ_4 .notif.fa-exclamation-circle {color: #988483;}
 
 /* ROJOS - deporte */
 .cuadro.categ_5 h5 {color: #ea6e49;} /*#E3DB1E*/
 .cuadro.categ_5 h4 {color: #ea6e49;}
 .cuadro.categ_5 h5 a {color: #ea6e49;}
-.cuadro.categ_5 .date {
-    background-color:#ea6e49;
-}
+.cuadro.categ_5 .date {background-color:#ea6e49;}
 .cuadro.categ_5 .btn-pella.link_web {color:#000; background-color:#ea6e49; border-color: #ea6e49;}
 .cuadro.categ_5 .fa-map-marker {color: #ea6e49;}
 .cuadro.categ_5 .date span.hora {background-color: #8c422c;}
 .cuadro.categ_5 .descr-evento a.link_web {color: #ea6e49;}
 .cuadro.categ_5 .imagen {background-color: #ea6e49;}
-.cuadro.categ_5 .notif.fa-exclamation-circle {color: #ea6e49};
+.cuadro.categ_5 .notif.fa-exclamation-circle {color: #ea6e49;}
 
 /* excepciones de color */
 .evento-detalle .cuadro h4 {color: #fff;}
