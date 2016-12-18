@@ -398,7 +398,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 /* campana de notificacion */
 .notif.fa-exclamation-circle {
-/*    display: none;*/
+    display: none;
     position: absolute;
     bottom: 2px;
     right: 5px;
