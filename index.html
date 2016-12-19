@@ -28,7 +28,8 @@
                     <li><a class="link_locales" >Organizadores</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -188,7 +189,8 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -274,7 +276,7 @@
             <i class="notif fa fa-exclamation-circle"></i> 
         </div>
         <div class="col-xs-3 imagen">
-            <img src="http://pelladeocio.com/uploads/medias/{{image}}" />
+            <img class="" src="http://pelladeocio.com/uploads/medias/{{image}}" />
         </div>
         
     </div>
@@ -296,7 +298,8 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -331,10 +334,11 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
-            <a class="pull-right" onclick="window.plugins.socialsharing.share('Próximamente {{title}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://pelladeocio.com/es/evento-{{id_evento}}')"><i class="fa fa-share-alt"></i></a>
+            <a class="pull-right" onclick="window.plugins.socialsharing.share('Próximamente {{title}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i></a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -415,13 +419,15 @@
                 </p>
                 <div id="eve-map-canvas" ></div>
             </div>  
-            <div class="col-xs-12 organizador-evento">
-                <div class="local_link" data-id="{{Eventor.id_user}}">
-                    <span class="nombre-local">{{Eventor.first_name}} </span>
-                    <span class="icono"><i class="fa fa-info-circle"></i></span>
-                    <div class="clearfix"></div>
+            {{#if Eventor.noAdmin}}
+                <div class="col-xs-12 organizador-evento">
+                    <div class="local_link" data-id="{{Eventor.id_user}}">
+                        <span class="nombre-local">{{Eventor.first_name}} </span>
+                        <span class="icono"><i class="fa fa-info-circle"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-            </div>
+            {{/if}}
         </div>
     </div>
 </script>
@@ -442,7 +448,8 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -503,10 +510,11 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
-            <a class="pull-right" onclick="window.plugins.socialsharing.share('{{Eventor.first_name}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://pelladeocio.com/es/')"><i class="fa fa-share-alt"></i></a>
+            <a class="pull-right" onclick="window.plugins.socialsharing.share('{{Eventor.first_name}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i></a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -590,10 +598,10 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="menu_salir">Salir</a></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <!--<li><a class="menu_salir">Salir</a></li>-->
                 </ul>
             </div>
-            <a class="pull-right" onclick="window.plugins.socialsharing.share('Próximamente {{title}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://pelladeocio.com/es/evento-{{id_evento}}')"><i class="fa fa-share-alt"></i></a>
             <div class="clearfix"></div>
         </div>
     </div>

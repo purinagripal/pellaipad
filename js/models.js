@@ -23,7 +23,8 @@ var EventoCollection = Backbone.Collection.extend({
                     //console.log(element.attributes.Eventor);
             
                     var esta_incluido = _.some(this, function(local) {return local.id_user === element.attributes.Eventor.id_user;});
-                    if(!esta_incluido){
+                    var es_admin = element.attributes.Eventor.id_user == 1;
+                    if(!esta_incluido && !es_admin){
                         //console.log("::: incluye 1 local ::: id_user: "+element.attributes.Eventor.id_user);
                         locales.push(element.attributes.Eventor);
                     }  

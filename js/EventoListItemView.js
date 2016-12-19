@@ -31,6 +31,10 @@ var EventoListItemView = Backbone.View.extend({
         }
         $('.ico-categ', this.el).html(ico_categ);
         
+        // cuando se cargue la imagen le añade la clase correspondiente (vertical u horizontal)
+        var self = this;
+        $('.cuadro .imagen img', this.el).on('load', function() { self.clase_imagen(this) });
+        
         console.log('id_evento de model en evento list: '+this.model.attributes.id_evento);
         
         // añade la clase q correponde a la categoria del evento
@@ -56,22 +60,31 @@ var EventoListItemView = Backbone.View.extend({
         if( esNotif == 1 ) {
             $('.notif.fa-exclamation-circle', this.el).show();
         }
-    }
+    },
     
 //    claseCategoria: function (id_categoria) {
 //        $('.row.cuadro', this.el).addClass('categ_'+id_categoria);
 //    }
     
-    /*events: {
-        "click .cuadro": "ver_evento"
-    },
+   
     
-    ver_evento: function (event) {
-        var id_evento = $(event.currentTarget).attr('data-id'); 
-        console.log("ver evento "+id_evento);
-        //console.log(event);
-        Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
-    }*/
+    clase_imagen: function (imagen) {
+//        console.log(imagen);
+//        console.log($('.cuadro .imagen img', this.el));
+//        console.log(imagen.width);
+//        console.log(imagen.height);
+        console.log( $('.cuadro .imagen', this.el).width() );
+        console.log( $('.cuadro .imagen', this.el).height() );
+        if(imagen.width < imagen.height) { $('.cuadro .imagen img', this.el).addClass('vertical'); }
+        
+        // redimensiona la imagen al cargar (al girar la pantalla no se redimensiona
+//        if(imagen.width < imagen.height) { 
+//            imagen.width = $('.cuadro .imagen', this.el).width();
+//            imagen.height = $('.cuadro .imagen', this.el).height();
+//        } else {
+//            $('.cuadro .imagen img', this.el).addClass('horiz'); 
+//        }
+    }
 
     
 });

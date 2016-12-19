@@ -15,6 +15,11 @@ var EventoView = Backbone.View.extend({
             this.model.attributes.horarioBr = horarioBr;
         }
         
+        // si el organizador no es admin le añado campo noAdmin
+         if(this.model.attributes.Eventor.id_user != 1) {
+            this.model.attributes.Eventor.noAdmin = 1;
+        }
+        
         
         this.$el.html(this.template(this.model.toJSON()));        
         this.datosModelo = this.model.attributes;

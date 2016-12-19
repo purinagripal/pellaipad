@@ -377,6 +377,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     height: 100%;
     overflow: hidden;
 }
+/* imagen horizontal (por defecto) */
 .guiaeventos .cuadro .imagen img {
     /* ajusta la imagen - no funciona en movil */
     /*width: 100%; height: 100%; object-fit: cover;*/
@@ -388,14 +389,26 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     left: -100%;
     right: -100%;
     margin: auto; 
-/*  para ajuste al ancho: img = alto > ancho
-    width: 100%;
-    height: auto;*/
 /*  para ajuste al alto: img = alto < ancho */
     height: 100%;    
     width: auto;
-
 }
+.guiaeventos .cuadro .imagen img.vertical {
+    /* ajusta la imagen - no funciona en movil */
+    /*width: 100%; height: 100%; object-fit: cover;*/
+
+    /* otra opcion para ajustar la imagen*/
+    position: absolute;
+    top: -100%;
+    bottom: -100%;
+    left: -100%;
+    right: -100%;
+    margin: auto; 
+/*  para ajuste al ancho: img = alto > ancho */
+    width: 100%;
+    height: auto;
+}
+
 /* signo de notificacion */
 .notif.fa-exclamation-circle {
     display: none;
