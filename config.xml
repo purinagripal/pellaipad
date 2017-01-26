@@ -33,14 +33,6 @@
     <preference name="LoadUrlTimeoutValue" value="120000" /> <!-- para evitar el error de android -->
     
     
-<!--
-    <preference name="permissions" value="none" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="disable-cursor" value="false" />
--->
-    
-    
     
     <!--   PLUGINS   -->
     
@@ -60,8 +52,10 @@
     -->
     
     <!--  Status Bar  -->
+<!--
     <plugin name="cordova-plugin-statusbar"  spec="2.1.3" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+-->
 
     <!--   WhiteList   -->
     <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.2" />
