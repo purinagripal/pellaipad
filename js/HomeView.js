@@ -1,7 +1,7 @@
 var HomeView = Backbone.View.extend({
 
     initialize:function () {
-        console.log('initialize de homeView');
+        // console.log('initialize de homeView');
         this.categoria = 0;
         this.ciudad = 0;
         
@@ -11,11 +11,11 @@ var HomeView = Backbone.View.extend({
         var contexto = this;
         this.model.fetch({reset: true, 
                           success: function() {
-                            console.log( 'fetch success' );                            
+                            // console.log( 'fetch success' );                            
                           },
                           complete: function() {
                               //alert('fetch complete');
-                              console.log( 'fetch complete, oculta cargando' );
+                              // console.log( 'fetch complete, oculta cargando' );
                               
                               // renderiza eventos una vez descargados
                               contexto.cargarEventos();
@@ -29,8 +29,8 @@ var HomeView = Backbone.View.extend({
     },
 
     render:function () {
-        console.log('render de homeView');
-        //console.log(JSON.stringify(this.model));
+        // console.log('render de homeView');
+        //// console.log(JSON.stringify(this.model));
                 
         //this.$el.html(this.template());
            
@@ -119,10 +119,10 @@ var HomeView = Backbone.View.extend({
     
     filtra_categoria: function (event) {
         var id_cat = $(event.currentTarget).attr('data-id'); 
-        console.log('id de categoria'+id_cat);
+        // console.log('id de categoria'+id_cat);
         
         //window.historial = "home";
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
         Backbone.history.navigate('categ/'+id_cat, {trigger: true});
         // borra del historial
@@ -131,10 +131,10 @@ var HomeView = Backbone.View.extend({
     
     filtra_ciudad: function (event) {
         var id_ciudad = $(event.currentTarget).attr('data-id'); 
-        console.log('id de ciudad: '+id_ciudad);
+        // console.log('id de ciudad: '+id_ciudad);
         
         //window.historial = "home";
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         // borra del historial
         Backbone.history.navigate('zona/'+id_ciudad, {trigger: true});
         Backbone.history.navigate('', {replace: true});
@@ -142,13 +142,13 @@ var HomeView = Backbone.View.extend({
     
     ver_evento: function (event) {
         var id_evento = $(event.currentTarget).attr('data-id'); 
-        console.log("ver evento "+id_evento);
+        // console.log("ver evento "+id_evento);
         
         // añade entrada al historial
         window.historial.push('eventos/'+id_evento);
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },
     
@@ -160,32 +160,32 @@ var HomeView = Backbone.View.extend({
     ver_locales: function (event) {        
         // reset historial
         window.historial = ['', 'locales'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('locales', {trigger: true});
     },
     
     ver_favoritos: function (event) {        
         // reset historial
         window.historial = ['', 'favoritos'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('favoritos', {trigger: true});
     },
     
     ver_prefer: function (event) {        
         // reset historial
         window.historial = ['', 'preferencias'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
     },
 
     salir: function (event) {
-        console.log("SALIR");
+        // console.log("SALIR");
         navigator.app.exitApp();
     }
 });

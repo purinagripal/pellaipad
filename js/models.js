@@ -15,27 +15,27 @@ var EventoCollection = Backbone.Collection.extend({
         
         var locales = [];
         
-        console.log("::: antes del each ::: ");
+        // console.log("::: antes del each ::: ");
         // recorro la lista de eventos (this)
         _.each( this.models, 
                 function(element) {
-                    //console.log("evento dentro de each");
-                    //console.log(element.attributes.Eventor);
+                    //// console.log("evento dentro de each");
+                    //// console.log(element.attributes.Eventor);
             
                     var esta_incluido = _.some(this, function(local) {return local.id_user === element.attributes.Eventor.id_user;});
                     var es_admin = element.attributes.Eventor.id_user == 1;
                     if(!esta_incluido && !es_admin){
-                        //console.log("::: incluye 1 local ::: id_user: "+element.attributes.Eventor.id_user);
+                        //// console.log("::: incluye 1 local ::: id_user: "+element.attributes.Eventor.id_user);
                         locales.push(element.attributes.Eventor);
                     }  
-                    //console.log("::: locales ::: ")
-                    //console.log(this);
+                    //// console.log("::: locales ::: ")
+                    //// console.log(this);
                 }, 
                 locales);
         
-        //console.log("::: despues del each ::: ");
-        //console.log(":::locales al terminar::: ");
-        //console.log(locales);
+        //// console.log("::: despues del each ::: ");
+        //// console.log(":::locales al terminar::: ");
+        //// console.log(locales);
 
         var localesList = new Backbone.Collection(locales);
         
@@ -55,7 +55,7 @@ var EventoCollection = Backbone.Collection.extend({
         
         // seleccionamos los eventos q corresponden a las categorias favoritas de la lista total de eventos
         for (index = 0; index < ls_pref_categ.length; index++) {
-            console.log('id_categoria: '+ls_pref_categ[index].id_categoria);
+            // console.log('id_categoria: '+ls_pref_categ[index].id_categoria);
             //cat_favoritosList.concat( this.where({id_categoria: String(ls_pref_categ[index].id_categoria)}) );
             cat_favoritosList = cat_favoritosList.concat( this.where({id_categoria: String(ls_pref_categ[index].id_categoria)}) );
         }
@@ -63,7 +63,7 @@ var EventoCollection = Backbone.Collection.extend({
         
         // seleccionamos los eventos q corresponden a las ciudades favoritas de la lista obtenida
         for (index = 0; index < ls_pref_ciudad.length; index++) {
-            console.log('id_ciudad: '+ls_pref_ciudad[index].id_ciudad);
+            // console.log('id_ciudad: '+ls_pref_ciudad[index].id_ciudad);
             ciu_favoritosList = ciu_favoritosList.concat( cat_favoritosColec.where({id_ciudad: String(ls_pref_ciudad[index].id_ciudad)}) );
         }
         var result_favoritosColec = new EventoCollection(ciu_favoritosList);

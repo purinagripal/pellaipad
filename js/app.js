@@ -26,7 +26,7 @@
     /*this.eventosList = new EventoCollection();
     this.eventosList.fetch({reset: true, 
                       success: function() {
-                        console.log( 'fetch terminado, esconde splashscreen' );
+                        // console.log( 'fetch terminado, esconde splashscreen' );
                         // ocultar pantalla presentacion 
                         setTimeout(function() {
                             navigator.splashscreen.hide();
@@ -64,7 +64,7 @@
                 homeView = new HomeView({model: this.eventosList});
                 
             } else {
-                console.log('reusing home view');
+                // console.log('reusing home view');
                 homeView.cargarEventos();
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
@@ -75,8 +75,8 @@
             
             homeView.categoria = id_cat;
             
-            console.log('categ: '+homeView.categoria);
-            console.log('ciudad: '+homeView.ciudad);
+            // console.log('categ: '+homeView.categoria);
+            // console.log('ciudad: '+homeView.ciudad);
             
             if (homeView.categoria == 0) {
                 if( homeView.ciudad != 0 ) {
@@ -96,8 +96,8 @@
                 }
             }
             
-            console.log("imprime listacategoria");
-            console.log(this.eventosCateg);
+            // console.log("imprime listacategoria");
+            // console.log(this.eventosCateg);
             //console.log(JSON.stringify(this.eventosCateg));
             
             homeView.model = this.eventosCateg;
@@ -109,8 +109,8 @@
             
             homeView.ciudad = id_ciudad;
             
-            console.log('categ: '+homeView.categoria);
-            console.log('ciudad: '+homeView.ciudad);
+            // console.log('categ: '+homeView.categoria);
+            // console.log('ciudad: '+homeView.ciudad);
             
             if (homeView.categoria == 0) {
                 if( homeView.ciudad != 0 ) {
@@ -130,8 +130,8 @@
                 }
             }
             
-            console.log("imprime listaciudad");
-            console.log(this.eventosCiudad);
+            // console.log("imprime listaciudad");
+            // console.log(this.eventosCiudad);
             //console.log(JSON.stringify(this.eventosCateg));
             
             homeView.model = this.eventosCiudad;
@@ -144,7 +144,7 @@
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
 
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -165,7 +165,7 @@
 
             //console.log(JSON.stringify(this.favoritosList));
             
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
         },
         
@@ -177,11 +177,11 @@
                 
                 localesView = new LocalesView({model: this.localesList});
             } else {
-                console.log('reusing locales view');
+                // console.log('reusing locales view');
                 localesView.delegateEvents(); // delegate events when the view is recycled
             }
             
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(localesView.$el);
         },
         
@@ -189,7 +189,7 @@
             
             localesView.ciudad = id_ciudad;
             
-            console.log('ciudad: '+localesView.ciudad);
+            // console.log('ciudad: '+localesView.ciudad);
             
             if( localesView.ciudad != 0 ) {
                 // filtra solo x por ciudad
@@ -200,20 +200,20 @@
             }
             
             
-            console.log("imprime listaciudad");
-            console.log(this.localesCiudad);
+            // console.log("imprime listaciudad");
+            // console.log(this.localesCiudad);
             
             localesView.model = this.localesCiudad;
             localesView.render();
         },
         
         localDetails: function (id) {
-            console.log("localDetails link");
+            // console.log("localDetails link");
             //console.log(JSON.stringify(this.eventosList));
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -223,13 +223,13 @@
         },
         
         mapaLocal: function (id) {
-            console.log("mapaLocal link");
+            // console.log("mapaLocal link");
             //console.log(JSON.stringify(this.eventosList));
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             var primerEvento = this.eventosLocal.at(0);
-            console.log("primerEvento");
-            console.log(primerEvento);
+            // console.log("primerEvento");
+            // console.log(primerEvento);
             
             var nuevoModel = new Backbone.Model({
                 titulo: primerEvento.attributes.Eventor.first_name,
@@ -241,10 +241,10 @@
                 id_categoria: 0
             });
             
-            console.log("nuevoModel");
-            console.log(nuevoModel);
+            // console.log("nuevoModel");
+            // console.log(nuevoModel);
             
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -254,11 +254,11 @@
         },
         
         mapaEvento: function (id) {
-            console.log("mapaEvento link");
+            // console.log("mapaEvento link");
             
             var primerEvento = this.eventosList.get(id);
-            console.log("primerEvento");
-            console.log(primerEvento);
+            // console.log("primerEvento");
+            // console.log(primerEvento);
             
             var nuevoModel = new Backbone.Model({
                 titulo: primerEvento.attributes.title,
@@ -270,10 +270,10 @@
                 id_categoria: primerEvento.attributes.id_categoria
             });
             
-            console.log("nuevoModel");
-            console.log(nuevoModel);
+            // console.log("nuevoModel");
+            // console.log(nuevoModel);
             
-            $("html,body").scrollTop(0);
+            //$("html,body").scrollTop(0);
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -287,7 +287,7 @@
     });
 
     
-    console.log("window.historial: "+window.historial);
+    // console.log("window.historial: "+window.historial);
     
     var router = new AppRouter();
     Backbone.history.start();
@@ -319,8 +319,8 @@
     
     // PhoneGap esta listo y ahora ya se pueden hacer llamadas a PhoneGap
     function onDeviceReady() {
-        console.log('onDeviceReady se ejecutó');
-        console.log(navigator);
+        // console.log('onDeviceReady se ejecutó');
+        // console.log(navigator);
         
         if (navigator.notification) { // Override default HTML alert with native dialog
             window.alert = function (message) {
@@ -359,7 +359,7 @@
             if( window.localStorage.getItem('reg_id') ){
                 // ya esta guardado
                 //alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
-                console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                // console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
                     // si ha cambiado lo guardamos DE NUEVO
@@ -368,7 +368,7 @@
 
             } else {
                 //alert("registration id: "+data.registrationId);
-                console.log("registration id: "+data.registrationId);
+                // console.log("registration id: "+data.registrationId);
                 
                 // lo guardamos por PRIMERA vez 
                 saveRegistrationId(data.registrationId);
@@ -384,9 +384,9 @@
                     
             setTimeout( function(){ 
                 push.finish(function() {
-                    console.log('success finish');
+                    // console.log('success finish');
                 }, function() {
-                    console.log('error finish');
+                    // console.log('error finish');
                 }, 'push-1');
             }, 9000);
             
@@ -413,7 +413,7 @@
         window.notif_vistas = 1;
         
         var id_follow = window.localStorage.getItem('id_follow');
-        console.log('eventos notificados para id_follow='+id_follow);
+        // console.log('eventos notificados para id_follow='+id_follow);
         
         $.ajax({
             url: 'http://pelladeocio.com/app_feventos/'+id_follow,
@@ -424,8 +424,8 @@
             processData: false,
             type: 'POST',
             success: function(data){
-                console.log('success eventos notificados');
-                console.log(data);
+                // console.log('success eventos notificados');
+                // console.log(data);
                 // une los nuevos a los guardados (si hay)
                 var eventos_notificados = window.localStorage.getItem('ev_notif');
                 eventos_notificados = JSON.parse(eventos_notificados);
@@ -437,19 +437,19 @@
                 eventos_notificados = eventos_notificados.concat(data);
                 
                 //eventos_notificados = eventos_notificados+JSON.stringify(JSON.parse(data));
-                console.log('eventos_notificados');
-                console.log(eventos_notificados);
+                // console.log('eventos_notificados');
+                // console.log(eventos_notificados);
                 // y guarda todo en LS
                 window.localStorage.setItem('ev_notif', JSON.stringify(eventos_notificados));
                 
                 
             },
             error: function(data){
-                console.log("error eventos notificados");
-                console.log(data);
+                // console.log("error eventos notificados");
+                // console.log(data);
             },
             complete: function(data){
-                console.log("complete eventos notificados");
+                // console.log("complete eventos notificados");
                 
                 setTimeout( function() { 
                     // reset historial
@@ -511,18 +511,18 @@
         follower.save(null, {
             success:function(model, response){
                 //alert(model);
-                console.log("succes save");
-                console.log("model:");
-                console.log(model);
-                console.log("response:");
-                console.log(response);
+                // console.log("succes save");
+                // console.log("model:");
+                // console.log(model);
+                // console.log("response:");
+                // console.log(response);
         
                 // lo guardamos en LocalStorage 
                 window.localStorage.setItem('reg_id', registrationId);
                 window.localStorage.setItem('id_follow', response.id_follow);
             },
             error: function(model, response) {
-                console.log("error save");
+                // console.log("error save");
             },
             wait: true
         });
@@ -530,19 +530,19 @@
     
     
     function onBackKeyDown() {
-        console.log("length del historial: "+window.historial.length);
+        // console.log("length del historial: "+window.historial.length);
         // si está en home, sale de la app
         if(window.historial.length == 1) {
-            console.log("sale de la app");
+            // console.log("sale de la app");
             navigator.app.exitApp();
             /*navigator.Backbutton.goHome(function() {
-              console.log('success background')
+              // console.log('success background')
             }, function() {
-              console.log('fail background')
+              // console.log('fail background')
             });*/
         } else {
-            console.log("boton atras - no sale de la app");
-            console.log(window.historial);
+            // console.log("boton atras - no sale de la app");
+            // console.log(window.historial);
         }
         
         // vuelve al home
@@ -557,11 +557,11 @@
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
                           success: function() {
-                            console.log( 'fetch success' );                            
+                            // console.log( 'fetch success' );                            
                           },
                           complete: function() {
                               //alert('fetch complete');
-                              console.log( 'fetch complete, oculta cargando' );
+                              // console.log( 'fetch complete, oculta cargando' );
                               
                               // resetea
                               homeView.ciudad = 0;

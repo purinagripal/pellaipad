@@ -5,7 +5,7 @@ var LocalDetailsView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log("render de local details view");
+        // console.log("render de local details view");
         
         // Eventor.resume: pasar de \r\n a <br>
         var descripcionBr = (this.model.attributes.Eventor.resume + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ '<br>' +'$2');
@@ -18,14 +18,14 @@ var LocalDetailsView = Backbone.View.extend({
         }
         
         this.$el.html(this.template(this.model.toJSON()));
-        console.log('this.model.toJSON');
-        console.log(this.model.toJSON());
+        // console.log('this.model.toJSON');
+        // console.log(this.model.toJSON());
         
-        //console.log("con this.el");
-        //console.log($('#map-canvas', this.el)[0]);
+        //// console.log("con this.el");
+        //// console.log($('#map-canvas', this.el)[0]);
         
         var datosModelo = this.model.attributes;
-        console.log(datosModelo);
+        // console.log(datosModelo);
         
         var div_canvas = $('#local-map-canvas', this.el)[0];
         
@@ -46,9 +46,9 @@ var LocalDetailsView = Backbone.View.extend({
         
         
         
-        //console.log(window.map);
+        //// console.log(window.map);
 
-        //console.log(this.model);
+        //// console.log(this.model);
         
         return this;
     },

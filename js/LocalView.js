@@ -5,7 +5,7 @@ var LocalView = Backbone.View.extend({
     },
 
     render:function () {
-        console.log('render de local');
+        // console.log('render de local');
                 
         this.primerEvento = this.collection.at(0);
         
@@ -42,14 +42,14 @@ var LocalView = Backbone.View.extend({
     },
     
     l_ver_evento: function (event) {
-        console.log("ver evento dsd local, antes de data-id");
+        // console.log("ver evento dsd local, antes de data-id");
         var id_evento = $(event.currentTarget).attr('data-id'); 
-        console.log("ver evento dsd local "+id_evento);
-        //console.log(event);
+        // console.log("ver evento dsd local "+id_evento);
+        //// console.log(event);
         
         // añade entrada al historial
         window.historial.push('eventos/'+id_evento);
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
 
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },
@@ -58,7 +58,7 @@ var LocalView = Backbone.View.extend({
         var id_local = this.primerEvento.attributes.id_user;
         // añade entrada al historial
         window.historial.push('mapaLocal/'+id_local);
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
 
         Backbone.history.navigate('mapaLocal/'+id_local, {trigger: true});
     },
@@ -71,43 +71,43 @@ var LocalView = Backbone.View.extend({
      ver_locales: function (event) {        
         // resetea el historial
         window.historial = ['', 'locales'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('locales', {trigger: true});
     },
     
     ver_favoritos: function (event) {        
         // reset historial
         window.historial = ['', 'favoritos'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('favoritos', {trigger: true});
     },
     
     ver_prefer: function (event) {        
         // reset historial
         window.historial = ['', 'preferencias'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
     },
     
     volver_inicio: function (event) {
         // resetea el historial
         window.historial = [""];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         Backbone.history.navigate( "", {trigger: true} );
     },
     
     volver_atras: function (event) {
-        console.log("volver");
+        // console.log("volver");
         
         // saca elemento del historial y vuelve al anterior
         window.historial.pop();
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         Backbone.history.navigate( window.historial[window.historial.length-1], {trigger: true} );
         
         //Backbone.history.history.back();
@@ -116,7 +116,7 @@ var LocalView = Backbone.View.extend({
     },
     
     salir: function (event) {
-        console.log("SALIR");
+        // console.log("SALIR");
         navigator.app.exitApp();
     }
 

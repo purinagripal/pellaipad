@@ -259,7 +259,7 @@ a.menu_salir {
 .btn-pella.active,
 .open .dropdown-toggle.btn-pella {
   color: #fff;
-  background-color: #004158;
+  background-color: #256c90;
   border-color: #004158;
 }
 .btn-pella:active,

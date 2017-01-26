@@ -35,7 +35,7 @@ var EventoListItemView = Backbone.View.extend({
         var self = this;
         $('.cuadro .imagen img', this.el).on('load', function() { self.clase_imagen(this) });
         
-        console.log('id_evento de model en evento list: '+this.model.attributes.id_evento);
+        // console.log('id_evento de model en evento list: '+this.model.attributes.id_evento);
         
         // añade la clase q correponde a la categoria del evento
         //this.claseCategoria(this.model.attributes.id_categoria);   
@@ -73,8 +73,8 @@ var EventoListItemView = Backbone.View.extend({
 //        console.log($('.cuadro .imagen img', this.el));
 //        console.log(imagen.width);
 //        console.log(imagen.height);
-        console.log( $('.cuadro .imagen', this.el).width() );
-        console.log( $('.cuadro .imagen', this.el).height() );
+        // console.log( $('.cuadro .imagen', this.el).width() );
+        // console.log( $('.cuadro .imagen', this.el).height() );
         if(imagen.width < imagen.height) { $('.cuadro .imagen img', this.el).addClass('vertical'); }
         
         // redimensiona la imagen al cargar (al girar la pantalla no se redimensiona

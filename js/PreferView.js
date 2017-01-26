@@ -1,7 +1,7 @@
 var PreferView = Backbone.View.extend({
 
     initialize: function () {
-        console.log('initialize de preferView');
+        // console.log('initialize de preferView');
         
         /* los arrays this.ciudades_01 y this.categorias_01 son arrays tipo [0, 1, 1, 0, 1, 1, 1]
            marcan con 0's la ciudad/categoría no seleccionadas, 
@@ -26,10 +26,10 @@ var PreferView = Backbone.View.extend({
             // paso lo guardado en localStorage a arrays
             var ls_pref_categ = window.localStorage.getItem('pref_categ');
             ls_pref_categ = JSON.parse(ls_pref_categ);
-            //console.log(ls_pref_categ);
+            //// console.log(ls_pref_categ);
             var ls_pref_ciudad = window.localStorage.getItem('pref_ciudad');
             ls_pref_ciudad = JSON.parse(ls_pref_ciudad);
-            //console.log(ls_pref_ciudad);
+            //// console.log(ls_pref_ciudad);
             
             
             // CATEGORIAS: cargamos ls en this.categorias_01 como array de 0's y 1's
@@ -39,8 +39,8 @@ var PreferView = Backbone.View.extend({
                 this.categorias_01[id_categoria] = 1;
                 $('#cat'+id_categoria+' i.fa-check', this.el).show();
             }
-            console.log('categorias 0y1');
-            console.log(this.categorias_01);
+            // console.log('categorias 0y1');
+            // console.log(this.categorias_01);
             
             // CIUDADES: cargamos ls en this.ciudades_01 como array de 0's y 1's
             var id_ciudad;
@@ -49,8 +49,8 @@ var PreferView = Backbone.View.extend({
                 this.ciudades_01[id_ciudad] = 1;
                 $('#ciudad'+id_ciudad+' i.fa-check', this.el).show();
             }
-            console.log('ciudades 0y1');
-            console.log(this.ciudades_01);
+            // console.log('ciudades 0y1');
+            // console.log(this.ciudades_01);
             
         } else {
             // no hay preferencias guardadas
@@ -69,7 +69,7 @@ var PreferView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log('render de PreferView');
+        // console.log('render de PreferView');
         //this.$el.html(this.template()); // en initialize para poder preparar la vista
         return this;
     },
@@ -95,7 +95,7 @@ var PreferView = Backbone.View.extend({
             this.categorias_01[index_cat]=0;
             $('#cat'+index_cat+' i.fa-check').hide();
         }
-        console.log(this.categorias_01);
+        // console.log(this.categorias_01);
     },
     
     selec_ciudad: function (event) {
@@ -107,7 +107,7 @@ var PreferView = Backbone.View.extend({
             this.ciudades_01[index_ciu]=0;
             $('#ciudad'+index_ciu+' i.fa-check').hide();
         }
-        console.log(this.ciudades_01);
+        // console.log(this.ciudades_01);
     },
     
     guardarPreferencias: function () {
@@ -115,7 +115,7 @@ var PreferView = Backbone.View.extend({
         var ls_id_follow = window.localStorage.getItem('id_follow');
         var contexto_this = this;
         
-        //console.log(JSON.stringify(contexto_this.categorias));
+        //// console.log(JSON.stringify(contexto_this.categorias));
         
         // muestra imagen cargando...
         $('#cargando').show();
@@ -152,8 +152,8 @@ var PreferView = Backbone.View.extend({
     
     click_guardar: function (event) {
         
-        console.log("guardar_prefes");
-        console.log(event);
+        // console.log("guardar_prefes");
+        // console.log(event);
         
         this.categorias = [];
         this.ciudades = [];
@@ -174,7 +174,7 @@ var PreferView = Backbone.View.extend({
         
         if( this.categorias.length==0 || this.ciudades.length==0 ) {
             // si no hay NINGUNA categoria o NINGUNA zona seleccionada
-            console.log('categorias o zonas no seleccionadas');
+            // console.log('categorias o zonas no seleccionadas');
             var mensaje;
             if( this.categorias.length==0 ) {
                 mensaje = 'No has seleccionado ninguna categoría.';
@@ -209,30 +209,30 @@ var PreferView = Backbone.View.extend({
     ver_locales: function (event) {        
         // resetea el historial
         window.historial = ['', 'locales'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('locales', {trigger: true});
     },
     
     ver_favoritos: function (event) {        
         // reset historial
         window.historial = ['', 'favoritos'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
-        //console.log(event);
+        //// console.log(event);
         Backbone.history.navigate('favoritos', {trigger: true});
     },
     
     volver_inicio: function (event) {
         // resetea el historial
         window.historial = [""];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         Backbone.history.navigate( "", {trigger: true} );
     }, 
     
     salir: function (event) {
-        console.log("SALIR");
+        // console.log("SALIR");
         navigator.app.exitApp();
     }
     

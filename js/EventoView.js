@@ -23,7 +23,7 @@ var EventoView = Backbone.View.extend({
         
         this.$el.html(this.template(this.model.toJSON()));        
         this.datosModelo = this.model.attributes;
-        console.log(this.datosModelo);
+        // console.log(this.datosModelo);
         
         // si el evento era una notificacion, lo saca de la lista xq ya esta visto
         this.borrarNotificacion(this.datosModelo.id_evento);
@@ -104,7 +104,7 @@ var EventoView = Backbone.View.extend({
         
         // añade entrada al historial
         window.historial.push('local/'+id_local);
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
         Backbone.history.navigate('local/'+id_local, {trigger: true});
     },
@@ -131,12 +131,12 @@ var EventoView = Backbone.View.extend({
     },
     
     ver_bigmap: function (event) {
-        console.log('evento ver big map');
-        console.log(event);
+        // console.log('evento ver big map');
+        // console.log(event);
         
         // añade entrada al historial
         window.historial.push('mapaEvento/'+this.datosModelo.id_evento);
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
 
         Backbone.history.navigate('mapaEvento/'+this.datosModelo.id_evento, {trigger: true});
     },
@@ -149,7 +149,7 @@ var EventoView = Backbone.View.extend({
     ver_locales: function (event) {        
         // resetea el historial
         window.historial = ['', 'locales'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
         //console.log(event);
         Backbone.history.navigate('locales', {trigger: true});
@@ -158,7 +158,7 @@ var EventoView = Backbone.View.extend({
     ver_favoritos: function (event) {        
         // reset historial
         window.historial = ['', 'favoritos'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
         //console.log(event);
         Backbone.history.navigate('favoritos', {trigger: true});
@@ -167,7 +167,7 @@ var EventoView = Backbone.View.extend({
     ver_prefer: function (event) {        
         // reset historial
         window.historial = ['', 'preferencias'];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         
         //console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
@@ -176,16 +176,16 @@ var EventoView = Backbone.View.extend({
     volver_inicio: function (event) {
         // resetea el historial
         window.historial = [""];
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         Backbone.history.navigate( "", {trigger: true} );
     },
     
     volver_atras: function (event) {
-        console.log("volver");
+        // console.log("volver");
         
         // saca elemento del historial y vuelve al anterior
         window.historial.pop();
-        console.log("window.historial: "+window.historial);
+        // console.log("window.historial: "+window.historial);
         Backbone.history.navigate( window.historial[window.historial.length-1], {trigger: true} );
         
         //console.log(Backbone.history.location);
@@ -195,7 +195,7 @@ var EventoView = Backbone.View.extend({
     },
 
     salir: function (event) {
-        console.log("SALIR");
+        // console.log("SALIR");
         navigator.app.exitApp();
     }
 
