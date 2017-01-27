@@ -74,7 +74,8 @@
     </plugin>
     
     <!--    Analytics   -->
-    <plugin name="cordova-plugin-google-analytics" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.7.4" />
+
     
     <!-- especificas plataformas -->
     <platform name="android">
