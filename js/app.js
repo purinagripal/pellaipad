@@ -146,8 +146,7 @@
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
 
-            window.ga.trackView('evento');
-            //window.ga.trackView(this.evento.attributes.title);
+            window.ga.trackView(this.evento.attributes.title);
             //$("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
