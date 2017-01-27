@@ -54,6 +54,7 @@
         },
         
         preferencias: function () {
+            window.ga.trackView('preferencias');
             slider.slidePage(new PreferView().render().$el);
         },
 
@@ -68,6 +69,7 @@
                 homeView.cargarEventos();
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
+            window.ga.trackView('inicio');
             slider.slidePage(homeView.$el);
         },
         
@@ -144,6 +146,8 @@
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
 
+            
+            window.ga.trackView(this.evento.attributes.title);
             //$("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
@@ -165,6 +169,7 @@
 
             //console.log(JSON.stringify(this.favoritosList));
             
+            window.ga.trackView('favoritos');
             //$("html,body").scrollTop(0);
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
         },
@@ -181,6 +186,7 @@
                 localesView.delegateEvents(); // delegate events when the view is recycled
             }
             
+            window.ga.trackView('locales');
             //$("html,body").scrollTop(0);
             slider.slidePage(localesView.$el);
         },
@@ -213,6 +219,7 @@
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
+            window.ga.trackView('local id '+id);
             //$("html,body").scrollTop(0);
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
             
@@ -244,6 +251,7 @@
             // console.log("nuevoModel");
             // console.log(nuevoModel);
             
+            window.ga.trackView('mapalocal id '+id);
             //$("html,body").scrollTop(0);
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
@@ -273,6 +281,7 @@
             // console.log("nuevoModel");
             // console.log(nuevoModel);
             
+            window.ga.trackView('mapaevento id '+id);
             //$("html,body").scrollTop(0);
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
@@ -337,6 +346,8 @@
         document.addEventListener("backbutton", onBackKeyDown, false);
         document.addEventListener("resume", onResume, false);
         
+        // iniciar ANALYTICS
+        window.ga.startTrackerWithId('UA-38453012-7', 10);
         
         //StatusBar.hide();
         

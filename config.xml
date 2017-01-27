@@ -73,6 +73,8 @@
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
+    <!--    Analytics   -->
+    <plugin name="cordova-plugin-google-analytics" />
     
     <!-- especificas plataformas -->
     <platform name="android">
