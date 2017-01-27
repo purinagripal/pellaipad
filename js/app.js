@@ -147,7 +147,7 @@
             this.evento = this.eventosList.get(id);
 
             
-            //window.ga.trackView(this.evento.attributes.title);
+            window.ga.trackView(this.evento.attributes.title);
             //$("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
@@ -347,7 +347,7 @@
         document.addEventListener("resume", onResume, false);
         
         // iniciar ANALYTICS
-        window.ga.startTrackerWithId('UA-38453012-7', 10);
+        window.ga.startTrackerWithId('UA-38453012-7');
         window.ga.trackView('inicia App');
         
         //StatusBar.hide();
