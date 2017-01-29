@@ -144,6 +144,9 @@ var HomeView = Backbone.View.extend({
         var id_evento = $(event.currentTarget).attr('data-id'); 
         // console.log("ver evento "+id_evento);
         
+        // guarda la posicion del SCROLL en HOME para después volver al mismo lugar
+        window.scrollHome = $('div.guiaeventos').scrollTop();
+        
         // añade entrada al historial
         window.historial.push('eventos/'+id_evento);
         // console.log("window.historial: "+window.historial);

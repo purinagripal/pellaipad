@@ -11,7 +11,7 @@ var PreferView = Backbone.View.extend({
            son arrays tipo: [{"id_categoria":1},{"id_categoria":2},{"id_categoria":5},{"id_categoria":6}]
            y se crean para guardar la info en BBDD y en localStorage */
         
-        this.ciudades_01 = [0,0,0,0,0,0,0,0,0];
+        this.ciudades_01 =   [0,0,0,0,0,0,0];
         this.categorias_01 = [0,0,0,0,0,0,0];
         this.categorias = [];
         this.ciudades = [];
@@ -60,7 +60,7 @@ var PreferView = Backbone.View.extend({
             $('.menu_drop', this.el).hide();
             
             // selecciono todo por defecto
-            this.ciudades_01 = [0,1,1,1,1,1,1,1,1];
+            this.ciudades_01 =   [0,1,1,1,1,1,1];
             this.categorias_01 = [0,1,1,1,1,1,1];
             $('.sel_ciudad i.fa-check', this.el).show();
             $('.sel_cat i.fa-check', this.el).show();

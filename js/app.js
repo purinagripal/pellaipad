@@ -18,6 +18,9 @@
     
     window.historial = [""];
     window.notif_vistas = 0;
+    window.scrollHome = 0;
+    window.scrollLocales = 0;
+    window.scrollFavor = 0;
 
     var homeView;
     var localesView;
@@ -54,7 +57,9 @@
         },
         
         preferencias: function () {
+            // ANALYTICS
             //window.ga.trackView('preferencias');
+            
             slider.slidePage(new PreferView().render().$el);
         },
 
@@ -69,8 +74,13 @@
                 homeView.cargarEventos();
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
+            
+            // ANALYTICS
             //window.ga.trackView('inicio');
+            
             slider.slidePage(homeView.$el);
+            // lleva el scroll a la posicion guardada
+            $('div.guiaeventos').scrollTop(window.scrollHome);
         },
         
         categoria: function (id_cat) {
@@ -146,8 +156,9 @@
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
 
-            window.ga.trackView(this.evento.attributes.title);
-            //$("html,body").scrollTop(0);
+            // ANALYTICS
+            //window.ga.trackView(this.evento.attributes.title);
+            
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -168,9 +179,12 @@
 
             //console.log(JSON.stringify(this.favoritosList));
             
+            // ANALYTICS
             //window.ga.trackView('favoritos');
-            //$("html,body").scrollTop(0);
+            
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
+            // lleva el scroll a la posicion guardada
+            $('div.guiaeventos').scrollTop(window.scrollFavor);
         },
         
         locales: function () {
@@ -185,9 +199,12 @@
                 localesView.delegateEvents(); // delegate events when the view is recycled
             }
             
+            // ANALYTICS
             //window.ga.trackView('locales');
-            //$("html,body").scrollTop(0);
+
             slider.slidePage(localesView.$el);
+            // lleva el scroll a la posicion guardada
+            $('div.guiaeventos').scrollTop(window.scrollLocales);
         },
         
         ciudadLocales: function (id_ciudad) {
@@ -218,8 +235,9 @@
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
+            // ANALYTICS
             //window.ga.trackView('local id '+id);
-            //$("html,body").scrollTop(0);
+
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -250,8 +268,9 @@
             // console.log("nuevoModel");
             // console.log(nuevoModel);
             
+            // ANALYTICS
             //window.ga.trackView('mapalocal id '+id);
-            //$("html,body").scrollTop(0);
+            
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -280,8 +299,9 @@
             // console.log("nuevoModel");
             // console.log(nuevoModel);
             
+            // ANALYTICS
             //window.ga.trackView('mapaevento id '+id);
-            //$("html,body").scrollTop(0);
+
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
