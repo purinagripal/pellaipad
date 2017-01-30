@@ -58,7 +58,9 @@
         
         preferencias: function () {
             // ANALYTICS
-            window.ga.trackView('preferencias');
+            setTimeout( function(){ 
+                window.ga.trackView('preferencias');
+            }, 6000);
             
             slider.slidePage(new PreferView().render().$el);
         },
@@ -76,7 +78,9 @@
             }
             
             // ANALYTICS
-            //window.ga.trackView('inicio');
+            setTimeout( function(){ 
+                window.ga.trackView('inicio');
+            }, 6000);
             
             slider.slidePage(homeView.$el);
             // lleva el scroll a la posicion guardada
@@ -180,7 +184,9 @@
             //console.log(JSON.stringify(this.favoritosList));
             
             // ANALYTICS
-            window.ga.trackView('favoritos');
+            setTimeout( function(){ 
+                window.ga.trackView('favoritos');
+            }, 6000);
             
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
             // lleva el scroll a la posicion guardada
