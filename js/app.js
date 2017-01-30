@@ -57,10 +57,11 @@
         },
         
         preferencias: function () {
+            
             // ANALYTICS
-            setTimeout( function(){ 
+            if (typeof window.ga !== 'undefined') {
                 window.ga.trackView('preferencias');
-            }, 6000);
+            }
             
             slider.slidePage(new PreferView().render().$el);
         },
@@ -78,9 +79,9 @@
             }
             
             // ANALYTICS
-            setTimeout( function(){ 
+            if (typeof window.ga !== 'undefined') {
                 window.ga.trackView('inicio');
-            }, 6000);
+            }
             
             slider.slidePage(homeView.$el);
             // lleva el scroll a la posicion guardada
@@ -161,8 +162,10 @@
             this.evento = this.eventosList.get(id);
 
             // ANALYTICS
-            window.ga.trackView(this.evento.attributes.title);
-            
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView(this.evento.attributes.title);
+            }
+                        
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -184,10 +187,10 @@
             //console.log(JSON.stringify(this.favoritosList));
             
             // ANALYTICS
-            setTimeout( function(){ 
+            if (typeof window.ga !== 'undefined') {
                 window.ga.trackView('favoritos');
-            }, 6000);
-            
+            }
+           
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
             // lleva el scroll a la posicion guardada
             $('div.guiaeventos').scrollTop(window.scrollFavor);
@@ -206,8 +209,10 @@
             }
             
             // ANALYTICS
-            window.ga.trackView('locales');
-
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('indice locales');
+            }
+            
             slider.slidePage(localesView.$el);
             // lleva el scroll a la posicion guardada
             $('div.guiaeventos').scrollTop(window.scrollLocales);
@@ -242,7 +247,9 @@
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
             // ANALYTICS
-            window.ga.trackView('local id '+id);
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('local id '+id);
+            }            
 
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
             
@@ -275,8 +282,10 @@
             // console.log(nuevoModel);
             
             // ANALYTICS
-            window.ga.trackView('mapalocal id '+id);
-            
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('mapalocal id '+id);
+            }
+                        
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -306,8 +315,10 @@
             // console.log(nuevoModel);
             
             // ANALYTICS
-            window.ga.trackView('mapaevento id '+id);
-
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('mapaevento id '+id);
+            }
+            
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
             // para que el mapa se vea más de una vez
@@ -372,9 +383,11 @@
         document.addEventListener("resume", onResume, false);
         
         // iniciar ANALYTICS
-        window.ga.startTrackerWithId('UA-38453012-7', 30);
-        window.ga.trackView('inicia App');
-        
+        if (typeof window.ga !== 'undefined') {
+            window.ga.startTrackerWithId('UA-38453012-7', 30);
+            window.ga.trackView('inicia App');
+        }
+                
         //StatusBar.hide();
         
 
