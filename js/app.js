@@ -58,7 +58,7 @@
         
         preferencias: function () {
             // ANALYTICS
-            //window.ga.trackView('preferencias');
+            window.ga.trackView('preferencias');
             
             slider.slidePage(new PreferView().render().$el);
         },
@@ -76,7 +76,7 @@
             }
             
             // ANALYTICS
-            //window.ga.trackView('inicio');
+            window.ga.trackView('inicio');
             
             slider.slidePage(homeView.$el);
             // lleva el scroll a la posicion guardada
@@ -157,7 +157,7 @@
             this.evento = this.eventosList.get(id);
 
             // ANALYTICS
-            //window.ga.trackView(this.evento.attributes.title);
+            window.ga.trackView(this.evento.attributes.title);
             
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
             
@@ -180,7 +180,7 @@
             //console.log(JSON.stringify(this.favoritosList));
             
             // ANALYTICS
-            //window.ga.trackView('favoritos');
+            window.ga.trackView('favoritos');
             
             slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
             // lleva el scroll a la posicion guardada
@@ -200,7 +200,7 @@
             }
             
             // ANALYTICS
-            //window.ga.trackView('locales');
+            window.ga.trackView('locales');
 
             slider.slidePage(localesView.$el);
             // lleva el scroll a la posicion guardada
@@ -236,7 +236,7 @@
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
             // ANALYTICS
-            //window.ga.trackView('local id '+id);
+            window.ga.trackView('local id '+id);
 
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
             
@@ -269,7 +269,7 @@
             // console.log(nuevoModel);
             
             // ANALYTICS
-            //window.ga.trackView('mapalocal id '+id);
+            window.ga.trackView('mapalocal id '+id);
             
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             
@@ -300,7 +300,7 @@
             // console.log(nuevoModel);
             
             // ANALYTICS
-            //window.ga.trackView('mapaevento id '+id);
+            window.ga.trackView('mapaevento id '+id);
 
             slider.slidePage(new MapaView({model: nuevoModel}).render().$el);
             

@@ -53,7 +53,7 @@ var HomeView = Backbone.View.extend({
                 categ_txt = 'Deportes';
                 break;
             case '6':
-                categ_txt = 'Para niños';
+                categ_txt = 'Infantiles';
                 break;
             default:
                 categ_txt = 'Categoría';

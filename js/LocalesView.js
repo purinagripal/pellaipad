@@ -56,7 +56,6 @@ var LocalesView = Backbone.View.extend({
         // console.log("ver local "+id_local);
         
         // guarda la posicion del SCROLL en LOCALES para después volver al mismo lugar
-        console.log( $('div.guiaeventos').scrollTop() );
         window.scrollLocales = $('div.guiaeventos').scrollTop();
         
         // añade entrada al historial
