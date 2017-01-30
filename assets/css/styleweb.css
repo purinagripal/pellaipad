@@ -388,10 +388,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     width: auto;
 }
 .guiaeventos .cuadro .imagen img.vertical {
-    /* ajusta la imagen - no funciona en movil */
-    /*width: 100%; height: 100%; object-fit: cover;*/
-
-    /* otra opcion para ajustar la imagen*/
+    /* cuando la imagen es vertical */
     position: absolute;
     top: -100%;
     bottom: -100%;

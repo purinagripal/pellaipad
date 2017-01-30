@@ -36,6 +36,10 @@ var LocalesView = Backbone.View.extend({
                 ciudad_txt = 'Municipio';
         }
         this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
+        
+        // cuando se cargue la imagen le añade la clase correspondiente (vertical u horizontal)
+//        var self = this;
+//        $('.cuadro .imagen img', this.el).on('load', function() { self.clase_imagen(this) });
                 
         return this;
     },
@@ -76,6 +80,10 @@ var LocalesView = Backbone.View.extend({
         Backbone.history.navigate('zona_loc/'+id_ciudad, {trigger: true});
         Backbone.history.navigate('locales', {replace: true});
     },
+    
+//    clase_imagen: function (imagen) {
+//        if(imagen.width < imagen.height) { $('.cuadro .imagen img', this.el).addClass('vertical'); }        
+//    },
     
    
     ///////////////////////////////////////

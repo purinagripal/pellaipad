@@ -99,7 +99,7 @@
                     <li id="cat4" class="sel_cat list-group-item" data-id="4">
                         <div class="row">
                             <div class="col-xs-2 ico-cat" ><i class="fa fa-comment" aria-hidden="true"></i></div>
-                            <div class="col-xs-8">Charlas y exposiciones</div>
+                            <div class="col-xs-8">Encuentros y exposiciones</div>
                             <div class="col-xs-2" ><i class="fa fa-check"></i></div>
                             <div class="clearfix"></div>
                         </div>
@@ -222,10 +222,19 @@
                         <li><a class="filt_categ" data-id="1">Música</a></li>
                         <li><a class="filt_categ" data-id="2">Espectáculos</a></li>
                         <li><a class="filt_categ" data-id="3">Talleres y cursos</a></li>
-                        <li><a class="filt_categ" data-id="4">Charlas y expos</a></li>
-                        <li><a class="filt_categ" data-id="5">Deportes</a></li>
                         <li><a class="filt_categ" data-id="6">Infantiles</a></li>
+                        <li><a class="filt_categ" data-id="5">Deportes</a></li>
+                        <li><a class="filt_categ" data-id="4">Encuentros y expos</a></li>
+                        
+                        <!--
+                        <li><a class="filt_categ" data-id="1"><i class="fa fa-music" aria-hidden="true"></i> Música</a></li>
+                        <li><a class="filt_categ" data-id="2"><i class="fa fa-star" aria-hidden="true"></i> Espectáculos</a></li>
+                        <li><a class="filt_categ" data-id="3"><i class="fa fa-paper-plane" aria-hidden="true"></i> Talleres y cursos</a></li>
+                        <li><a class="filt_categ" data-id="6"><i class="fa fa-child" aria-hidden="true"></i> Infantiles</a></li>
+                        <li><a class="filt_categ" data-id="5"><i class="fa fa-bicycle" aria-hidden="true"></i> Deportes</a></li>
+                        <li><a class="filt_categ" data-id="4"><i class="fa fa-comment" aria-hidden="true"></i> Encuentros y expos</a></li>
                         <li><a class="filt_categ" data-id="0">Todas</a></li>
+                        -->
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -478,7 +487,7 @@
         {{#each this}}
             <div class="row cuadro" data-id="{{id_user}}" >
                 <div class="col-xs-4 imagen">
-                    <img src="http://pelladeocio.com/uploads/medias/{{image}}" />
+                    <img id="imagen_{{id_user}}" src="http://pelladeocio.com/uploads/medias/{{image}}" />
                 </div>
                 <div class="col-xs-8 info">
                     <h4>{{first_name}}</h4>

@@ -47,7 +47,7 @@ var HomeView = Backbone.View.extend({
                 categ_txt = 'Talleres';
                 break;
             case '4':
-                categ_txt = 'Charlas';
+                categ_txt = 'Encuentros';
                 break;
             case '5':
                 categ_txt = 'Deportes';
