@@ -76,7 +76,7 @@
             }
             
             // ANALYTICS
-            window.ga.trackView('inicio');
+            //window.ga.trackView('inicio');
             
             slider.slidePage(homeView.$el);
             // lleva el scroll a la posicion guardada
