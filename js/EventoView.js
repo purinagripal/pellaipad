@@ -81,6 +81,7 @@ var EventoView = Backbone.View.extend({
         "click .link_locales": "ver_locales",
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
+        "click .link_acerca": "ver_acerca",
         
         "click #eve-map-canvas": "ver_bigmap",
         "click .link_bigmap": "ver_bigmap",
@@ -171,6 +172,15 @@ var EventoView = Backbone.View.extend({
         
         //console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
+    },
+    
+    ver_acerca: function (event) {        
+        // reset historial
+        window.historial = ['', 'acerca'];
+        // console.log("window.historial: "+window.historial);
+        
+        //// console.log(event);
+        Backbone.history.navigate('acerca', {trigger: true});
     },
     
     volver_inicio: function (event) {

@@ -75,7 +75,14 @@ var EventoListItemView = Backbone.View.extend({
 //        console.log(imagen.height);
         // console.log( $('.cuadro .imagen', this.el).width() );
         // console.log( $('.cuadro .imagen', this.el).height() );
-        if(imagen.width < imagen.height) { $('.cuadro .imagen img', this.el).addClass('vertical'); }
+        
+        var relac = imagen.width / imagen.height;
+
+        // si la imagen es vertical (mas alta q ancha) 
+        // y es bastante alta ( 80/100=0.8 ancho/alto del div
+        if(relac < 0.8) { 
+            $('.cuadro .imagen img', this.el).addClass('vertical'); 
+        }
         
         // redimensiona la imagen al cargar (al girar la pantalla no se redimensiona
 //        if(imagen.width < imagen.height) { 

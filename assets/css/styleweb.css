@@ -195,6 +195,7 @@ a.menu_salir {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 50px;
+    color: #fff;
 }
 .eventos_cargados {display: none;}
 
@@ -334,30 +335,33 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     color: #000;
     margin: 0 0.1em 3px;
     overflow: hidden;
-    height: 90px;
+    height: 100px;
 }
 .guiaeventos .cuadro .info {
     height: 100%;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 /* h5: titulo evento */
-.guiaeventos .cuadro h5 {margin: 0.3em 0; color: #000; font-weight: 600; letter-spacing: -0.2px; font-size: 1.05em; line-height: 1.3;}
-.guiaeventos .cuadro .eventor-ciudad {position: absolute; bottom: 0; }
+.guiaeventos .cuadro h5 {margin: 0.45em 0; color: #000; font-weight: 600; letter-spacing: -0.2px; font-size: 1.05em; line-height: 1.1;}
+.guiaeventos .cuadro .eventor-ciudad {position: absolute; bottom: 0;}
 .guiaeventos .cuadro p {font-size: 1em; line-height: 1.3; margin: 0;}
 .guiaeventos .cuadro p.nombre-eventor {font-weight: 700; font-style: italic; font-size: 0.95em;}
-.guiaeventos .cuadro p.ciudad {margin-bottom: 0.7em;}
+.guiaeventos .cuadro p.ciudad {margin-bottom: 7px;}
 
 .guiaeventos .cuadro .date {
     text-align: center; 
     background-color:#fff;
     color: #000;
     height: 100%;
+    padding-top: 6px;
 }
 .guiaeventos .cuadro .date span { display: block; line-height: 1;}
 .guiaeventos .cuadro .date span.ico-categ {position: absolute; top:2px; left: 2px; color: #fff; font-size: 0.8em;}
 .guiaeventos .cuadro .date span.hoy { font-size: 2em; font-weight:900; line-height: 2.3;}
 .guiaeventos .cuadro .date span.ndiafi { font-size: 2.2em; font-weight:900; line-height: 1;}
 .guiaeventos .cuadro .date span.ndiaff { font-size: 2.2em; font-weight:900; line-height: 1; border-top: solid 1px #000;}
-.guiaeventos .cuadro .date span.ndia { font-size: 2.4em; font-weight:900; line-height: 1;}
+.guiaeventos .cuadro .date span.ndia { font-size: 2.4em; font-weight:900; line-height: 1; }
 .guiaeventos .cuadro .date span.mes { font-size: 0.7em; text-transform:uppercase; margin-bottom: 0.3em; }
 .guiaeventos .cuadro .date span.diasemana { font-size: 1em; border-top: solid 1px #000; padding-top: 0.1em;}
 .guiaeventos .cuadro .date span.hora {font-size: 0.9em; color: #fff; padding: 0.4em 0;  width: 100%; background-color: #000;
@@ -430,7 +434,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 
 /* evento-detalle --- en EVENTO */
-.evento-detalle .cuadro {background-color: #fff; }
+.evento-detalle .cuadro {background-color: #fff;}
 
 .evento-detalle .cuadro .titulo-imagen {
     position: relative;
@@ -440,19 +444,12 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 .evento-detalle .cuadro h4 {
     margin: 0;
-    /* posicion absoluta, centrado arriba sobre la imagen */
-    position: absolute; top: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;
-    padding-top: 5px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
+    padding-top: 6px;
     text-align: center;
     color: #fff; 
     font-size: 1.8em; letter-spacing: -1px; line-height: 1.1;
-    /* gradiente en background */
-    background: rgba(0, 0, 0, 0.7); /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0)); /*Safari 5.1-6*/
-    background: -o-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0)); /*Opera 11.1-12*/
-    background: -moz-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0));  /*Fx 3.6-15*/
-    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7),rgba(0,0,0,0.5),rgba(0,0,0,0));  /*Standard*/
+    background: #00212c;
 }
 
 /* fecha */
@@ -472,8 +469,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .evento-detalle .cuadro .datos-evento-grande p {font-size: 1em; text-align: right;}
 
 /* descripcion del evento */
-.evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: justify; font-size: 1em;}
-.evento-detalle .cuadro .descr-evento p {line-height: 1.4; text-align: justify;}
+.evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: left; font-size: 1em;}
+.evento-detalle .cuadro .descr-evento p {line-height: 1.4; text-align: left;}
 .evento-detalle .cuadro .descr-evento a.link_web {margin: 1.3em auto; color: #004158; font-size: 1.1em; font-weight: 700;}
 
 /* direccion y mapa del evento */
@@ -509,6 +506,39 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 /* fin - evento-detalle --- en EVENTO */
 
+/* acerca de ... */
+.acerca .cuadro {
+    height: 100%;
+}
+.acerca .cuadro h1,
+.acerca .cuadro h2, 
+.acerca .cuadro p, 
+.acerca .cuadro a {
+    color: #00212c; 
+    text-transform: none;
+}
+
+.acerca .cuadro h1 {
+    font-size: 1.8em;
+    margin-top: 1em;
+}
+.acerca .cuadro h2 {
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    border-bottom: solid 1px #d8e1e5;
+}
+.acerca .cuadro ul {
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.acerca .cuadro p {
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+
+
+
 /* sobreescribe bootstrap */
 .img-responsive {width: 100%;}
 
@@ -521,7 +551,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 .cuadro h4, .cuadro h5 {font-weight: 600;}
 .cuadro {
-    background-color: #EBF0EF; 
+    background-color: #fff; 
     color: #000; 
 }
 .cuadro .date {color: #000;}
@@ -602,7 +632,20 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* excepciones de color */
 .evento-detalle .cuadro h4 {color: #fff;}
 
+.evento-detalle .cuadro.categ_1 h4 {background-color: #459bd0;}
+.evento-detalle .cuadro.categ_2 h4 {background-color: #45b192;}
+.evento-detalle .cuadro.categ_3 h4 {background-color: #9fb235;}
+.evento-detalle .cuadro.categ_4 h4 {background-color: #988483;}
+.evento-detalle .cuadro.categ_5 h4 {background-color: #ea6e49;}
+.evento-detalle .cuadro.categ_6 h4 {background-color: #f6ac34;}
 
+/*.evento-detalle .cuadro.categ_1 h4 {background-color: #295d7d;}
+.evento-detalle .cuadro.categ_2 h4 {background-color: #296a58;}
+.evento-detalle .cuadro.categ_3 h4 {background-color: #5f6b20;}
+.evento-detalle .cuadro.categ_4 h4 {background-color: #5b4f4f;}
+.evento-detalle .cuadro.categ_5 h4 {background-color: #8c422c;}
+.evento-detalle .cuadro.categ_6 h4 {background-color: #94671f;}
+*/
 
 /* ++++++++++++++++++++++++++++++++++++++ */
 /*     MEDIA QUERIES                      */
@@ -649,11 +692,11 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 @media (min-width: 412px) {
     /* en inicio */
     /* altura fija del cuadro + ajustes fuentes */
-    .guiaeventos .cuadro {height: 105px;}
-    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy {margin-top: 8px;}
-    .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 5px}
+    .guiaeventos .cuadro {height: 110px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy {margin-top: 4px;}
+    .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 3px}
     .guiaeventos .cuadro .info {font-size: 1.1em;}
-    .guiaeventos .cuadro h5 {font-size: 1.3em;}
+    .guiaeventos .cuadro h5 {font-size: 1em;}
     
     /* en evento */
     .evento-detalle .cuadro .datos-evento p {font-size: 1em;}
@@ -665,7 +708,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .guiaeventos .cuadro {height: 150px;}
     .guiaeventos .cuadro .date {font-size: 1.4em;}
     .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy, .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 10px;}
-    .guiaeventos .cuadro .info {font-size: 1.4em;}
+    .guiaeventos .cuadro .info {font-size: 1.6em; padding-left: 12px; padding-right: 12px;}
     
 }
 
@@ -680,6 +723,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .guiaeventos .cuadro .date span.ico-categ {position: absolute; top: 7px; left: 8px; }
     
     /* en evento */
+    .evento-detalle .cuadro {height: 100%}
     .evento-detalle .cuadro .datos-evento p {font-size: 0.8em;}
     .evento-detalle .cuadro .descr-evento {padding-left: 1em;}
     #eve-map-canvas {height: 300px;}
@@ -697,7 +741,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     /* altura fija del cuadro + ajustes fuentes */
     .guiaeventos .cuadro {height: 250px;}
     .guiaeventos .cuadro .date {font-size: 2em;}
-    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy, .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 10px;}
+    .guiaeventos .cuadro .date span.ndia, .guiaeventos .cuadro .date span.hoy, .guiaeventos .cuadro .date span.ndiafi, .guiaeventos .cuadro .date span.ndiaff {margin-top: 6px;}
     .guiaeventos .cuadro .info {font-size: 2em;}    
     
     /* en evento */

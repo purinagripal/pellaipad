@@ -23,6 +23,7 @@ var FavoritosView = Backbone.View.extend({
         "click .link_eventos": "volver_inicio",
         "click .link_locales": "ver_locales",
         "click .link_prefer": "ver_prefer",
+        "click .link_acerca": "ver_acerca",
         "click .menu_salir": "salir",
         
         "click .row.cuadro": "ver_evento"
@@ -73,6 +74,15 @@ var FavoritosView = Backbone.View.extend({
         
         //console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
+    },
+    
+    ver_acerca: function (event) {        
+        // reset historial
+        window.historial = ['', 'acerca'];
+        // console.log("window.historial: "+window.historial);
+        
+        //// console.log(event);
+        Backbone.history.navigate('acerca', {trigger: true});
     },
 
     salir: function (event) {

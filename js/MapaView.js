@@ -41,6 +41,7 @@ var MapaView = Backbone.View.extend({
         "click .link_locales": "ver_locales",
         "click .link_favoritos": "ver_favoritos",
         "click .link_prefer": "ver_prefer",
+        "click .link_acerca": "ver_acerca",
         
         "click .boton_atras": "volver_atras",
         "click .menu_salir": "salir",
@@ -109,6 +110,15 @@ var MapaView = Backbone.View.extend({
         
         //// console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
+    },
+    
+    ver_acerca: function (event) {        
+        // reset historial
+        window.historial = ['', 'acerca'];
+        // console.log("window.historial: "+window.historial);
+        
+        //// console.log(event);
+        Backbone.history.navigate('acerca', {trigger: true});
     },
     
     volver_inicio: function (event) {

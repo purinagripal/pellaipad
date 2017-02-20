@@ -12,6 +12,7 @@
     PreferView.prototype.template = Handlebars.compile($("#prefer-tpl").html());
     FavoritosView.prototype.template = Handlebars.compile($("#favoritos-tpl").html());
     MapaView.prototype.template = Handlebars.compile($("#mapa-tpl").html());
+    
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
@@ -53,7 +54,8 @@
             "zona_loc/:id_ciudad":  "ciudadLocales",
             "local/:id":            "localDetails",
             "mapaLocal/:id":        "mapaLocal",
-            "mapaEvento/:id":       "mapaEvento"
+            "mapaEvento/:id":       "mapaEvento",
+            "acerca":               "acerca"
         },
         
         preferencias: function () {
@@ -325,7 +327,17 @@
             google.maps.event.trigger(window.map, 'resize');
             window.map.setOptions(window.mapOptions);
             //window.map.setCenter(window.mapOptions.center);
-        }
+        },
+        
+        acerca: function () {
+            
+            // ANALYTICS
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('acerca de');
+            }
+            
+            slider.slidePage(new AcercaView().render().$el);
+        },
         
         
         
@@ -337,13 +349,14 @@
     var router = new AppRouter();
     Backbone.history.start();
     
-    // establecer el localStorage para eventos notificados si no existe
+     // establecer el localStorage para eventos notificados si no existe
     if( !window.localStorage.getItem('ev_notif') ) {
         window.localStorage.setItem('ev_notif', '[]');
     }
     
     // si no están seleccionadas las preferencias de notificacion nos redirige
     if( !window.localStorage.getItem('pref_categ') ) {
+        console.log("navigate preferencias");
         Backbone.history.navigate('preferencias', {trigger: true});
     }
     
@@ -434,16 +447,16 @@
                     
             setTimeout( function(){ 
                 push.finish(function() {
-                    // console.log('success finish');
+                    console.log('Success finish');
                 }, function() {
-                    // console.log('error finish');
+                    console.log('Error finish');
                 }, 'push-1');
             }, 9000);
             
         });
 
         push.on('error', function(e) {
-            alert('error');
+            alert('Error de registro de notificación');
             // e.message
         });
         
@@ -451,7 +464,7 @@
         window.open = cordova.InAppBrowser.open;
         
         // oculta splashscreen (mejor ponerlo en config.xml
-        navigator.splashscreen.hide();
+        // navigator.splashscreen.hide();
         
     
     };
@@ -495,7 +508,7 @@
                 
             },
             error: function(data){
-                // console.log("error eventos notificados");
+                console.log("Error eventos notificados");
                 // console.log(data);
             },
             complete: function(data){
@@ -572,7 +585,7 @@
                 window.localStorage.setItem('id_follow', response.id_follow);
             },
             error: function(model, response) {
-                // console.log("error save");
+                console.log("Error follower save");
             },
             wait: true
         });
@@ -607,7 +620,7 @@
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
                           success: function() {
-                            // console.log( 'fetch success' );                            
+                            console.log( 'fetch success' );                            
                           },
                           complete: function() {
                               //alert('fetch complete');
