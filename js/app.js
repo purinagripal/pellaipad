@@ -26,9 +26,11 @@
     var homeView;
     var localesView;
     var localDetailsView;
+    var eventosList = new EventoCollection();
+    var eventosListFetched = 0;
     
-    /*this.eventosList = new EventoCollection();
-    this.eventosList.fetch({reset: true, 
+    /*eventosList = new EventoCollection();
+    eventosList.fetch({reset: true, 
                       success: function() {
                         // console.log( 'fetch terminado, esconde splashscreen' );
                         // ocultar pantalla presentacion 
@@ -39,8 +41,7 @@
                       wait: true
     });*/
     
-    
-
+   
     var AppRouter = Backbone.Router.extend({
 
         routes: {
@@ -71,14 +72,29 @@
         home: function () {
             // Since the home view never changes, we instantiate it and render it only once
             if (!homeView) {
-                this.eventosList = new EventoCollection();
-                homeView = new HomeView({model: this.eventosList});
+                console.log('router entra en home');
+                homeView = new HomeView({model: eventosList});
+                eventosList.fetch({reset: true, 
+                                    success: function() {
+                                      // console.log( 'fetch success' );                            
+                                    },
+                                    complete: function() {
+                                        //alert('fetch complete');
+                                        console.log( 'router - fetch complete, oculta cargando' );
+                                        eventosList.trigger("fcomplete");
+                                        eventosListFetched = 1;
+
+                                        // renderiza eventos una vez descargados
+                                        homeView.cargarEventos();
+                                    }
+                });
                 
             } else {
-                // console.log('reusing home view');
+                console.log('reusing home view');
                 homeView.cargarEventos();
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
+            homeView.delegateEvents();
             
             // ANALYTICS
             if (typeof window.ga !== 'undefined') {
@@ -100,18 +116,18 @@
             if (homeView.categoria == 0) {
                 if( homeView.ciudad != 0 ) {
                     // filtra solo x por ciudad
-                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_ciudad: homeView.ciudad}));
+                    this.eventosCateg = new EventoCollection(eventosList.where({id_ciudad: homeView.ciudad}));
                 } else {
                     // coge todas las categorías, vuelve a mostrar la lista inicial
-                    this.eventosCateg = this.eventosList;
+                    this.eventosCateg = eventosList;
                 }
             } else {
                 if( homeView.ciudad != 0 ) {
                     // filtra x categoria y x ciudad
-                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
+                    this.eventosCateg = new EventoCollection(eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
                 } else {
                     // filtra solo x categoria
-                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria}));
+                    this.eventosCateg = new EventoCollection(eventosList.where({id_categoria: homeView.categoria}));
                 }
             }
             
@@ -134,18 +150,18 @@
             if (homeView.categoria == 0) {
                 if( homeView.ciudad != 0 ) {
                     // filtra solo x por ciudad
-                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_ciudad: homeView.ciudad}));
+                    this.eventosCiudad = new EventoCollection(eventosList.where({id_ciudad: homeView.ciudad}));
                 } else {
                     // coge todas las categorías, vuelve a mostrar la lista inicial
-                    this.eventosCiudad = this.eventosList;
+                    this.eventosCiudad = eventosList;
                 }
             } else {
                 if( homeView.ciudad != 0 ) {
                     // filtra x categoria y x ciudad
-                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
+                    this.eventosCiudad = new EventoCollection(eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
                 } else {
                     // filtra solo x categoria
-                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria}));
+                    this.eventosCiudad = new EventoCollection(eventosList.where({id_categoria: homeView.categoria}));
                 }
             }
             
@@ -161,7 +177,7 @@
         eventoDetails: function (id) {
             //var employee = new Evento({id: id});
             // coge el evento de la coleccion del HOME
-            this.evento = this.eventosList.get(id);
+            this.evento = eventosList.get(id);
 
             // ANALYTICS
             if (typeof window.ga !== 'undefined') {
@@ -178,13 +194,13 @@
         
         favoritos: function () {
             // como puede cambiar segun las preferencias cada vez creamos una vista nueva
-            //this.favoritosList = new EventoCollection(this.eventosList.where({id_categoria: '1', id_ciudad: '2'}));
+            //this.favoritosList = new EventoCollection(eventosList.where({id_categoria: '1', id_ciudad: '2'}));
             
-            /*this.pre_favoritosList = new EventoCollection(this.eventosList.where({id_categoria: '1'}).concat( this.eventosList.where({id_categoria: '3'}) ));
+            /*this.pre_favoritosList = new EventoCollection(eventosList.where({id_categoria: '1'}).concat( eventosList.where({id_categoria: '3'}) ));
             this.favoritosList = new EventoCollection(this.pre_favoritosList.where({id_ciudad: '1'}));
             this.favoritosList.sort();*/
             
-            this.favoritosList = this.eventosList.obtenerFavoritos();
+            this.favoritosList = eventosList.obtenerFavoritos();
 
             //console.log(JSON.stringify(this.favoritosList));
             
@@ -201,7 +217,7 @@
         locales: function () {
             // Since the home view never changes, we instantiate it and render it only once
             if (!localesView) {
-                this.localesList = this.eventosList.obtenerLocales();
+                this.localesList = eventosList.obtenerLocales();
                 //console.log(JSON.stringify(this.localesList));
                 
                 localesView = new LocalesView({model: this.localesList});
@@ -244,9 +260,9 @@
         
         localDetails: function (id) {
             // console.log("localDetails link");
-            //console.log(JSON.stringify(this.eventosList));
+            //console.log(JSON.stringify(eventosList));
             // lista de eventos del Local
-            this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
+            this.eventosLocal = new EventoCollection( eventosList.where({id_user: id}) );
             
             // ANALYTICS
             if (typeof window.ga !== 'undefined') {
@@ -263,9 +279,9 @@
         
         mapaLocal: function (id) {
             // console.log("mapaLocal link");
-            //console.log(JSON.stringify(this.eventosList));
+            //console.log(JSON.stringify(eventosList));
             // lista de eventos del Local
-            this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
+            this.eventosLocal = new EventoCollection( eventosList.where({id_user: id}) );
             var primerEvento = this.eventosLocal.at(0);
             // console.log("primerEvento");
             // console.log(primerEvento);
@@ -299,7 +315,7 @@
         mapaEvento: function (id) {
             // console.log("mapaEvento link");
             
-            var primerEvento = this.eventosList.get(id);
+            var primerEvento = eventosList.get(id);
             // console.log("primerEvento");
             // console.log(primerEvento);
             
@@ -361,7 +377,7 @@
     }
     
     // para probar el funcionamiento en local
-    // eventosNotificados();
+    eventosNotificados();
     
 
     /* --------------------------------- Event Registration -------------------------------- */
@@ -489,45 +505,41 @@
             success: function(data){
                 // console.log('success eventos notificados');
                 // console.log(data);
-                // une los nuevos a los guardados (si hay)
-                var eventos_notificados = window.localStorage.getItem('ev_notif');
-                eventos_notificados = JSON.parse(eventos_notificados);
                 
-                // localhost devuelve un json en "data", lo pasamos a array con parse
-                //eventos_notificados = eventos_notificados.concat( JSON.parse(data) );
-                
-                // el servidor devuelve un array en "data"
-                eventos_notificados = eventos_notificados.concat(data);
-                
-                //eventos_notificados = eventos_notificados+JSON.stringify(JSON.parse(data));
-                // console.log('eventos_notificados');
-                // console.log(eventos_notificados);
-                // y guarda todo en LS
+                // PROCESO SIN GUARDAR LAS NOTIFIC ANTERIORES (las notificaciones se sustituyen cada día)
+                var eventos_notificados = data; // data es un array
                 window.localStorage.setItem('ev_notif', JSON.stringify(eventos_notificados));
-                
-                
             },
             error: function(data){
                 console.log("Error eventos notificados");
                 // console.log(data);
             },
             complete: function(data){
-                // console.log("complete eventos notificados");
+                console.log("complete eventos notificados");
+                // reset historial
+                window.historial = ['', 'favoritos'];
                 
-                setTimeout( function() { 
-                    // reset historial
-                    window.historial = ['', 'favoritos'];
+                if(eventosListFetched === 1){
+                    // la lista se ha cargado completamente
                     // redirecciona a favoritos
                     Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
                     Backbone.history.navigate('favoritos', {replace: true, trigger: true});
                     
-                }, 2000);
+                } else {
+                    // espera q la lista se cargue completamente
+                    eventosList.on("fcomplete", function(eventName) {
+                        console.log( 'trigger fetch complete' );
+                        // redirecciona a favoritos
+                        Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
+                        Backbone.history.navigate('favoritos', {replace: true, trigger: true});
+                    });
+                }
                 
                                 
                 // reiniciar la variable x si la app queda abierta mucho tiempo
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
-                }, 9000);
+                }, 12000);
             },
         });
         

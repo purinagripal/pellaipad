@@ -8,21 +8,21 @@ var HomeView = Backbone.View.extend({
         this.$el.html(this.template());
         
         //this.model.on("reset", this.render, this);
-        var contexto = this;
-        this.model.fetch({reset: true, 
-                          success: function() {
-                            // console.log( 'fetch success' );                            
-                          },
-                          complete: function() {
-                              //alert('fetch complete');
-                              // console.log( 'fetch complete, oculta cargando' );
-                              
-                              // renderiza eventos una vez descargados
-                              contexto.cargarEventos();
-                              
-                              
-                          }
-        });
+//        var contexto = this;
+//        this.model.fetch({reset: true, 
+//                          success: function() {
+//                            // console.log( 'fetch success' );                            
+//                          },
+//                          complete: function() {
+//                              //alert('fetch complete');
+//                              // console.log( 'fetch complete, oculta cargando' );
+//                              
+//                              // renderiza eventos una vez descargados
+//                              contexto.cargarEventos();
+//                              
+//                              
+//                          }
+//        });
         
         
         this.render();
@@ -106,6 +106,9 @@ var HomeView = Backbone.View.extend({
     },
     
     cargarEventos: function () {
+        
+        console.log('cargar eventos');
+        
         // resetea el div
         $('.guiaeventos', this.el).html('');
         

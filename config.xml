@@ -29,6 +29,7 @@
     <!-- android only -->
     <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
     <preference name="android-minSdkVersion" value="13" />
+    <preference name="android-installLocation" value="auto" />
     <preference name="LoadUrlTimeoutValue" value="120000" /> <!-- para evitar el error de android -->
     
     
