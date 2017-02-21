@@ -17,7 +17,7 @@
     <!--    PREFERENCIAS    -->
     
     <!-- all platforms -->
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="FullScreen" value="false" />
     
     <!-- ios only -->
