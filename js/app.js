@@ -541,7 +541,7 @@
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
                 }, 10000); 
-            }
+            },
         });
         
     };
