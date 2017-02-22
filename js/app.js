@@ -72,7 +72,7 @@
         home: function () {
             // Since the home view never changes, we instantiate it and render it only once
             if (!homeView) {
-                console.log('router entra en home');
+                // console.log('router entra en home');
                 homeView = new HomeView({model: eventosList});
                 eventosList.fetch({reset: true, 
                                     success: function() {
@@ -80,7 +80,7 @@
                                     },
                                     complete: function() {
                                         //alert('fetch complete');
-                                        console.log( 'router - fetch complete, oculta cargando' );
+                                        // console.log( 'router - fetch complete, oculta cargando' );
                                         eventosList.trigger("fcomplete");
                                         eventosListFetched = 1;
 
@@ -90,7 +90,7 @@
                 });
                 
             } else {
-                console.log('reusing home view');
+                // console.log('reusing home view');
                 homeView.cargarEventos();
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
@@ -372,7 +372,7 @@
     
     // si no están seleccionadas las preferencias de notificacion nos redirige
     if( !window.localStorage.getItem('pref_categ') ) {
-        console.log("navigate preferencias");
+        // console.log("navigate preferencias");
         Backbone.history.navigate('preferencias', {trigger: true});
     }
     
@@ -515,7 +515,7 @@
                 // console.log(data);
             },
             complete: function(data){
-                console.log("complete eventos notificados");
+                // console.log("complete eventos notificados");
                 // reset historial
                 window.historial = ['', 'favoritos'];
                 
@@ -528,7 +528,7 @@
                 } else {
                     // espera q la lista se cargue completamente
                     eventosList.on("fcomplete", function(eventName) {
-                        console.log( 'trigger fetch complete' );
+                        // console.log( 'trigger fetch complete' );
                         // redirecciona a favoritos
                         Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
                         Backbone.history.navigate('favoritos', {replace: true, trigger: true});
@@ -539,8 +539,8 @@
                 // reiniciar la variable x si la app queda abierta mucho tiempo
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
-                }, 12000);
-            },
+                }, 600000); // 10 min
+            }
         });
         
     };

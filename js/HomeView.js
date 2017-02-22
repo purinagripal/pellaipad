@@ -107,7 +107,7 @@ var HomeView = Backbone.View.extend({
     
     cargarEventos: function () {
         
-        console.log('cargar eventos');
+        // console.log('cargar eventos');
         
         // resetea el div
         $('.guiaeventos', this.el).html('');
