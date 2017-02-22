@@ -541,7 +541,7 @@
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
                 }, 10000); 
-            },
+            }
         });
         
     };
@@ -633,6 +633,7 @@
         console.log('on resume');
         
         // para que espere hasta que se haya cargado
+        eventosListFetched = 0;
         
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
@@ -644,7 +645,9 @@
                               console.log( 'fetch complete del onresume' );
                                
                               // para notificaciones
-                              
+                              eventosList.trigger("fcomplete");
+                              eventosListFetched = 1;
+
                               // resetea
                               homeView.ciudad = 0;
                               homeView.categoria = 0;
