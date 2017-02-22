@@ -487,6 +487,7 @@
     
     
     function eventosNotificados() {
+        console.log('eventos notificados funcion');
         
         // marcamos como las notificaciones como vistas para que no se repita la descarga de notificaciones
         window.notif_vistas = 1;
@@ -539,7 +540,7 @@
                 // reiniciar la variable x si la app queda abierta mucho tiempo
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
-                }, 600000); // 10 min
+                }, 1000); // 10 min
             }
         });
         
@@ -629,6 +630,11 @@
     
     // para actualizar la lista de eventos en iOS (nunca se cierra la app)
     function onResume() {
+        console.log('on resume');
+        
+        // para que espere hasta que se haya cargado
+        eventosListFetched = 0;
+        
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
                           success: function() {
@@ -636,7 +642,11 @@
                           },
                           complete: function() {
                               //alert('fetch complete');
-                              // console.log( 'fetch complete, oculta cargando' );
+                              console.log( 'fetch complete del onresume' );
+                               
+                              // para notificaciones
+                              eventosList.trigger("fcomplete");
+                              eventosListFetched = 1;
                               
                               // resetea
                               homeView.ciudad = 0;
