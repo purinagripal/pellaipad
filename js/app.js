@@ -421,60 +421,60 @@
         
 
         //  --- NOTIFICACIONES PUSH
-//        var push = PushNotification.init({
-//            android: {
-//                senderID: "41817165383"
-//            },
-//            ios: {
-//                alert: "true",
-//                badge: "false",
-//                sound: "false"
-//            },
-//            windows: {}
-//        });
-//             
-//        push.on('registration', function(data) {            
-//            // comprobamos si tiene RegistrationId
-//            if( window.localStorage.getItem('reg_id') ){
-//                // ya esta guardado
-//                //alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
-//                // console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
-//                
-//                if( window.localStorage.getItem('reg_id') != data.registrationId ) {
-//                    // si ha cambiado lo guardamos DE NUEVO
-//                    saveRegistrationId(data.registrationId);
-//                }
-//
-//            } else {
-//                //alert("registration id: "+data.registrationId);
-//                // console.log("registration id: "+data.registrationId);
-//                
-//                // lo guardamos por PRIMERA vez 
-//                saveRegistrationId(data.registrationId);
-//            }
-//        });
-//
-//        push.on('notification', function(data) {
-//            // para que solo descargue las notificaciones una vez (no por cada notificacion)
-//            if( window.notif_vistas == 0 ) {
-//                eventosNotificados();
-//            }
-//            
-//                    
-//            setTimeout( function(){ 
-//                push.finish(function() {
-//                    console.log('Success finish');
-//                }, function() {
-//                    console.log('Error finish');
-//                }, 'push-1');
-//            }, 9000);
-//            
-//        });
-//
-//        push.on('error', function(e) {
-//            alert('Error de registro de notificación');
-//            // e.message
-//        });
+        var push = PushNotification.init({
+            android: {
+                senderID: "41817165383"
+            },
+            ios: {
+                alert: "true",
+                badge: "false",
+                sound: "false"
+            },
+            windows: {}
+        });
+             
+        push.on('registration', function(data) {            
+            // comprobamos si tiene RegistrationId
+            if( window.localStorage.getItem('reg_id') ){
+                // ya esta guardado
+                //alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                // console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                
+                if( window.localStorage.getItem('reg_id') != data.registrationId ) {
+                    // si ha cambiado lo guardamos DE NUEVO
+                    saveRegistrationId(data.registrationId);
+                }
+
+            } else {
+                //alert("registration id: "+data.registrationId);
+                // console.log("registration id: "+data.registrationId);
+                
+                // lo guardamos por PRIMERA vez 
+                saveRegistrationId(data.registrationId);
+            }
+        });
+
+        push.on('notification', function(data) {
+            // para que solo descargue las notificaciones una vez (no por cada notificacion)
+            if( window.notif_vistas == 0 ) {
+                eventosNotificados();
+            }
+            
+                    
+            setTimeout( function(){ 
+                push.finish(function() {
+                    console.log('Success finish');
+                }, function() {
+                    console.log('Error finish');
+                }, 'push-1');
+            }, 9000);
+            
+        });
+
+        push.on('error', function(e) {
+            alert('Error de registro de notificación');
+            // e.message
+        });
         
         // para abrir en InAppBrowser
         window.open = cordova.InAppBrowser.open;
