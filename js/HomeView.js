@@ -30,7 +30,7 @@ var HomeView = Backbone.View.extend({
 
     render:function () {
         // console.log('render de homeView');
-        //// console.log(JSON.stringify(this.model));
+        // console.log(JSON.stringify(this.model));
                 
         //this.$el.html(this.template());
            

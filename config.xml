@@ -27,7 +27,6 @@
     <preference name="exit-on-suspend" value="false" />
     
     <!-- android only -->
-    <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
     <preference name="LoadUrlTimeoutValue" value="120000" /> <!-- para evitar el error de android -->
@@ -69,6 +68,7 @@
     <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.1" />
     
     <!--    Notificaciones PUSH   -->
+    <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
     <plugin name="phonegap-plugin-push" source="npm" >        
         <param name="SENDER_ID" value="41817165383" />
     </plugin>

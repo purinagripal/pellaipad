@@ -723,7 +723,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     .guiaeventos .cuadro .date span.ico-categ {position: absolute; top: 7px; left: 8px; }
     
     /* en evento */
-    .evento-detalle .cuadro {height: 100%}
+    /*.evento-detalle .cuadro {height: 100%}*/
     .evento-detalle .cuadro .datos-evento p {font-size: 0.8em;}
     .evento-detalle .cuadro .descr-evento {padding-left: 1em;}
     #eve-map-canvas {height: 300px;}

@@ -12,9 +12,36 @@ var FavoritosView = Backbone.View.extend({
         //this.$el.html(this.template(this.model.toJSON()));
         this.$el.html(this.template());
         
-        _.each(this.model.models, 
-               function (evento) {$('.guiaeventos', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
-               this);
+        var listaFav;
+        if(this.model.fetchComplete===1) {
+//            console.log(this.model);
+            listaFav = this.model.obtenerFavoritos();
+            // console.log(listaFav);
+            _.each(listaFav.models, 
+                function (evento) {$('.guiaeventos', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
+                this);
+                
+            $('.cargando_eventos', this.el).hide();
+            $('.eventos_cargados', this.el).show();
+            
+        } else {
+            // espera q la lista se cargue completamente
+            var contexto = this;
+            this.model.on("fcomplete", function() {
+//                console.log(contexto.model);
+//                console.log('fetch complete recogido');
+                listaFav = contexto.model.obtenerFavoritos();
+                
+                _.each(listaFav.models, 
+                    function (evento) {$('.guiaeventos', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
+                    this);
+
+                $('.cargando_eventos', this.el).hide();
+                $('.eventos_cargados', this.el).show();
+            });
+            
+        }
+        
         return this;
     },
 

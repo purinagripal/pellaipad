@@ -26,21 +26,15 @@
     var homeView;
     var localesView;
     var localDetailsView;
+
     var eventosList = new EventoCollection();
-    var eventosListFetched = 0;
-    
-    /*eventosList = new EventoCollection();
-    eventosList.fetch({reset: true, 
-                      success: function() {
-                        // console.log( 'fetch terminado, esconde splashscreen' );
-                        // ocultar pantalla presentacion 
-                        setTimeout(function() {
-                            navigator.splashscreen.hide();
-                        }, 1500);
-                      },
-                      wait: true
-    });*/
-    
+    // cuando se completa el fetch pone la variable a 1
+    eventosList.on('fcomplete', function(){
+        eventosList.fetchComplete = 1;
+        console.log('trigger fcomplete');
+        //console.log(eventosList);
+    });
+   
    
     var AppRouter = Backbone.Router.extend({
 
@@ -80,10 +74,10 @@
                                     },
                                     complete: function() {
                                         //alert('fetch complete');
-                                        // console.log( 'router - fetch complete, oculta cargando' );
+                                        console.log( 'router - fetch complete, oculta cargando' );
+                                        
                                         eventosList.trigger("fcomplete");
-                                        eventosListFetched = 1;
-
+                                        
                                         // renderiza eventos una vez descargados
                                         homeView.cargarEventos();
                                     }
@@ -193,23 +187,14 @@
         },
         
         favoritos: function () {
-            // como puede cambiar segun las preferencias cada vez creamos una vista nueva
-            //this.favoritosList = new EventoCollection(eventosList.where({id_categoria: '1', id_ciudad: '2'}));
-            
-            /*this.pre_favoritosList = new EventoCollection(eventosList.where({id_categoria: '1'}).concat( eventosList.where({id_categoria: '3'}) ));
-            this.favoritosList = new EventoCollection(this.pre_favoritosList.where({id_ciudad: '1'}));
-            this.favoritosList.sort();*/
-            
-            this.favoritosList = eventosList.obtenerFavoritos();
-
-            //console.log(JSON.stringify(this.favoritosList));
+            // como puede cambiar segun las preferencias, cada vez creamos una vista nueva
             
             // ANALYTICS
             if (typeof window.ga !== 'undefined') {
                 window.ga.trackView('favoritos');
             }
            
-            slider.slidePage(new FavoritosView({model: this.favoritosList}).$el);
+            slider.slidePage(new FavoritosView({model: eventosList}).$el);
             // lleva el scroll a la posicion guardada
             $('div.guiaeventos').scrollTop(window.scrollFavor);
         },
@@ -519,28 +504,13 @@
                 // console.log("complete eventos notificados");
                 // reset historial
                 window.historial = ['', 'favoritos'];
-                
-                if(eventosListFetched === 1){
-                    // la lista se ha cargado completamente
-                    // redirecciona a favoritos
-                    Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
-                    Backbone.history.navigate('favoritos', {replace: true, trigger: true});
-                    
-                } else {
-                    // espera q la lista se cargue completamente
-                    eventosList.on("fcomplete", function(eventName) {
-                        // console.log( 'trigger fetch complete' );
-                        // redirecciona a favoritos
-                        Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
-                        Backbone.history.navigate('favoritos', {replace: true, trigger: true});
-                    });
-                }
-                
+                Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
+                Backbone.history.navigate('favoritos', {replace: true, trigger: true});
                                 
                 // reiniciar la variable x si la app queda abierta mucho tiempo
                 setTimeout( function(){ 
                     window.notif_vistas = 0; 
-                }, 10000); 
+                }, 600000); 
             }
         });
         
@@ -633,8 +603,8 @@
         console.log('on resume');
         
         // para que espere hasta que se haya cargado
-        eventosListFetched = 0;
-        
+        eventosList.fetchComplete = 0;
+
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
                           success: function() {
@@ -646,7 +616,6 @@
                                
                               // para notificaciones
                               eventosList.trigger("fcomplete");
-                              eventosListFetched = 1;
 
                               // resetea
                               homeView.ciudad = 0;
