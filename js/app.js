@@ -400,7 +400,6 @@
         if (typeof window.ga !== 'undefined') {
             
             window.ga.startTrackerWithId('UA-38453012-7', 30);
-            window.ga.setAllowIDFACollection(false);
             window.ga.trackView('inicia App');
             
         }
