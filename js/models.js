@@ -7,7 +7,6 @@ var EventoCollection = Backbone.Collection.extend({
     model: Evento,
     fetchComplete: 0,
 
-    //url: "http://localhost/fuerteagenda_cms/agenda_app",
     //url: "http://localhost/pelladeocio/appeventos",
     url: "http://pelladeocio.com/appeventos",
     

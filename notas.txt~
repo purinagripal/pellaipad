@@ -1,1 +1,3 @@
-plugin-push no funciona con cli 6.3.0 en iOS
+plugin-push no funciona con cli 6.3.0 en iOS - hay que mantener en cli-6.5.0 - no hay una version del plugin especificada
+
+analytics da problemas con IDFA en App Store iOS - ponemos v.1.0.0

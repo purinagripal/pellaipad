@@ -82,6 +82,8 @@ var EventoListItemView = Backbone.View.extend({
         // y es bastante alta ( 80/100=0.8 ancho/alto del div
         if(relac < 0.8) { 
             $('.cuadro .imagen img', this.el).addClass('vertical'); 
+        } else if ( relac < 1 ) {
+            $('.cuadro .imagen img', this.el).addClass('vertical-entablet'); 
         }
         
         // redimensiona la imagen al cargar (al girar la pantalla no se redimensiona
