@@ -73,7 +73,7 @@
     
     <!--    Notificaciones PUSH   -->
     <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
-    <plugin name="phonegap-plugin-push" source="npm" spec="1.8.4" > -->  <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
+    <plugin name="phonegap-plugin-push" source="npm" spec="1.10.5" > -->  <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
        <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
