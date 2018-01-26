@@ -76,7 +76,7 @@
     <!--    Analytics   -->
     <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
     <!-- <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" /> -->
-    <plugin name="cordova-plugin-google-analytics" source="npm" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" />
 
     
     <!-- especificas plataformas -->
