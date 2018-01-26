@@ -35,11 +35,10 @@
     
     <!--   PLUGINS   -->
     
-    <!--
     <plugin name="cordova-plugin-console" />
     <plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-dialogs" />
-    <plugin name="cordova-plugin-inappbrowser" />-->
+    <plugin name="cordova-plugin-inappbrowser" />
     
     <!--   SplashScreen   
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
