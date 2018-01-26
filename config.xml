@@ -17,7 +17,7 @@
     <!--    PREFERENCIAS    -->
     
     <!-- all platforms -->
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="FullScreen" value="false" />
     
     <!-- ios only -->
@@ -67,7 +67,7 @@
     <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.1" />
     
     <!--    Notificaciones PUSH   -->
-    <plugin name="phonegap-plugin-push" source="npm" spec="1.8.4" >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
+    <plugin name="phonegap-plugin-push" source="npm"  >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
