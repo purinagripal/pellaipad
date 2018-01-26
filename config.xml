@@ -68,7 +68,7 @@
     <plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
-    <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
+    <!-- <preference name="android-build-tool" value="gradle" />  para push plugin -->
     <plugin name="phonegap-plugin-push" source="npm" spec="1.9.4" >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
