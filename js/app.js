@@ -212,7 +212,6 @@
             if (typeof window.ga !== 'undefined') {
                 window.ga.trackView('nuevos');
             }
-            
                 
             var eventos_notificados = JSON.parse(window.localStorage.getItem('ev_notif'));
             console.log('eventos sacados del localStorage');
@@ -235,6 +234,7 @@
                 // no viene de una notificacion 
                 // si no existe la vista la crea y si existe la recupera
                 if (!nuevosView) {
+                    
                     // debemos chequear el localStorage para q no haya eventos pasados
                     var hoy = new Date();
                     var fechaevento;
@@ -255,6 +255,7 @@
 
                     // crea la coleccion
                     nuevosList = new EventoCollection(eventos_vigentes);
+                    nuevosView = new NuevosView();
                     nuevosView.model = nuevosList;
                     // console.log(nuevosList);
 
@@ -591,6 +592,15 @@
         var id_follow = window.localStorage.getItem('id_follow');
         // console.log('eventos notificados para id_follow='+id_follow);
         
+        // crea una vista nueva
+        nuevosView = new NuevosView();
+
+        // reset historial
+        window.historial = ['', 'nuevos'];
+        // navega a 'nuevos eventos'
+        Backbone.history.navigate('', {replace: true}); // por si ya estaba en nuevos
+        Backbone.history.navigate('nuevos', {replace: true, trigger: true});
+        
         $.ajax({
             // url de prueba
             url: 'http://pelladeocio.com/feventos/'+id_follow,
@@ -605,21 +615,14 @@
                 console.log('success eventos notificados');
                 console.log(datares);
                 
-                // PROCESO SIN GUARDAR LAS NOTIFIC ANTERIORES (las notificaciones se sustituyen cada día)
+                // guarda los eventos en LS (las notificaciones se sustituyen cada día)
                 var eventos_notificados = datares; // data es un array
                 window.localStorage.setItem('ev_notif', JSON.stringify(eventos_notificados));
-                // se cargaran los eventos desde localStorage para proximas vistas
-                
-                // crea una vista nueva
-                nuevosView = new NuevosView();
-                
-                // reset historial
-                window.historial = ['', 'nuevos'];
-                Backbone.history.navigate('', {replace: true}); // por si ya estaba en nuevos
-                Backbone.history.navigate('nuevos', {replace: true, trigger: true});
+                // para proximas vistas, se cargaran los eventos desde localStorage 
                 
                 // crea la coleccion con los eventos actualizados con la notificacion
                 nuevosList = new EventoCollection(eventos_notificados);
+                // y la vincula a la vista
                 nuevosView.model = nuevosList;
                                 
             },

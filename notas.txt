@@ -1,3 +1,8 @@
+cuando se cambia la version del plugin push o se prueba una nueva version de la app, hay q desinstalar la app e instalar 
+de nuevo para que funcionen las notificaciones
+
+------------
+
 falla el build porque los plugin de abajo including different versions of the Play Services library
 plugin name="cordova-plugin-google-analytics" source="npm" 
 plugin name="phonegap-plugin-push" source="npm" spec="1.10.5" 
