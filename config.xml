@@ -27,7 +27,7 @@
     <preference name="exit-on-suspend" value="false" />
     
     <!-- android only -->
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="16" />
     <preference name="android-installLocation" value="auto" />
     <preference name="LoadUrlTimeoutValue" value="120000" /> <!-- para evitar el error de android -->
     
@@ -36,10 +36,10 @@
     <!--   PLUGINS   -->
     
     
-    <plugin name="cordova-plugin-console" spec="1.0.3" />
-    <plugin name="cordova-plugin-device" spec="1.1.2" />
-    <plugin name="cordova-plugin-dialogs" spec="1.2.1" />
-    <plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-inappbrowser" />
     
     <!--   SplashScreen   
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
@@ -51,13 +51,13 @@
     -->
     
     <!--  Status Bar  -->
-    <plugin name="cordova-plugin-statusbar"  spec="2.1.3" />
+    <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#004158" />
     <preference name="StatusBarStyle" value="lightcontent" />
 
     <!--   WhiteList   -->
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.2" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
         <allow-navigation href="*" />
         <access origin="*" />
        <!--  Permitir whatsapp 
@@ -65,7 +65,7 @@
         <access origin="whatsapp:*" launch-external="yes" />   -->
     
     <!--    Compartir en RRSS   -->
-    <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.1" />
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
     <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
