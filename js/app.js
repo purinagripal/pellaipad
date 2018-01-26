@@ -504,11 +504,23 @@
         
 
         //  --- NOTIFICACIONES PUSH
+//        var push = PushNotification.init({
+//            android: {
+//                senderID: "41817165383",
+//                sound: "false",
+//                vibrate: "false"
+//            },
+//            ios: {
+//                alert: "true",
+//                badge: "false",
+//                sound: "false"
+//            },
+//            windows: {}
+//        });
+
         var push = PushNotification.init({
             android: {
-                senderID: "41817165383",
-                sound: "false",
-                vibrate: "false"
+                senderID: "41817165383"                
             },
             ios: {
                 alert: "true",
@@ -524,7 +536,7 @@
                 // ya esta guardado
                 alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 // console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
-                alert("recibido de servidor: "+data.registrationId);
+                alert("recibido de gcm: "+data.registrationId);
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
                     // si ha cambiado lo guardamos DE NUEVO
