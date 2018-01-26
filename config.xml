@@ -35,10 +35,11 @@
     
     <!--   PLUGINS   -->
     
+    <!--
     <plugin name="cordova-plugin-console" />
     <plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-dialogs" />
-    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-inappbrowser" />-->
     
     <!--   SplashScreen   
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
@@ -50,21 +51,27 @@
     -->
     
     <!--  Status Bar  -->
+    <!--
     <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#004158" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    -->
 
     <!--   WhiteList   -->
+    <!--    
     <plugin name="cordova-plugin-whitelist" source="npm" />
         <allow-navigation href="*" />
         <access origin="*" />
+        -->
        <!--  Permitir whatsapp 
         <allow-intent href="whatsapp:*" />
         <access origin="whatsapp:*" launch-external="yes" />   -->
     
     <!--    Compartir en RRSS   -->
+    <!--
     <plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    -->
     
     <!--    Notificaciones PUSH   -->
     <plugin name="phonegap-plugin-push" source="npm"  >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
@@ -74,8 +81,9 @@
     <!--    Analytics   -->
     <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
     <!-- <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" /> -->
+    <!--
     <plugin name="cordova-plugin-google-analytics" source="npm" />
-
+    -->
     
     <!-- especificas plataformas -->
     <platform name="android">
