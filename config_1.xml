@@ -35,10 +35,11 @@
     
     <!--   PLUGINS   -->
     
-    <plugin name="cordova-plugin-console" spec="1.0.3" />
-    <plugin name="cordova-plugin-device" spec="1.1.2" />
-    <plugin name="cordova-plugin-dialogs" spec="1.2.1" />
-    <plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
+    
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-inappbrowser" />
     
     <!--   SplashScreen   
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
@@ -50,13 +51,13 @@
     -->
     
     <!--  Status Bar  -->
-    <plugin name="cordova-plugin-statusbar" spec="2.1.3" />
+    <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#004158" />
     <preference name="StatusBarStyle" value="lightcontent" />
 
     <!--   WhiteList   -->
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.2" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
         <allow-navigation href="*" />
         <access origin="*" />
        <!--  Permitir whatsapp 
@@ -64,17 +65,18 @@
         <access origin="whatsapp:*" launch-external="yes" />   -->
     
     <!--    Compartir en RRSS   -->
-    <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.1" />
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
     
     <!--    Notificaciones PUSH   -->
-    <plugin name="phonegap-plugin-push" source="npm" spec="1.8.4" >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
+    <preference name="android-build-tool" value="gradle" /> <!-- para push plugin -->
+    <plugin name="phonegap-plugin-push" source="npm" spec="1.9.4" >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
         <param name="SENDER_ID" value="41817165383" />
     </plugin>
     
     <!--    Analytics   -->
     <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
     <!-- <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" /> -->
-    <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.7.4" />
+    <plugin name="cordova-plugin-google-analytics" source="npm"  />
 
     
     <!-- especificas plataformas -->
@@ -127,10 +129,20 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <!-- This Cordova Hook (script) removes "AdSupport.framework" and "libAdIdAccess" references from the cordova-plugin-google-analytics plugin -->
-        
+        <!-- <hook src="lib/removeAdFramework.js" type="after_build" />-->
     </platform>
     
     <platform name="winphone" />
     <platform name="wp8" />
     
 </widget>
+
+<plugin name="cordova-plugin-console" spec="1.0.3" />
+<plugin name="cordova-plugin-device" spec="1.1.2" />
+<plugin name="cordova-plugin-dialogs" spec="1.2.1" />
+<plugin name="cordova-plugin-google-analytics" spec="1.7.4" />
+<plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
+<plugin name="cordova-plugin-statusbar" spec="2.1.3" />
+<plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+<plugin name="cordova-plugin-x-socialsharing" spec="5.1.1" />
+<plugin name="phonegap-plugin-push" spec="1.8.4" />
