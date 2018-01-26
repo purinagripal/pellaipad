@@ -74,9 +74,10 @@
     -->
     
     <!--    Notificaciones PUSH   -->
-    <plugin name="phonegap-plugin-push" source="npm"  >   <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
-        <param name="SENDER_ID" value="41817165383" />
-    </plugin>
+    <!--
+    <plugin name="phonegap-plugin-push" source="npm"  > -->  <!-- Version 1.9.x = Cordova CLI (6.4.0 or newer) -->   
+      <!--   <param name="SENDER_ID" value="41817165383" />
+    </plugin>-->
     
     <!--    Analytics   -->
     <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
