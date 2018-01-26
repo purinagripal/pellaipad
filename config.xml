@@ -74,7 +74,9 @@
     </plugin>
     
     <!--    Analytics   -->
-    <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" />
+    <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
+    <!-- <plugin name="cordova-plugin-google-analytics" source="npm" spec="1.0.0" /> -->
+    <plugin name="cordova-plugin-google-analytics" source="npm" />
 
     
     <!-- especificas plataformas -->
@@ -126,6 +128,8 @@
         
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <!-- This Cordova Hook (script) removes "AdSupport.framework" and "libAdIdAccess" references from the cordova-plugin-google-analytics plugin -->
+        <hook src="lib/removeAdFramework.js" type="after_build" />
     </platform>
     
     <platform name="winphone" />

@@ -486,7 +486,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /* descripcion del evento */
 .evento-detalle .cuadro .descr-evento { margin: 1.2em 0; text-align: left; font-size: 1em;}
 .evento-detalle .cuadro .descr-evento p {line-height: 1.4; text-align: left;}
-.evento-detalle .cuadro .descr-evento a.link_web {margin: 1.3em auto; color: #004158; font-size: 1.1em; font-weight: 700;}
+.evento-detalle .cuadro .descr-evento a.link_web {margin: 1.3em auto; color: #004158; font-size: 1.1em; font-weight: 600;}
 
 /* direccion y mapa del evento */
 .evento-detalle .cuadro .direccion-evento {background-color: #f2f2f2; margin-top: 25px;}

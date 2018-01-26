@@ -7,24 +7,6 @@ var HomeView = Backbone.View.extend({
         
         this.$el.html(this.template());
         
-        //this.model.on("reset", this.render, this);
-//        var contexto = this;
-//        this.model.fetch({reset: true, 
-//                          success: function() {
-//                            // console.log( 'fetch success' );                            
-//                          },
-//                          complete: function() {
-//                              //alert('fetch complete');
-//                              // console.log( 'fetch complete, oculta cargando' );
-//                              
-//                              // renderiza eventos una vez descargados
-//                              contexto.cargarEventos();
-//                              
-//                              
-//                          }
-//        });
-        
-        
         this.render();
     },
 
@@ -32,8 +14,6 @@ var HomeView = Backbone.View.extend({
         // console.log('render de homeView');
         // console.log(JSON.stringify(this.model));
                 
-        //this.$el.html(this.template());
-           
         // boton categoria
         var categ_txt;
         switch(this.categoria) {
@@ -96,6 +76,7 @@ var HomeView = Backbone.View.extend({
     events: {
         "click .link_locales": "ver_locales",
         "click .link_favoritos": "ver_favoritos",
+        "click .link_nuevos": "ver_nuevos",
         "click .link_prefer": "ver_prefer",
         "click .link_acerca": "ver_acerca",
         "click .menu_salir": "salir",
@@ -189,6 +170,15 @@ var HomeView = Backbone.View.extend({
         
         //// console.log(event);
         Backbone.history.navigate('preferencias', {trigger: true});
+    },
+    
+    ver_nuevos: function (event) {        
+        // reset historial
+        window.historial = ['', 'nuevos'];
+        // console.log("window.historial: "+window.historial);
+        
+        //// console.log(event);
+        Backbone.history.navigate('nuevos', {trigger: true});
     },
     
     ver_acerca: function (event) {        

@@ -26,6 +26,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
@@ -187,6 +188,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -306,6 +308,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -332,6 +335,51 @@
     </div>    
 </script>
 
+<script id="nuevos-tpl" type="text/template">
+    <div class="header">
+        <div class="head_sup">
+            <a class="boton_inicio pull-left"><i class="fa fa-home"></i></a>
+            <img src="logo.png" />
+            
+            <div class="menu_drop dropdown pull-right">
+                <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
+                    <li><a class="link_eventos">Eventos</a></li>
+                    <li><a class="link_locales" >Organizadores</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="window.plugins.socialsharing.share('Descarga Pella de Ocio', 'Pella de Ocio', null, 'http://app.pelladeocio.com')"><i class="fa fa-share-alt"></i> Compartir App</a></li>
+                    <li><a class="link_acerca" ><i class="fa fa-info"></i> Acerca de ...</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="head_inf favoritos">
+            <div class="col-xs-12 selec_container" >
+                Nuevos eventos
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid wrapper-absolute-80 cargando_eventos">
+        <p>Cargando eventos...</p>
+        <p><img src="assets/img/cargando.gif" /></p>
+    </div>
+    
+    <div class="wrapper-absolute-80 eventos_cargados">
+        <div class="container-fluid guiaeventos">
+
+        </div>
+        <div class="container-fluid">
+            <div class="col-xs-12">
+                <button id="boton_todos" class="btn btn-pella btn-lg btn-block" type="button" >Ver todos los eventos</button>
+            </div>
+        </div>
+    </div>
+</script>
+
 <script id="evento-tpl" type="text/template">
     <div class="header-50">
         <div class="head_sup">
@@ -347,6 +395,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -464,6 +513,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -526,6 +576,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -614,6 +665,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -650,6 +702,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a class="link_eventos">Eventos</a></li>
                     <li><a class="link_locales" >Organizadores</a></li>
+                    <li><a class="link_nuevos" ><i class="fa fa-exclamation-circle"></i> Nuevos eventos</a></li>
                     <li><a class="link_favoritos" ><i class="fa fa-heart"></i> Favoritos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="link_prefer" ><i class="fa fa-cog"></i> Preferencias</a></li>
@@ -701,6 +754,7 @@
 <script src="js/LocalDetailsView.js"></script>
 <script src="js/PreferView.js"></script>
 <script src="js/FavoritosView.js"></script>
+<script src="js/NuevosView.js"></script>
 <script src="js/MapaView.js"></script>
 <script src="js/AcercaView.js"></script>
 <script src="js/app.js"></script>

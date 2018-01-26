@@ -34,7 +34,7 @@ var LocalDetailsView = Backbone.View.extend({
             zoom: 17, 
             center: myLatlng,
             streetViewControl: false,
-            styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }]}],
+            //styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }]}],
             draggable: false
         }; 
         window.map = new google.maps.Map(div_canvas, window.mapOptions);

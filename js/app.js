@@ -11,6 +11,7 @@
     
     PreferView.prototype.template = Handlebars.compile($("#prefer-tpl").html());
     FavoritosView.prototype.template = Handlebars.compile($("#favoritos-tpl").html());
+    NuevosView.prototype.template = Handlebars.compile($("#nuevos-tpl").html());
     MapaView.prototype.template = Handlebars.compile($("#mapa-tpl").html());
     
 
@@ -18,15 +19,18 @@
     var slider = new PageSlider($('body'));
     
     window.historial = [""];
-    window.notif_vistas = 0;
+    window.notif_recibidas = 0; // cuando se inicia la app debe ser cero, sólo será 1 cuando se reciban notificaciones
     window.scrollHome = 0;
     window.scrollLocales = 0;
     window.scrollFavor = 0;
+    window.scrollNuevos = 0;
 
     var homeView;
+    var nuevosView;
     var localesView;
     var localDetailsView;
 
+    var nuevosList;
     var eventosList = new EventoCollection();
     // cuando se completa el fetch pone la variable a 1
     eventosList.on('fcomplete', function(){
@@ -42,6 +46,8 @@
             "":                     "home",
             "preferencias":         "preferencias",
             "favoritos":            "favoritos",
+            "nuevos":               "nuevos",
+            "nuevoevento/:id":      "nuevoeventoDetails",
             "categ/:id_cat":        "categoria",
             "zona/:id_ciudad":      "ciudad",
             "eventos/:id":          "eventoDetails",
@@ -70,19 +76,18 @@
                 homeView = new HomeView({model: eventosList});
                 eventosList.fetch({reset: true, 
                                     success: function() {
-                                        console.log( 'fetch success' );                            
+                                        console.log( 'fetch success eventosList' );                            
                                     },
                                     complete: function() {
                                         //alert('fetch complete');
                                         console.log( 'router - fetch complete, oculta cargando' );
-                                        
+                                        console.log(eventosList);
                                         eventosList.trigger("fcomplete");
                                         
                                         // renderiza eventos una vez descargados
                                         homeView.cargarEventos();
                                     }
                 });
-                
             } else {
                 // console.log('reusing home view');
                 homeView.cargarEventos();
@@ -110,6 +115,7 @@
             if (homeView.categoria == 0) {
                 if( homeView.ciudad != 0 ) {
                     // filtra solo x por ciudad
+                    
                     this.eventosCateg = new EventoCollection(eventosList.where({id_ciudad: homeView.ciudad}));
                 } else {
                     // coge todas las categorías, vuelve a mostrar la lista inicial
@@ -197,6 +203,96 @@
             slider.slidePage(new FavoritosView({model: eventosList}).$el);
             // lleva el scroll a la posicion guardada
             $('div.guiaeventos').scrollTop(window.scrollFavor);
+        },
+        
+        // nuevos eventos notificados
+        nuevos: function () {
+            
+            // ANALYTICS
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView('nuevos');
+            }
+            
+                
+            var eventos_notificados = JSON.parse(window.localStorage.getItem('ev_notif'));
+            console.log('eventos sacados del localStorage');
+            console.log(eventos_notificados);
+
+            if(window.notif_recibidas == 1) {
+                // viene de on.notificacion
+                // crea la coleccion con los eventos de localStorage actualizados con la notificacion
+                // YA TODO ESTO LO HACE DESDE eventosNotificados
+                //nuevosList = new EventoCollection(eventos_notificados);
+                //nuevosView = new NuevosView();
+                //nuevosView.model = nuevosList;
+                // console.log(nuevosList);
+
+                // llama a nuevosView.cargarEventos() desde 
+                // la funcion eventosNotificados que llama on.notification
+                // en el complete del ajax
+
+            } else {
+                // no viene de una notificacion 
+                // si no existe la vista la crea y si existe la recupera
+                if (!nuevosView) {
+                    // debemos chequear el localStorage para q no haya eventos pasados
+                    var hoy = new Date();
+                    var fechaevento;
+                    var eventos_vigentes = new Array();
+
+                    for (index = 0; index < eventos_notificados.length; index++) { 
+                        fechaevento = new Date(eventos_notificados[index]['date']+'T'+eventos_notificados[index]['time']+'Z');
+                        if( fechaevento >= hoy ) {
+                            // no es pasado, debe mantenerse en localStorage
+                            eventos_vigentes.push(eventos_notificados[index]);
+                        }
+                    }
+
+                    // guarda la lista actualizada en localStorage
+                    window.localStorage.setItem('ev_notif', JSON.stringify(eventos_vigentes));
+                    console.log('eventos sacados del array');
+                    console.log(eventos_vigentes);
+
+                    // crea la coleccion
+                    nuevosList = new EventoCollection(eventos_vigentes);
+                    nuevosView.model = nuevosList;
+                    // console.log(nuevosList);
+
+                    // debe llamar a cargarEventos desde aqui
+                    nuevosView.cargarEventos();
+                    console.log('nuevosView creada');
+                    
+                }  else {
+                    nuevosView.cargarEventos();
+                    nuevosView.delegateEvents();
+                    console.log('nuevosView reutilizada');
+                }
+            }
+
+            // resetea el flag
+            window.notif_recibidas = 0;
+                        
+            slider.slidePage(nuevosView.$el);
+            // lleva el scroll a la posicion guardada
+            $('div.eventos_cargados').scrollTop(window.scrollNuevos);
+        },
+        
+        nuevoeventoDetails: function (id) {
+            //var employee = new Evento({id: id});
+            // coge el evento de la coleccion del HOME
+            this.evento = nuevosList.get(id);
+
+            // ANALYTICS
+            if (typeof window.ga !== 'undefined') {
+                window.ga.trackView(this.evento.attributes.title);
+            }
+                        
+            slider.slidePage(new EventoView({model: this.evento}).render().$el);
+            
+            // para que el mapa se vea más de una vez
+            google.maps.event.trigger(window.map, 'resize');
+            window.map.setOptions(window.mapOptions);
+            //window.map.setCenter(window.mapOptions.center);
         },
         
         locales: function () {
@@ -410,7 +506,9 @@
         //  --- NOTIFICACIONES PUSH
         var push = PushNotification.init({
             android: {
-                senderID: "41817165383"
+                senderID: "41817165383",
+                sound: "false",
+                vibrate: "false"
             },
             ios: {
                 alert: "true",
@@ -442,12 +540,9 @@
         });
 
         push.on('notification', function(data) {
-            // para que solo descargue las notificaciones una vez (no por cada notificacion)
-            if( window.notif_vistas == 0 ) {
-                eventosNotificados();
-            }
             
-                    
+            eventosNotificados();
+                        
             setTimeout( function(){ 
                 push.finish(function() {
                     console.log('Success finish');
@@ -475,44 +570,52 @@
     
     function eventosNotificados() {
         console.log('eventos notificados funcion');
-        
-        // marcamos como las notificaciones como vistas para que no se repita la descarga de notificaciones
-        window.notif_vistas = 1;
+
+        // para verificarlo en la linea #222 app.js
+        window.notif_recibidas = 1;
         
         var id_follow = window.localStorage.getItem('id_follow');
         // console.log('eventos notificados para id_follow='+id_follow);
         
         $.ajax({
-            url: 'http://pelladeocio.com/app_feventos/'+id_follow,
-            //url: 'http://localhost/fuerteagenda_cms/app_feventos/'+id_follow,
+            // url de prueba
+            url: 'http://pelladeocio.com/feventos/'+id_follow,
+            //url: 'http://pelladeocio.com/app_feventos/'+id_follow,
             data: '',
+            dataType: 'json',
             cache: false,
             contentType: false,
-            processData: false,
+            //processData: false,
             type: 'POST',
-            success: function(data){
-                // console.log('success eventos notificados');
-                // console.log(data);
+            success: function(datares){
+                console.log('success eventos notificados');
+                console.log(datares);
                 
                 // PROCESO SIN GUARDAR LAS NOTIFIC ANTERIORES (las notificaciones se sustituyen cada día)
-                var eventos_notificados = data; // data es un array
+                var eventos_notificados = datares; // data es un array
                 window.localStorage.setItem('ev_notif', JSON.stringify(eventos_notificados));
+                // se cargaran los eventos desde localStorage para proximas vistas
+                
+                // crea una vista nueva
+                nuevosView = new NuevosView();
+                
+                // reset historial
+                window.historial = ['', 'nuevos'];
+                Backbone.history.navigate('', {replace: true}); // por si ya estaba en nuevos
+                Backbone.history.navigate('nuevos', {replace: true, trigger: true});
+                
+                // crea la coleccion con los eventos actualizados con la notificacion
+                nuevosList = new EventoCollection(eventos_notificados);
+                nuevosView.model = nuevosList;
+                                
             },
             error: function(data){
                 console.log("Error eventos notificados");
                 // console.log(data);
             },
-            complete: function(data){
-                // console.log("complete eventos notificados");
-                // reset historial
-                window.historial = ['', 'favoritos'];
-                Backbone.history.navigate('', {replace: true}); // por si ya estaba en favoritos
-                Backbone.history.navigate('favoritos', {replace: true, trigger: true});
-                                
-                // reiniciar la variable x si la app queda abierta mucho tiempo
-                setTimeout( function(){ 
-                    window.notif_vistas = 0; 
-                }, 600000); 
+            complete: function(datares){
+                console.log("complete eventos notificados");
+                nuevosView.cargarEventos();
             }
         });
         
@@ -604,8 +707,17 @@
     function onResume() {
         console.log('on resume');
         
+        // reiniciamos Scrolls
+        window.scrollHome = 0;
+        window.scrollLocales = 0;
+        window.scrollFavor = 0;
+        window.scrollNuevos = 0;
+        
         // para que espere hasta que se haya cargado
         eventosList.fetchComplete = 0;
+        
+        // para reiniciar marcador de notificaciones
+        window.notif_recibidas = 0; // cuando se inicia la app debe ser cero, sólo será 1 cuando se reciban notificaciones
 
         // actualizamos desde el servidor
         homeView.model.fetch({reset: true, 
