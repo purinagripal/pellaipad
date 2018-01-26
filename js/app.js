@@ -530,7 +530,9 @@
             windows: {}
         });
              
-        push.on('registration', function(data) {            
+        push.on('registration', function(data) {   
+            
+            alert(data);
             // comprobamos si tiene RegistrationId
             if( window.localStorage.getItem('reg_id') ){
                 // ya esta guardado
