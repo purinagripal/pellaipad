@@ -522,8 +522,9 @@
             // comprobamos si tiene RegistrationId
             if( window.localStorage.getItem('reg_id') ){
                 // ya esta guardado
-                //alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                alert("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
                 // console.log("RegistrationId guardado en localstorage: "+window.localStorage.getItem('reg_id'));
+                alert("recibido de servidor: "+data.registrationId);
                 
                 if( window.localStorage.getItem('reg_id') != data.registrationId ) {
                     // si ha cambiado lo guardamos DE NUEVO
@@ -531,7 +532,7 @@
                 }
 
             } else {
-                //alert("registration id: "+data.registrationId);
+                alert("registration id: "+data.registrationId);
                 // console.log("registration id: "+data.registrationId);
                 
                 // lo guardamos por PRIMERA vez 
