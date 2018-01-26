@@ -50,27 +50,21 @@
     -->
     
     <!--  Status Bar  -->
-    <!--
     <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#004158" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    -->
 
     <!--   WhiteList   -->
-    <!--    
     <plugin name="cordova-plugin-whitelist" source="npm" />
         <allow-navigation href="*" />
         <access origin="*" />
-        -->
        <!--  Permitir whatsapp 
         <allow-intent href="whatsapp:*" />
         <access origin="whatsapp:*" launch-external="yes" />   -->
     
     <!--    Compartir en RRSS   -->
-    <!--
     <plugin name="cordova-plugin-x-socialsharing" source="npm" />
-    -->
     
     <!--    Analytics   -->
     <!-- analytics da problemas con IDFA en App Store iOS - ponemos v. 1.0.0 para evitarlo -->
@@ -135,6 +129,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <!-- This Cordova Hook (script) removes "AdSupport.framework" and "libAdIdAccess" references from the cordova-plugin-google-analytics plugin -->
+        <hook src="lib/removeAdFramework.js" type="after_build" />
         
     </platform>
     
